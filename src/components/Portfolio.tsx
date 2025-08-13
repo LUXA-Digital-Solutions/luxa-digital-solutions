@@ -1,42 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { projects } from "@/data/projects";
+import { Link } from "react-router-dom";
 import { ExternalLink, Code } from "lucide-react";
 
 const Portfolio = () => {
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      category: "Full-Stack Development",
-      description: "Modern e-commerce solution with advanced features and seamless user experience",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=center",
-      link: "#"
-    },
-    {
-      title: "SaaS Dashboard",
-      category: "Web Application",
-      description: "Comprehensive analytics dashboard with real-time data visualization",
-      tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center",
-      link: "#"
-    },
-    {
-      title: "Corporate Website",
-      category: "Brand Identity",
-      description: "Professional corporate presence with modern design and optimal performance",
-      tech: ["React", "Tailwind", "Framer Motion", "Vercel"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center",
-      link: "#"
-    },
-    {
-      title: "Mobile Banking App",
-      category: "FinTech Solution",
-      description: "Secure and intuitive mobile banking experience with advanced features",
-      tech: ["React Native", "Firebase", "Stripe", "Biometric Auth"],
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop&crop=center",
-      link: "#"
-    }
-  ];
 
   return (
     <section className="py-24 px-6 bg-gradient-to-b from-card/20 to-background">
@@ -100,13 +68,15 @@ const Portfolio = () => {
                   ))}
                 </div>
                 
-                <Button 
-                  variant="outline" 
-                  className="w-full border-primary/30 text-foreground hover:bg-primary/10 group-hover:border-primary/60 transition-all"
-                >
-                  View Project Details
-                  <ExternalLink className="ml-2 w-4 h-4" />
-                </Button>
+                <Link to={`/project/${project.id}`}>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-primary/30 text-foreground hover:bg-primary/10 group-hover:border-primary/60 transition-all"
+                  >
+                    View Project Details
+                    <ExternalLink className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </div>
             </Card>
           ))}
