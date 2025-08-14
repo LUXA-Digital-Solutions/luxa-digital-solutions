@@ -41,21 +41,26 @@ const Navigation = () => {
   }, [isOpen]);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" }
+    { name: "Home", href: "#home", action: "scroll" },
+    { name: "Services", href: "#services", action: "scroll" },
+    { name: "Portfolio", href: "#portfolio", action: "scroll" },
+    { name: "About", href: "/about", action: "navigate" },
+    { name: "Contact", href: "/contact", action: "navigate" }
   ];
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (item: { href: string; action: string }) => {
     setIsOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+    
+    if (item.action === "navigate") {
+      navigate(item.href);
+    } else {
+      const element = document.querySelector(item.href);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     }
   };
 
@@ -89,7 +94,7 @@ const Navigation = () => {
                   href={item.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavClick(item.href);
+                    handleNavClick(item);
                   }}
                   className="relative text-muted-foreground hover:text-primary transition-all-spring font-medium py-2 group text-sm xl:text-base"
                   style={{ animationDelay: `${index * 0.1}s` }}
@@ -174,7 +179,7 @@ const Navigation = () => {
                     href={item.href}
                     onClick={(e) => {
                       e.preventDefault();
-                      handleNavClick(item.href);
+                      handleNavClick(item);
                     }}
                     className="flex items-center justify-between text-muted-foreground hover:text-primary transition-all-spring font-medium py-4 px-4 rounded-xl hover:bg-primary/5 group"
                     style={{ 

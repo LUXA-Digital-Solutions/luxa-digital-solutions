@@ -174,6 +174,15 @@ const Services = () => {
               >
                 View Case Studies
               </Button>
+              
+              <Button 
+                variant="ghost" 
+                size="lg" 
+                onClick={() => navigate('/about')}
+                className="text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto"
+              >
+                About Us
+              </Button>
             </div>
           </div>
         </div>

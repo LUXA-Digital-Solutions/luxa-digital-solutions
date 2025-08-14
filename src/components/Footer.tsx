@@ -8,19 +8,36 @@ import {
   ExternalLink,
   Heart
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" }
+    { name: "Home", href: "#home", action: "scroll" },
+    { name: "Services", href: "#services", action: "scroll" },
+    { name: "Portfolio", href: "#portfolio", action: "scroll" },
+    { name: "About", href: "/about", action: "navigate" },
+    { name: "Contact", href: "/contact", action: "navigate" }
   ];
+
+  const handleQuickLinkClick = (link: { href: string; action: string }) => {
+    if (link.action === "navigate") {
+      navigate(link.href);
+    } else {
+      const element = document.querySelector(link.href);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
 
   const services = [
     "Web Development",
@@ -87,6 +104,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <a
                       href={link.href}
+                      onClick={() => handleQuickLinkClick(link)}
                       className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm sm:text-base lg:text-lg group flex items-center"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >

@@ -273,7 +273,7 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center">
                   Start Your Project
-                  <ArrowRight className="ml-2 sm:ml-3 lg:ml-4 w-5 h-5 sm:w-6 sm:w-6 lg:w-7 lg:h-7 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="ml-2 sm:ml-3 lg:ml-4 w-5 h-5 sm:w-6 lg:w-7 lg:h-7 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </Button>
               
