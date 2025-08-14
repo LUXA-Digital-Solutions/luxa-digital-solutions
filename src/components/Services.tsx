@@ -74,8 +74,8 @@ const Services = () => {
             Our Services
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-            Comprehensive{' '}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
+            <span className="text-foreground">Comprehensive</span>{' '}
+            <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Digital Solutions
             </span>
           </h2>
@@ -142,8 +142,8 @@ const Services = () => {
         <div className="text-center animate-slide-up">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
-              Ready to Transform Your{' '}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="text-foreground">Ready to Transform Your</span>{' '}
+              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 Business?
               </span>
             </h3>

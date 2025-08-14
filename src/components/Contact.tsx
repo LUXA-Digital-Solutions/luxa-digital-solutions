@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
 import { 
   Phone, 
   Mail, 
@@ -14,7 +15,6 @@ import {
   Send,
   CheckCircle
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 
 const Contact = () => {
   const contactMethods = [
@@ -64,8 +64,8 @@ const Contact = () => {
             Get In Touch
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-            Ready to Start Your{' '}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
+            <span className="text-foreground">Ready to Start Your</span>{' '}
+            <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Project?
             </span>
           </h2>
@@ -247,8 +247,8 @@ const Contact = () => {
         <div className="text-center animate-slide-up">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
-              Let's Build Something{' '}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="text-foreground">Let's Build Something</span>{' '}
+              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 Amazing
               </span>
             </h3>

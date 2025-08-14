@@ -30,8 +30,8 @@ const Portfolio = () => {
             Our Portfolio
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-            Featured{' '}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
+            <span className="text-foreground">Featured</span>{' '}
+            <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
@@ -141,8 +141,8 @@ const Portfolio = () => {
         <div className="text-center animate-slide-up">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
-              Ready to See Your{' '}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="text-foreground">Ready to See Your</span>{' '}
+              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 Project Here?
               </span>
             </h3>

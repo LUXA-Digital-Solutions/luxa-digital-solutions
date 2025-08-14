@@ -49,8 +49,8 @@ const About = () => {
             About Us
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-            We're More Than Just{' '}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
+            <span className="text-foreground">We're More Than Just</span>{' '}
+            <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Developers
             </span>
           </h2>

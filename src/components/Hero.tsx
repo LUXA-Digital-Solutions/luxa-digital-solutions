@@ -53,12 +53,14 @@ const Hero = () => {
           {/* Enhanced Headline */}
           <div className="mb-6 sm:mb-8 lg:mb-10 animate-slide-up">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 sm:mb-6">
-              We Build
-              <span className="block bg-gradient-primary bg-clip-text text-transparent relative">
+              <span className="text-foreground">We Build</span>
+              <br />
+              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent relative inline-block">
                 Digital
                 <Sparkles className="inline-block w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 ml-2 sm:ml-3 lg:ml-4 text-primary animate-glow" />
               </span>
-              <span className="block">Solutions</span>
+              <br />
+              <span className="text-foreground">Solutions</span>
             </h1>
           </div>
 
