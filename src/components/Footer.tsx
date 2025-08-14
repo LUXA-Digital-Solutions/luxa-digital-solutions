@@ -1,98 +1,201 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Twitter, Linkedin, Github, ArrowUp } from "lucide-react";
+import { 
+  ArrowUp, 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Clock,
+  ExternalLink,
+  Heart
+} from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const quickLinks = [
+    { name: "Home", href: "#home" },
+    { name: "Services", href: "#services" },
+    { name: "Portfolio", href: "#portfolio" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" }
+  ];
+
+  const services = [
+    "Web Development",
+    "Mobile Applications", 
+    "UI/UX Design",
+    "Digital Consulting",
+    "Performance Optimization",
+    "Security & Compliance"
+  ];
+
+  const socialLinks = [
+    { name: "LinkedIn", href: "#", icon: ExternalLink },
+    { name: "Twitter", href: "#", icon: ExternalLink },
+    { name: "GitHub", href: "#", icon: ExternalLink },
+    { name: "Dribbble", href: "#", icon: ExternalLink }
+  ];
+
   return (
-    <footer className="bg-gradient-dark border-t border-border/20">
-      <div className="container mx-auto px-6">
-        {/* Main footer content */}
-        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company info */}
-          <div className="lg:col-span-2">
-            <img 
-              src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png" 
-              alt="LUXA Digital Solutions"
-              className="h-8 mb-6"
-            />
-            <p className="text-muted-foreground mb-6 max-w-md leading-relaxed">
-              Transforming businesses through innovative digital solutions. We create exceptional 
-              web experiences that drive growth and deliver measurable results.
-            </p>
-            <div className="flex space-x-4">
-              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary hover:bg-primary/10">
-                <Twitter className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary hover:bg-primary/10">
-                <Linkedin className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary hover:bg-primary/10">
-                <Github className="w-5 h-5" />
-              </Button>
-            </div>
-          </div>
+    <footer className="bg-gradient-dark relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/3 rounded-full blur-3xl"></div>
+      </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Services</h3>
-            <ul className="space-y-3">
-              {["Web Development", "Mobile Apps", "UI/UX Design", "E-Commerce", "SEO Optimization", "Maintenance"].map((service) => (
-                <li key={service}>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                    {service}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Main Footer Content */}
+        <div className="py-16 sm:py-20 lg:py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16">
+            {/* Company Info */}
+            <div className="lg:col-span-1">
+              <div className="flex items-center mb-6 sm:mb-8">
+                <img 
+                  src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png" 
+                  alt="LUXA" 
+                  className="h-8 sm:h-10 lg:h-12"
+                />
+              </div>
+              <p className="text-muted-foreground mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base lg:text-lg">
+                Transforming businesses through innovative digital solutions. We create exceptional experiences that drive growth and success.
+              </p>
+              <div className="flex space-x-4">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 hover:bg-primary/20 border border-primary/20 hover:border-primary/40 flex items-center justify-center transition-all-spring hover-lift group"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <social.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+                ))}
+              </div>
+            </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Contact</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-muted-foreground">
-                <Mail className="w-4 h-4 text-primary" />
-                <span className="text-sm">hello@luxadigital.com</span>
-              </div>
-              <div className="flex items-center space-x-3 text-muted-foreground">
-                <Phone className="w-4 h-4 text-primary" />
-                <span className="text-sm">+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3 text-muted-foreground">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-sm">123 Digital Avenue<br />Tech City, TC 12345</span>
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-6 sm:mb-8 text-foreground">
+                Quick Links
+              </h3>
+              <ul className="space-y-3 sm:space-y-4">
+                {quickLinks.map((link, index) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm sm:text-base lg:text-lg group flex items-center"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      <span className="relative">
+                        {link.name}
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all-spring group-hover:w-full"></span>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-6 sm:mb-8 text-foreground">
+                Services
+              </h3>
+              <ul className="space-y-3 sm:space-y-4">
+                {services.map((service, index) => (
+                  <li key={service}>
+                    <span className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm sm:text-base lg:text-lg cursor-pointer group flex items-center">
+                      <span className="relative">
+                        {service}
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all-spring group-hover:w-full"></span>
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-6 sm:mb-8 text-foreground">
+                Contact Info
+              </h3>
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start group">
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                  <div>
+                    <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">
+                      hello@luxa.com
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start group">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                  <div>
+                    <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">
+                      +1 (555) 123-4567
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start group">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                  <div>
+                    <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">
+                      123 Digital Street<br />
+                      Tech City, TC 12345
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start group">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                  <div>
+                    <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">
+                      Mon-Fri: 9AM-6PM<br />
+                      Sat: 10AM-4PM
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom footer */}
-        <div className="py-6 border-t border-border/20 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © 2024 LUXA Digital Solutions. All rights reserved.
-          </div>
-          
-          <div className="flex items-center space-x-6">
-            <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Terms of Service
-            </a>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              onClick={scrollToTop}
-              className="text-muted-foreground hover:text-primary hover:bg-primary/10"
-            >
-              <ArrowUp className="w-4 h-4" />
-            </Button>
+        {/* Bottom Section */}
+        <div className="border-t border-border/30 py-6 sm:py-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+            <div className="flex items-center text-muted-foreground text-sm sm:text-base">
+              <span>© 2024 LUXA Digital Solutions. All rights reserved.</span>
+            </div>
+            
+            <div className="flex items-center space-x-6 sm:space-x-8 text-sm sm:text-base">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+                Terms of Service
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+                Cookie Policy
+              </a>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      <Button
+        onClick={scrollToTop}
+        className="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary/90 hover:bg-primary text-black shadow-elegant hover:shadow-cyan transition-all-spring hover-lift z-40 group"
+      >
+        <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-translate-y-1 transition-transform duration-300" />
+      </Button>
     </footer>
   );
 };
