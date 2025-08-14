@@ -11,8 +11,11 @@ import {
   ArrowRight,
   CheckCircle
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
+  const navigate = useNavigate();
+
   const services = [
     {
       icon: Code,
@@ -153,6 +156,7 @@ const Services = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <Button 
                 size="lg" 
+                onClick={() => navigate('/get-quote')}
                 className="bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold group relative overflow-hidden w-full sm:w-auto"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -165,6 +169,7 @@ const Services = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
+                onClick={() => navigate('/case-studies')}
                 className="border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto"
               >
                 View Case Studies

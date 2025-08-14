@@ -10,8 +10,10 @@ import {
   Calendar,
   Users
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Portfolio = () => {
+  const navigate = useNavigate();
   const featuredProjects = projects.slice(0, 6);
 
   return (
@@ -70,6 +72,7 @@ const Portfolio = () => {
                 <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all-spring transform translate-y-2 group-hover:translate-y-0">
                   <Button 
                     size="sm" 
+                    onClick={() => navigate(`/project/${project.id}`)}
                     className="bg-primary/90 hover:bg-primary text-black font-semibold w-10 h-10 p-0 rounded-full hover:scale-110 transition-all-spring"
                   >
                     <Eye className="w-4 h-4" />
@@ -124,6 +127,7 @@ const Portfolio = () => {
 
                 {/* Enhanced CTA Button */}
                 <Button 
+                  onClick={() => navigate(`/project/${project.id}`)}
                   className="w-full bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift font-semibold group relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -152,18 +156,20 @@ const Portfolio = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <Button 
                 size="lg" 
+                onClick={() => navigate('/get-quote')}
                 className="bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold group relative overflow-hidden w-full sm:w-auto"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center">
                   Start Your Project
-                  <ArrowUpRight className="ml-2 sm:ml-3 lg:ml-4 w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                  <ArrowUpRight className="ml-2 sm:ml-3 lg:ml-4 w-5 h-5 sm:w-6 sm:w-6 lg:w-7 lg:h-7 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                 </span>
               </Button>
               
               <Button 
                 variant="outline" 
                 size="lg" 
+                onClick={() => navigate('/all-projects')}
                 className="border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto"
               >
                 View All Projects

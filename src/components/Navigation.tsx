@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronRight, Phone, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   // Handle scroll effect for navigation
   useEffect(() => {
@@ -101,6 +103,7 @@ const Navigation = () => {
             {/* Desktop CTA Button */}
             <div className="hidden lg:block">
               <Button 
+                onClick={() => navigate('/get-quote')}
                 className="bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift px-6 py-2.5 font-semibold relative overflow-hidden group text-sm xl:text-base"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -189,6 +192,7 @@ const Navigation = () => {
               {/* Mobile CTA Section */}
               <div className="mt-8 pt-6 border-t border-border/30">
                 <Button 
+                  onClick={() => navigate('/get-quote')}
                   className="w-full bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift font-semibold py-4 text-lg mb-4"
                   style={{ 
                     animationDelay: '0.5s',
@@ -201,11 +205,17 @@ const Navigation = () => {
                 
                 {/* Contact Info */}
                 <div className="space-y-3">
-                  <div className="flex items-center text-muted-foreground hover:text-primary transition-colors duration-300 group">
+                  <div 
+                    onClick={() => window.open('tel:+15551234567', '_self')}
+                    className="flex items-center text-muted-foreground hover:text-primary transition-colors duration-300 group cursor-pointer"
+                  >
                     <Phone className="w-4 h-4 mr-3 group-hover:scale-110 transition-transform duration-300" />
                     <span className="text-sm">+1 (555) 123-4567</span>
                   </div>
-                  <div className="flex items-center text-muted-foreground hover:text-primary transition-colors duration-300 group">
+                  <div 
+                    onClick={() => window.open('mailto:hello@luxa.com', '_self')}
+                    className="flex items-center text-muted-foreground hover:text-primary transition-colors duration-300 group cursor-pointer"
+                  >
                     <Mail className="w-4 h-4 mr-3 group-hover:scale-110 transition-transform duration-300" />
                     <span className="text-sm">hello@luxa.com</span>
                   </div>

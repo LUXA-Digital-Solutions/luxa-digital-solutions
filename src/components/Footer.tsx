@@ -125,7 +125,10 @@ const Footer = () => {
                 Contact Info
               </h3>
               <div className="space-y-4 sm:space-y-6">
-                <div className="flex items-start group">
+                <div 
+                  onClick={() => window.open('mailto:hello@luxa.com', '_self')}
+                  className="flex items-start group cursor-pointer"
+                >
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">
@@ -134,7 +137,10 @@ const Footer = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start group">
+                <div 
+                  onClick={() => window.open('tel:+15551234567', '_self')}
+                  className="flex items-start group cursor-pointer"
+                >
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">
@@ -143,7 +149,10 @@ const Footer = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start group">
+                <div 
+                  onClick={() => window.open('https://maps.google.com/?q=123+Digital+Street+Tech+City+TC+12345', '_blank')}
+                  className="flex items-start group cursor-pointer"
+                >
                   <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">

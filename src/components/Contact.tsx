@@ -15,36 +15,43 @@ import {
   Send,
   CheckCircle
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
+  const navigate = useNavigate();
+
   const contactMethods = [
     {
       icon: Phone,
       title: "Phone",
       value: "+1 (555) 123-4567",
       description: "Call us anytime",
-      action: "Call Now"
+      action: "Call Now",
+      onClick: () => window.open('tel:+15551234567', '_self')
     },
     {
       icon: Mail,
       title: "Email",
       value: "hello@luxa.com",
       description: "Send us a message",
-      action: "Send Email"
+      action: "Send Email",
+      onClick: () => window.open('mailto:hello@luxa.com', '_self')
     },
     {
       icon: MapPin,
       title: "Office",
       value: "123 Digital Street",
       description: "Visit our office",
-      action: "Get Directions"
+      action: "Get Directions",
+      onClick: () => window.open('https://maps.google.com/?q=123+Digital+Street', '_blank')
     },
     {
       icon: Clock,
       title: "Hours",
       value: "Mon-Fri 9AM-6PM",
       description: "Business hours",
-      action: "Schedule Meeting"
+      action: "Schedule Meeting",
+      onClick: () => navigate('/schedule-consultation')
     }
   ];
 
@@ -185,7 +192,8 @@ const Contact = () => {
                 {contactMethods.map((method, index) => (
                   <Card 
                     key={method.title}
-                    className="p-4 sm:p-6 bg-card/30 border-border/30 hover:border-primary/40 group hover-lift backdrop-blur-sm transition-all-spring relative overflow-hidden"
+                    onClick={method.onClick}
+                    className="p-4 sm:p-6 bg-card/30 border-border/30 hover:border-primary/40 group hover-lift backdrop-blur-sm transition-all-spring relative overflow-hidden cursor-pointer"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -230,6 +238,7 @@ const Contact = () => {
                   
                   <Button 
                     variant="outline" 
+                    onClick={() => navigate('/schedule-consultation')}
                     className="border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 transition-all-spring hover-lift px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold group"
                   >
                     <span className="flex items-center">
@@ -258,18 +267,20 @@ const Contact = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <Button 
                 size="lg" 
+                onClick={() => navigate('/get-quote')}
                 className="bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold group relative overflow-hidden w-full sm:w-auto"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center">
                   Start Your Project
-                  <ArrowRight className="ml-2 sm:ml-3 lg:ml-4 w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="ml-2 sm:ml-3 lg:ml-4 w-5 h-5 sm:w-6 sm:w-6 lg:w-7 lg:h-7 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </Button>
               
               <Button 
                 variant="outline" 
                 size="lg" 
+                onClick={() => navigate('/all-projects')}
                 className="border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto"
               >
                 View Our Work

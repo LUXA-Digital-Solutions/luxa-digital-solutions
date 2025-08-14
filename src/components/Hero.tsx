@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Code, Palette, Smartphone, Globe, Zap, Shield } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   const features = [
     { icon: Code, label: "Custom Development" },
     { icon: Palette, label: "UI/UX Design" },
@@ -37,9 +40,9 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-6xl mx-auto">
+        <div className="text-center max-w-6xl mx-auto pt-20">
           {/* Enhanced Logo */}
-          <div className="mb-8 sm:mb-12 animate-fade-in">
+          {/* <div className="mb-8 sm:mb-12 animate-fade-in">
             <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-3xl bg-gradient-accent p-4 mb-6 group">
               <img 
                 src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png" 
@@ -48,7 +51,7 @@ const Hero = () => {
               />
               <div className="absolute inset-0 rounded-3xl bg-primary/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </div>
-          </div>
+          </div> */}
 
           {/* Enhanced Headline */}
           <div className="mb-6 sm:mb-8 lg:mb-10 animate-slide-up">
@@ -97,6 +100,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <Button 
                 size="lg" 
+                onClick={() => navigate('/get-quote')}
                 className="bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold group relative overflow-hidden w-full sm:w-auto"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -109,6 +113,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
+                onClick={() => navigate('/all-projects')}
                 className="border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto"
               >
                 View Our Work
