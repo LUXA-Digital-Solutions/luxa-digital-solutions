@@ -1,20 +1,20 @@
 import { Button } from "@/components/ui/button";
-import { 
-  ArrowUp, 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  ArrowUp,
+  Mail,
+  Phone,
+  MapPin,
   Clock,
   ExternalLink,
-  Heart
+  Heart,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate();
-  
+
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const quickLinks = [
@@ -22,7 +22,7 @@ const Footer = () => {
     { name: "Services", href: "#services", action: "scroll" },
     { name: "Portfolio", href: "#portfolio", action: "scroll" },
     { name: "About", href: "/about", action: "navigate" },
-    { name: "Contact", href: "/contact", action: "navigate" }
+    { name: "Contact", href: "/contact", action: "navigate" },
   ];
 
   const handleQuickLinkClick = (link: { href: string; action: string }) => {
@@ -31,9 +31,9 @@ const Footer = () => {
     } else {
       const element = document.querySelector(link.href);
       if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
         });
       }
     }
@@ -41,27 +41,27 @@ const Footer = () => {
 
   const services = [
     "Web Development",
-    "Mobile Applications", 
+    "Mobile Applications",
     "UI/UX Design",
     "Digital Consulting",
     "Performance Optimization",
-    "Security & Compliance"
+    "Security & Compliance",
   ];
 
   const socialLinks = [
     { name: "LinkedIn", href: "#", icon: ExternalLink },
     { name: "Twitter", href: "#", icon: ExternalLink },
     { name: "GitHub", href: "#", icon: ExternalLink },
-    { name: "Dribbble", href: "#", icon: ExternalLink }
+    { name: "Dribbble", href: "#", icon: ExternalLink },
   ];
 
   return (
-    <footer className="bg-gradient-dark relative overflow-hidden">
+    <footer className="bg-brand-light dark:bg-brand-dark relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/3 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-brand-teal/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-brand-teal/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-brand-teal/3 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -71,24 +71,25 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center mb-6 sm:mb-8">
-                <img 
-                  src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png" 
-                  alt="LUXA" 
+                <img
+                  src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png"
+                  alt="LUXA"
                   className="h-8 sm:h-10 lg:h-12"
                 />
               </div>
               <p className="text-muted-foreground mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base lg:text-lg">
-                Transforming businesses through innovative digital solutions. We create exceptional experiences that drive growth and success.
+                Transforming businesses through innovative digital solutions. We
+                create exceptional experiences that drive growth and success.
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
                     key={social.name}
                     href={social.href}
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 hover:bg-primary/20 border border-primary/20 hover:border-primary/40 flex items-center justify-center transition-all-spring hover-lift group"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-teal/10 hover:bg-brand-teal/20 border border-brand-teal/20 hover:border-brand-teal/40 flex items-center justify-center transition-all-spring hover-lift group"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <social.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    <social.icon className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal group-hover:scale-110 transition-transform duration-300" />
                   </a>
                 ))}
               </div>
@@ -105,12 +106,12 @@ const Footer = () => {
                     <a
                       href={link.href}
                       onClick={() => handleQuickLinkClick(link)}
-                      className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm sm:text-base lg:text-lg group flex items-center"
+                      className="text-muted-foreground hover:text-brand-teal transition-colors duration-300 text-sm sm:text-base lg:text-lg group flex items-center"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <span className="relative">
                         {link.name}
-                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all-spring group-hover:w-full"></span>
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-teal transition-all-spring group-hover:w-full"></span>
                       </span>
                     </a>
                   </li>
@@ -126,10 +127,10 @@ const Footer = () => {
               <ul className="space-y-3 sm:space-y-4">
                 {services.map((service, index) => (
                   <li key={service}>
-                    <span className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm sm:text-base lg:text-lg cursor-pointer group flex items-center">
+                    <span className="text-muted-foreground hover:text-brand-teal transition-colors duration-300 text-sm sm:text-base lg:text-lg cursor-pointer group flex items-center">
                       <span className="relative">
                         {service}
-                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all-spring group-hover:w-full"></span>
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-teal transition-all-spring group-hover:w-full"></span>
                       </span>
                     </span>
                   </li>
@@ -143,48 +144,55 @@ const Footer = () => {
                 Contact Info
               </h3>
               <div className="space-y-4 sm:space-y-6">
-                <div 
-                  onClick={() => window.open('mailto:hello@luxa.com', '_self')}
+                <div
+                  onClick={() => window.open("mailto:hello@luxa.com", "_self")}
                   className="flex items-start group cursor-pointer"
                 >
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">
                       hello@luxa.com
                     </p>
                   </div>
                 </div>
-                
-                <div 
-                  onClick={() => window.open('tel:+15551234567', '_self')}
+
+                <div
+                  onClick={() => window.open("tel:+15551234567", "_self")}
                   className="flex items-start group cursor-pointer"
                 >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">
                       +1 (555) 123-4567
                     </p>
                   </div>
                 </div>
-                
-                <div 
-                  onClick={() => window.open('https://maps.google.com/?q=123+Digital+Street+Tech+City+TC+12345', '_blank')}
+
+                <div
+                  onClick={() =>
+                    window.open(
+                      "https://maps.google.com/?q=123+Digital+Street+Tech+City+TC+12345",
+                      "_blank"
+                    )
+                  }
                   className="flex items-start group cursor-pointer"
                 >
-                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">
-                      123 Digital Street<br />
+                      123 Digital Street
+                      <br />
                       Tech City, TC 12345
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start group">
-                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">
-                      Mon-Fri: 9AM-6PM<br />
+                      Mon-Fri: 9AM-6PM
+                      <br />
                       Sat: 10AM-4PM
                     </p>
                   </div>
@@ -200,15 +208,24 @@ const Footer = () => {
             <div className="flex items-center text-muted-foreground text-sm sm:text-base">
               <span>© 2024 LUXA Digital Solutions. All rights reserved.</span>
             </div>
-            
+
             <div className="flex items-center space-x-6 sm:space-x-8 text-sm sm:text-base">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-brand-teal transition-colors duration-300"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-brand-teal transition-colors duration-300"
+              >
                 Terms of Service
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-brand-teal transition-colors duration-300"
+              >
                 Cookie Policy
               </a>
             </div>
@@ -219,7 +236,7 @@ const Footer = () => {
       {/* Scroll to Top Button */}
       <Button
         onClick={scrollToTop}
-        className="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary/90 hover:bg-primary text-black shadow-elegant hover:shadow-cyan transition-all-spring hover-lift z-40 group"
+        className="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-brand-teal/90 hover:bg-brand-teal text-black shadow-elegant hover:shadow-cyan transition-all-spring hover-lift z-40 group"
       >
         <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-translate-y-1 transition-transform duration-300" />
       </Button>

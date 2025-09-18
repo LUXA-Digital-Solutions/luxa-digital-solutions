@@ -78,9 +78,9 @@ const Services = () => {
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/3 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-brand-teal/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-brand-teal/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-teal/3 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -88,13 +88,13 @@ const Services = () => {
         <div className="text-center mb-16 sm:mb-20 lg:mb-24 animate-slide-up">
           <Badge
             variant="secondary"
-            className="bg-primary/10 text-primary border-primary/20 mb-4 sm:mb-6 px-4 py-2 text-sm font-semibold"
+            className="bg-brand-teal/10 text-brand-teal border-brand-teal/20 mb-4 sm:mb-6 px-4 py-2 text-sm font-semibold"
           >
             Our Services
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
             <span className="text-foreground">Comprehensive</span>{" "}
-            <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-teal to-brand-teal/80 bg-clip-text text-transparent">
               Digital Solutions
             </span>
           </h2>
@@ -109,28 +109,28 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="group p-6 sm:p-8 lg:p-10 bg-card/30 border-border/30 hover:border-primary/40 transition-all-spring hover-lift backdrop-blur-sm relative overflow-hidden"
+              className="group p-6 sm:p-8 lg:p-10 bg-card/30 border-border/30 hover:border-brand-teal/40 transition-all-spring hover-lift backdrop-blur-sm relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Hover background effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 via-transparent to-brand-teal/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               <div className="relative z-10">
                 {/* Service Header */}
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-2xl bg-gradient-accent flex items-center justify-center group-hover:animate-glow transition-all-spring group-hover:scale-110">
-                    <service.icon className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-primary" />
+                    <service.icon className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-teal" />
                   </div>
                   <Badge
                     variant="outline"
-                    className="border-primary/30 text-primary bg-primary/10 text-xs sm:text-sm font-medium"
+                    className="border-brand-teal/30 text-brand-teal bg-brand-teal/10 text-xs sm:text-sm font-medium"
                   >
                     {service.category}
                   </Badge>
                 </div>
 
                 {/* Service Content */}
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 group-hover:text-primary transition-colors duration-300 leading-tight">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 group-hover:text-brand-teal transition-colors duration-300 leading-tight">
                   {service.title}
                 </h3>
 
@@ -145,7 +145,7 @@ const Services = () => {
                       key={featureIndex}
                       className="flex items-center group/feature"
                     >
-                      <div className="w-2 h-2 bg-primary rounded-full mr-3 sm:mr-4 group-hover/feature:scale-150 transition-transform duration-300"></div>
+                      <div className="w-2 h-2 bg-brand-teal rounded-full mr-3 sm:mr-4 group-hover/feature:scale-150 transition-transform duration-300"></div>
                       <span className="text-muted-foreground group-hover/feature:text-foreground transition-colors duration-300 text-sm sm:text-base leading-relaxed">
                         {feature}
                       </span>
@@ -155,8 +155,8 @@ const Services = () => {
 
                 {/* Hover indicator */}
                 <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 right-6 sm:right-8 lg:right-10 opacity-0 group-hover:opacity-100 transition-all-spring transform translate-x-4 group-hover:translate-x-0">
-                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                    <ArrowRight className="w-4 h-4 text-primary" />
+                  <div className="w-8 h-8 rounded-full bg-brand-teal/20 flex items-center justify-center">
+                    <ArrowRight className="w-4 h-4 text-brand-teal" />
                   </div>
                 </div>
               </div>
@@ -169,7 +169,7 @@ const Services = () => {
           <div className="max-w-3xl mx-auto">
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
               <span className="text-foreground">Ready to Transform Your</span>{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-teal to-brand-teal/80 bg-clip-text text-transparent">
                 Business?
               </span>
             </h3>
@@ -181,9 +181,9 @@ const Services = () => {
               <Button
                 size="lg"
                 onClick={() => navigate("/get-quote")}
-                className="bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold group relative overflow-hidden w-full sm:w-auto"
+                className="bg-brand-teal hover:shadow-cyan transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold group relative overflow-hidden w-full sm:w-auto"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-teal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center">
                   Start Your Project
                   <ArrowRight className="ml-2 sm:ml-3 lg:ml-4 w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 group-hover:translate-x-1 transition-transform duration-300" />
@@ -194,7 +194,7 @@ const Services = () => {
                 variant="outline"
                 size="lg"
                 onClick={() => navigate("/case-studies")}
-                className="border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto"
+                className="border-brand-teal/40 text-foreground hover:bg-brand-teal/10 hover:border-brand-teal/60 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto"
               >
                 View Case Studies
               </Button>
@@ -203,7 +203,7 @@ const Services = () => {
                 variant="ghost"
                 size="lg"
                 onClick={() => navigate("/about")}
-                className="text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto"
+                className="text-muted-foreground hover:text-brand-teal hover:bg-brand-teal/10 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto"
               >
                 About Us
               </Button>

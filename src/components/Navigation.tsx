@@ -110,7 +110,7 @@ const Navigation = () => {
               <ThemeToggle />
               <Button
                 onClick={() => navigate("/get-quote")}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-full font-medium text-sm"
+                className="bg-brand-teal hover:bg-brand-teal/90 text-brand-teal-foreground px-6 py-2 rounded-full font-medium text-sm"
               >
                 Get Quote
               </Button>
@@ -122,7 +122,7 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-foreground hover:text-primary transition-colors p-1"
+                className="text-foreground hover:text-brand-teal transition-colors p-1"
               >
                 {isOpen ? (
                   <X className="h-6 w-6" />
@@ -157,7 +157,7 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsOpen(false)}
-                className="text-foreground hover:text-primary transition-colors p-1"
+                className="text-foreground hover:text-brand-teal transition-colors p-1"
               >
                 <X className="h-6 w-6" />
               </Button>
@@ -183,7 +183,7 @@ const Navigation = () => {
                       setIsOpen(false);
                       navigate("/get-quote");
                     }}
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-full font-medium text-sm"
+                    className="w-full bg-brand-teal hover:bg-brand-teal/90 text-brand-teal-foreground px-6 py-2 rounded-full font-medium text-sm"
                   >
                     Get Quote
                   </Button>
