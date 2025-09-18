@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { projects } from "@/data/projects";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { 
-  ArrowLeft, 
-  ArrowUpRight, 
+import {
+  ArrowLeft,
+  ArrowUpRight,
   ExternalLink,
   Eye,
   Calendar,
@@ -14,19 +14,26 @@ import {
   TrendingUp,
   Target,
   Award,
-  Star
+  Star,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const CaseStudies = () => {
   const navigate = useNavigate();
 
-  const categories = ["All", "Web Development", "Mobile Apps", "UI/UX Design", "E-commerce", "SaaS"];
+  const categories = [
+    "All",
+    "Web Development",
+    "Mobile Apps",
+    "UI/UX Design",
+    "E-commerce",
+    "SaaS",
+  ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-24 px-6 bg-gradient-dark relative overflow-hidden">
@@ -37,9 +44,9 @@ const CaseStudies = () => {
 
           <div className="container mx-auto relative z-10">
             <div className="mb-8">
-              <Button 
-                variant="ghost" 
-                onClick={() => navigate('/')}
+              <Button
+                variant="ghost"
+                onClick={() => navigate("/")}
                 className="text-muted-foreground hover:text-primary mb-6 group transition-all-spring hover-lift"
               >
                 <ArrowLeft className="mr-3 w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
@@ -48,19 +55,26 @@ const CaseStudies = () => {
             </div>
 
             <div className="text-center max-w-4xl mx-auto">
-              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2 text-sm font-semibold">
+              <Badge
+                variant="secondary"
+                className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2 text-sm font-semibold"
+              >
                 Case Studies
               </Badge>
-              
+
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Success{' '}
-                <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                  Stories
+                Success{" "}
+                <span className="relative inline-block">
+                  <span className="relative z-10 text-white font-bold px-4 py-2">
+                    Stories
+                  </span>
+                  <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
                 </span>
               </h1>
-              
+
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Discover how we've helped businesses achieve remarkable results through innovative digital solutions.
+                Discover how we've helped businesses achieve remarkable results
+                through innovative digital solutions.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -82,9 +96,9 @@ const CaseStudies = () => {
           <div className="container mx-auto">
             <div className="flex flex-wrap gap-3 justify-center">
               {categories.map((category) => (
-                <Badge 
+                <Badge
                   key={category}
-                  variant="outline" 
+                  variant="outline"
                   className="border-primary/30 text-primary bg-primary/10 hover:bg-primary/20 hover:border-primary/50 transition-all-spring hover-scale px-4 py-2 text-sm font-medium cursor-pointer"
                 >
                   {category}
@@ -99,33 +113,36 @@ const CaseStudies = () => {
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
-                <Card 
+                <Card
                   key={project.id}
                   className="group bg-card/30 border-border/30 hover:border-primary/40 transition-all-spring hover-lift backdrop-blur-sm relative overflow-hidden"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Image Container */}
                   <div className="relative h-64 overflow-hidden">
-                    <img 
+                    <img
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover transition-all-spring group-hover:scale-110"
                     />
-                    
+
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all-spring"></div>
-                    
+
                     {/* Category Badge */}
                     <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all-spring transform -translate-y-2 group-hover:translate-y-0">
-                      <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/30 text-xs font-medium">
+                      <Badge
+                        variant="secondary"
+                        className="bg-primary/20 text-primary border-primary/30 text-xs font-medium"
+                      >
                         {project.category}
                       </Badge>
                     </div>
 
                     {/* Action Button */}
                     <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all-spring transform translate-y-2 group-hover:translate-y-0">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         className="bg-primary/90 hover:bg-primary text-black font-semibold w-10 h-10 p-0 rounded-full hover:scale-110 transition-all-spring"
                       >
                         <Eye className="w-4 h-4" />
@@ -163,14 +180,25 @@ const CaseStudies = () => {
                     {/* Results Preview */}
                     {project.results && project.results.length > 0 && (
                       <div className="mb-6">
-                        <h4 className="text-sm font-semibold text-foreground mb-3">Key Results:</h4>
+                        <h4 className="text-sm font-semibold text-foreground mb-3">
+                          Key Results:
+                        </h4>
                         <div className="grid grid-cols-2 gap-3">
-                          {project.results.slice(0, 2).map((result, resultIndex) => (
-                            <div key={resultIndex} className="text-center p-3 bg-primary/5 rounded-lg">
-                              <div className="text-lg font-bold text-primary">{result.value}</div>
-                              <div className="text-xs text-muted-foreground">{result.metric}</div>
-                            </div>
-                          ))}
+                          {project.results
+                            .slice(0, 2)
+                            .map((result, resultIndex) => (
+                              <div
+                                key={resultIndex}
+                                className="text-center p-3 bg-primary/5 rounded-lg"
+                              >
+                                <div className="text-lg font-bold text-primary">
+                                  {result.value}
+                                </div>
+                                <div className="text-xs text-muted-foreground">
+                                  {result.metric}
+                                </div>
+                              </div>
+                            ))}
                         </div>
                       </div>
                     )}
@@ -178,23 +206,26 @@ const CaseStudies = () => {
                     {/* Tech Stack */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.tech.slice(0, 3).map((tech, techIndex) => (
-                        <Badge 
+                        <Badge
                           key={techIndex}
-                          variant="outline" 
+                          variant="outline"
                           className="border-primary/30 text-primary bg-primary/10 text-xs font-medium hover:bg-primary/20 hover:border-primary/50 transition-all-spring hover-scale"
                         >
                           {tech}
                         </Badge>
                       ))}
                       {project.tech.length > 3 && (
-                        <Badge variant="outline" className="border-border/50 text-muted-foreground text-xs">
+                        <Badge
+                          variant="outline"
+                          className="border-border/50 text-muted-foreground text-xs"
+                        >
                           +{project.tech.length - 3} more
                         </Badge>
                       )}
                     </div>
 
                     {/* CTA Button */}
-                    <Button 
+                    <Button
                       onClick={() => navigate(`/project/${project.id}`)}
                       className="w-full bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift font-semibold group relative overflow-hidden"
                     >
@@ -216,13 +247,14 @@ const CaseStudies = () => {
           <div className="container mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">
-                Our{' '}
+                Our{" "}
                 <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                   Impact
                 </span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Numbers that speak for themselves - the results we've delivered for our clients.
+                Numbers that speak for themselves - the results we've delivered
+                for our clients.
               </p>
             </div>
 
@@ -233,34 +265,42 @@ const CaseStudies = () => {
                 </div>
                 <div className="text-4xl font-bold text-primary mb-2">500+</div>
                 <div className="font-semibold mb-2">Projects Delivered</div>
-                <div className="text-sm text-muted-foreground">Successful launches across industries</div>
+                <div className="text-sm text-muted-foreground">
+                  Successful launches across industries
+                </div>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
                   <Target className="w-10 h-10 text-primary" />
                 </div>
                 <div className="text-4xl font-bold text-primary mb-2">98%</div>
                 <div className="font-semibold mb-2">Client Satisfaction</div>
-                <div className="text-sm text-muted-foreground">Exceeding expectations consistently</div>
+                <div className="text-sm text-muted-foreground">
+                  Exceeding expectations consistently
+                </div>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
                   <Award className="w-10 h-10 text-primary" />
                 </div>
                 <div className="text-4xl font-bold text-primary mb-2">25+</div>
                 <div className="font-semibold mb-2">Awards Won</div>
-                <div className="text-sm text-muted-foreground">Industry recognition & excellence</div>
+                <div className="text-sm text-muted-foreground">
+                  Industry recognition & excellence
+                </div>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
                   <Star className="w-10 h-10 text-primary" />
                 </div>
                 <div className="text-4xl font-bold text-primary mb-2">300%</div>
                 <div className="font-semibold mb-2">Average ROI</div>
-                <div className="text-sm text-muted-foreground">Client growth & success</div>
+                <div className="text-sm text-muted-foreground">
+                  Client growth & success
+                </div>
               </div>
             </div>
           </div>
@@ -270,32 +310,33 @@ const CaseStudies = () => {
         <section className="py-24 px-6 bg-gradient-dark">
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">
-              Ready to Create Your{' '}
+              Ready to Create Your{" "}
               <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 Success Story?
               </span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can help you achieve similar results for your business.
+              Let's discuss how we can help you achieve similar results for your
+              business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                onClick={() => navigate('/get-quote')}
+              <Button
+                size="lg"
+                onClick={() => navigate("/get-quote")}
                 className="bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift px-10 py-5 text-xl font-semibold group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10">Start Your Project</span>
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 onClick={() => {
-                  navigate('/');
+                  navigate("/");
                   setTimeout(() => {
-                    const contactSection = document.getElementById('contact');
+                    const contactSection = document.getElementById("contact");
                     if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                      contactSection.scrollIntoView({ behavior: "smooth" });
                     }
                   }, 100);
                 }}

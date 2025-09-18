@@ -56,6 +56,7 @@ const Hero = () => {
           {/* Enhanced Headline */}
           <div className="mb-6 sm:mb-8 lg:mb-10 animate-slide-up">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 sm:mb-6">
+              <span className="">We</span> {}
               <span className="text-brand-teal">Build</span> {}
               <span className="text-foreground dark:text-brand-light">
                 Digital
@@ -128,13 +129,6 @@ const Hero = () => {
 
       {/* Enhanced Bottom Gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 lg:h-48 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 sm:bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-brand-teal/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-brand-teal/60 rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div>
     </section>
   );
 };

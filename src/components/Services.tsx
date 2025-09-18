@@ -94,8 +94,11 @@ const Services = () => {
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
             <span className="text-foreground">Comprehensive</span>{" "}
-            <span className="bg-gradient-to-r from-brand-teal to-brand-teal/80 bg-clip-text text-transparent">
-              Digital Solutions
+            <span className="relative inline-block">
+              <span className="relative z-10 text-white font-bold px-4 py-2">
+                Digital Solutions
+              </span>
+              <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
             </span>
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4 sm:px-6">
@@ -168,10 +171,14 @@ const Services = () => {
         <div className="text-center animate-slide-up">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
-              <span className="text-foreground">Ready to Transform Your</span>{" "}
-              <span className="bg-gradient-to-r from-brand-teal to-brand-teal/80 bg-clip-text text-transparent">
-                Business?
+              <span className="text-foreground">Ready to </span>
+              <span className="relative inline-block">
+                <span className="relative z-10 text-white font-bold">
+                  Start Your
+                </span>
+                <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
               </span>
+              <span className="text-foreground"> Business?</span>
             </h3>
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-10 leading-relaxed px-4 sm:px-6">
               Let's discuss how our services can help you achieve your digital
@@ -197,15 +204,6 @@ const Services = () => {
                 className="border-brand-teal/40 text-foreground hover:bg-brand-teal/10 hover:border-brand-teal/60 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto"
               >
                 View Case Studies
-              </Button>
-
-              <Button
-                variant="ghost"
-                size="lg"
-                onClick={() => navigate("/about")}
-                className="text-muted-foreground hover:text-brand-teal hover:bg-brand-teal/10 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto"
-              >
-                About Us
               </Button>
             </div>
           </div>
