@@ -71,11 +71,25 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center mb-6 sm:mb-8">
-                <img
-                  src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png"
-                  alt="LUXA"
-                  className="h-8 sm:h-10 lg:h-12"
-                />
+                <div className="relative group cursor-pointer">
+                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-teal/15 via-brand-teal/8 to-transparent p-3 sm:p-4 lg:p-5 border border-brand-teal/25 hover:border-brand-teal/50 transition-all duration-700 hover:shadow-xl hover:shadow-brand-teal/25 backdrop-blur-sm">
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl"></div>
+                    <img
+                      src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png"
+                      alt="LUXA"
+                      className="h-10 sm:h-12 lg:h-16 w-auto relative z-10 group-hover:scale-105 transition-all duration-700 filter drop-shadow-lg group-hover:drop-shadow-xl"
+                    />
+                    <div className="absolute -top-1 -right-1 w-4 h-4 bg-brand-teal/40 rounded-full animate-pulse"></div>
+                    <div
+                      className="absolute -bottom-1 -left-1 w-3 h-3 bg-brand-teal/30 rounded-full animate-pulse"
+                      style={{ animationDelay: "0.7s" }}
+                    ></div>
+                    <div
+                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-brand-teal/5 rounded-full animate-ping"
+                      style={{ animationDelay: "1s" }}
+                    ></div>
+                  </div>
+                </div>
               </div>
               <p className="text-muted-foreground mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base lg:text-lg">
                 Transforming businesses through innovative digital solutions. We

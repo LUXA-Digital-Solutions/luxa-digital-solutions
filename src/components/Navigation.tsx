@@ -75,16 +75,27 @@ const Navigation = () => {
           scrolled ? "bg-background border-b border-border/30" : "bg-background"
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-2">
           <div className="flex items-center justify-between h-16 sm:h-20">
             <div className="flex items-center justify-start">
               {/* Modern Logo */}
-              <div className="relative">
-                <img
-                  src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png"
-                  alt="LUXA"
-                  className="h-8 sm:h-10"
-                />
+              <div
+                className="relative group cursor-pointer"
+                onClick={() => navigate("/")}
+              >
+                <div className="relative overflow-hidden rounded-full bg-black p-2 sm:p-4 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-500 hover:shadow-lg hover:shadow-brand-teal/20 backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                  <img
+                    src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png"
+                    alt="LUXA"
+                    className="h-8 sm:h-10 lg:h-12 w-auto relative z-10 group-hover:scale-110 transition-all duration-500 filter drop-shadow-sm group-hover:drop-shadow-md"
+                  />
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-brand-teal/30 rounded-full animate-pulse"></div>
+                  <div
+                    className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand-teal/20 rounded-full animate-pulse"
+                    style={{ animationDelay: "0.5s" }}
+                  ></div>
+                </div>
               </div>
             </div>
 
@@ -148,11 +159,23 @@ const Navigation = () => {
         <nav className="relative h-full w-full max-w-xs ml-auto bg-background border-l border-border/30 shadow-xl">
           <div className="flex flex-col h-full">
             <div className="flex items-center justify-between p-4 border-b border-border/30">
-              <img
-                src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png"
-                alt="LUXA"
-                className="h-8"
-              />
+              <div
+                className="relative group cursor-pointer"
+                onClick={() => {
+                  setIsOpen(false);
+                  navigate("/");
+                }}
+              >
+                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-brand-teal/10 via-brand-teal/5 to-transparent p-2.5 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-500 hover:shadow-lg hover:shadow-brand-teal/20 backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                  <img
+                    src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png"
+                    alt="LUXA"
+                    className="h-7 sm:h-8 w-auto relative z-10 group-hover:scale-110 transition-all duration-500 filter drop-shadow-sm"
+                  />
+                  <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-brand-teal/30 rounded-full animate-pulse"></div>
+                </div>
+              </div>
               <Button
                 variant="ghost"
                 size="sm"
