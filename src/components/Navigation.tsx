@@ -74,7 +74,7 @@ const Navigation = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
           scrolled
             ? "bg-background border-b border-border/30"
-            : "bg-background bg-transparent"
+            : "bg-transparent"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-2">
@@ -111,7 +111,7 @@ const Navigation = () => {
                     e.preventDefault();
                     handleNavClick(item);
                   }}
-                  className="px-5 py-2 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+                  className="px-5 py-2 text-muted-foreground hover:text-foreground transition-colors text-lg font-medium"
                 >
                   {item.name}
                 </a>
@@ -168,7 +168,7 @@ const Navigation = () => {
                   navigate("/");
                 }}
               >
-                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-brand-teal/10 via-brand-teal/5 to-transparent p-2.5 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-500 hover:shadow-lg hover:shadow-brand-teal/20 backdrop-blur-sm">
+                {/* <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-brand-teal/10 via-brand-teal/5 to-transparent p-2.5 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-500 hover:shadow-lg hover:shadow-brand-teal/20 backdrop-blur-sm">
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
                   <img
                     src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png"
@@ -176,7 +176,7 @@ const Navigation = () => {
                     className="h-7 sm:h-8 w-auto relative z-10 group-hover:scale-110 transition-all duration-500 filter drop-shadow-sm"
                   />
                   <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-brand-teal/30 rounded-full animate-pulse"></div>
-                </div>
+                </div> */}
               </div>
               <Button
                 variant="ghost"
