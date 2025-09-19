@@ -6,6 +6,10 @@ import {
   MapPin,
   Clock,
   ExternalLink,
+  Linkedin,
+  Facebook,
+  Instagram,
+  MessageCircle,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -48,10 +52,26 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "LinkedIn", href: "#", icon: ExternalLink },
-    { name: "Twitter", href: "#", icon: ExternalLink },
-    { name: "GitHub", href: "#", icon: ExternalLink },
-    { name: "Dribbble", href: "#", icon: ExternalLink },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/company/luxa-digital-solutions/",
+      icon: Linkedin,
+    },
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/share/16yU24EfZE/",
+      icon: Facebook,
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/luxa_digital_solutions?igsh=YzljYTk1ODg3Zg==",
+      icon: Instagram,
+    },
+    {
+      name: "WhatsApp",
+      href: "https://whatsapp.com/channel/0029Vb6lnPZ17EmpPBfjY60N",
+      icon: MessageCircle,
+    },
   ];
 
   return (
@@ -99,6 +119,8 @@ const Footer = () => {
                   <a
                     key={social.name}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-teal/10 hover:bg-brand-teal/20 border border-brand-teal/20 hover:border-brand-teal/40 flex items-center justify-center transition-all-spring hover-lift group"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
