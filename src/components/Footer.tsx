@@ -6,7 +6,6 @@ import {
   MapPin,
   Clock,
   ExternalLink,
-  Heart,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -72,7 +71,7 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <div className="flex items-center mb-6 sm:mb-8">
                 <div className="relative group cursor-pointer">
-                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-teal/15 via-brand-teal/8 to-transparent p-3 sm:p-4 lg:p-5 border border-brand-teal/25 hover:border-brand-teal/50 transition-all duration-700 hover:shadow-xl hover:shadow-brand-teal/25 backdrop-blur-sm">
+                  <div className="relative overflow-hidden rounded-full bg-black p-3 sm:p-4 lg:p-5 border border-brand-teal/25 hover:border-brand-teal/50 transition-all duration-700 hover:shadow-xl hover:shadow-brand-teal/25 backdrop-blur-sm">
                     <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl"></div>
                     <img
                       src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png"
