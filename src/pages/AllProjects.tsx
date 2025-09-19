@@ -5,9 +5,9 @@ import { Input } from "@/components/ui/input";
 import { projects } from "@/data/projects";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { 
-  ArrowLeft, 
-  ArrowUpRight, 
+import {
+  ArrowLeft,
+  ArrowUpRight,
   ExternalLink,
   Eye,
   Calendar,
@@ -19,7 +19,7 @@ import {
   TrendingUp,
   Target,
   Award,
-  Star
+  Star,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState, useMemo } from "react";
@@ -30,16 +30,29 @@ const AllProjects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
-  const categories = ["All", "Web Development", "Mobile Apps", "UI/UX Design", "E-commerce", "SaaS", "Enterprise", "Startup"];
+  const categories = [
+    "All",
+    "Web Development",
+    "Mobile Apps",
+    "UI/UX Design",
+    "E-commerce",
+    "SaaS",
+    "Enterprise",
+    "Startup",
+  ];
 
   const filteredProjects = useMemo(() => {
-    return projects.filter(project => {
-      const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           project.tech.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
-      
-      const matchesCategory = selectedCategory === "All" || project.category === selectedCategory;
-      
+    return projects.filter((project) => {
+      const matchesSearch =
+        project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        project.tech.some((tech) =>
+          tech.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
+      const matchesCategory =
+        selectedCategory === "All" || project.category === selectedCategory;
+
       return matchesSearch && matchesCategory;
     });
   }, [searchTerm, selectedCategory]);
@@ -47,10 +60,10 @@ const AllProjects = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
-      <main className="pt-20">
+
+      <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-24 px-6 bg-gradient-dark relative overflow-hidden">
+        <section className="py-10 md:py-16 px-2 md:px-6 bg-gradient-dark relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-20 right-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-20 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
@@ -58,9 +71,9 @@ const AllProjects = () => {
 
           <div className="container mx-auto relative z-10">
             <div className="mb-8">
-              <Button 
-                variant="ghost" 
-                onClick={() => navigate('/')}
+              <Button
+                variant="ghost"
+                onClick={() => navigate("/")}
                 className="text-muted-foreground hover:text-primary mb-6 group transition-all-spring hover-lift"
               >
                 <ArrowLeft className="mr-3 w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
@@ -69,19 +82,23 @@ const AllProjects = () => {
             </div>
 
             <div className="text-center max-w-4xl mx-auto">
-              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2 text-sm font-semibold">
+              <Badge
+                variant="secondary"
+                className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2 text-sm font-semibold"
+              >
                 Portfolio
               </Badge>
-              
+
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Our{' '}
+                Our{" "}
                 <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                   Projects
                 </span>
               </h1>
-              
+
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Explore our comprehensive portfolio of successful projects across various industries and technologies.
+                Explore our comprehensive portfolio of successful projects
+                across various industries and technologies.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -105,8 +122,8 @@ const AllProjects = () => {
               {/* Search Bar */}
               <div className="relative flex-1 max-w-md">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <Input 
-                  placeholder="Search projects..." 
+                <Input
+                  placeholder="Search projects..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10 h-12 border-border/50 hover:border-primary/40 focus:border-primary transition-all-spring"
@@ -116,13 +133,15 @@ const AllProjects = () => {
               {/* Category Filters */}
               <div className="flex flex-wrap gap-3">
                 {categories.map((category) => (
-                  <Badge 
+                  <Badge
                     key={category}
-                    variant={selectedCategory === category ? "default" : "outline"}
+                    variant={
+                      selectedCategory === category ? "default" : "outline"
+                    }
                     className={`cursor-pointer transition-all-spring hover-scale px-4 py-2 text-sm font-medium ${
-                      selectedCategory === category 
-                        ? 'bg-primary text-black' 
-                        : 'border-primary/30 text-primary bg-primary/10 hover:bg-primary/20 hover:border-primary/50'
+                      selectedCategory === category
+                        ? "bg-primary text-black"
+                        : "border-primary/30 text-primary bg-primary/10 hover:bg-primary/20 hover:border-primary/50"
                     }`}
                     onClick={() => setSelectedCategory(category)}
                   >
@@ -174,7 +193,7 @@ const AllProjects = () => {
                 <p className="text-muted-foreground mb-6">
                   Try adjusting your search terms or category filters.
                 </p>
-                <Button 
+                <Button
                   onClick={() => {
                     setSearchTerm("");
                     setSelectedCategory("All");
@@ -186,9 +205,15 @@ const AllProjects = () => {
                 </Button>
               </div>
             ) : (
-              <div className={viewMode === "grid" ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" : "space-y-6"}>
+              <div
+                className={
+                  viewMode === "grid"
+                    ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    : "space-y-6"
+                }
+              >
                 {filteredProjects.map((project, index) => (
-                  <Card 
+                  <Card
                     key={project.id}
                     className={`group bg-card/30 border-border/30 hover:border-primary/40 transition-all-spring hover-lift backdrop-blur-sm relative overflow-hidden ${
                       viewMode === "list" ? "flex" : ""
@@ -196,29 +221,34 @@ const AllProjects = () => {
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {/* Image Container */}
-                    <div className={`relative overflow-hidden ${
-                      viewMode === "list" ? "w-80 h-48 flex-shrink-0" : "h-64"
-                    }`}>
-                      <img 
+                    <div
+                      className={`relative overflow-hidden ${
+                        viewMode === "list" ? "w-80 h-48 flex-shrink-0" : "h-64"
+                      }`}
+                    >
+                      <img
                         src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover transition-all-spring group-hover:scale-110"
                       />
-                      
+
                       {/* Hover Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all-spring"></div>
-                      
+
                       {/* Category Badge */}
                       <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all-spring transform -translate-y-2 group-hover:translate-y-0">
-                        <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/30 text-xs font-medium">
+                        <Badge
+                          variant="secondary"
+                          className="bg-primary/20 text-primary border-primary/30 text-xs font-medium"
+                        >
                           {project.category}
                         </Badge>
                       </div>
 
                       {/* Action Button */}
                       <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all-spring transform translate-y-2 group-hover:translate-y-0">
-                        <Button 
-                          size="sm" 
+                        <Button
+                          size="sm"
                           className="bg-primary/90 hover:bg-primary text-black font-semibold w-10 h-10 p-0 rounded-full hover:scale-110 transition-all-spring"
                         >
                           <Eye className="w-4 h-4" />
@@ -227,7 +257,9 @@ const AllProjects = () => {
                     </div>
 
                     {/* Content Area */}
-                    <div className={`p-6 ${viewMode === "list" ? "flex-1" : ""}`}>
+                    <div
+                      className={`p-6 ${viewMode === "list" ? "flex-1" : ""}`}
+                    >
                       {/* Project Header */}
                       <div className="flex items-start justify-between mb-4">
                         <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300 leading-tight flex-1 mr-4">
@@ -256,14 +288,25 @@ const AllProjects = () => {
                       {/* Results Preview */}
                       {project.results && project.results.length > 0 && (
                         <div className="mb-6">
-                          <h4 className="text-sm font-semibold text-foreground mb-3">Key Results:</h4>
+                          <h4 className="text-sm font-semibold text-foreground mb-3">
+                            Key Results:
+                          </h4>
                           <div className="grid grid-cols-2 gap-3">
-                            {project.results.slice(0, 2).map((result, resultIndex) => (
-                              <div key={resultIndex} className="text-center p-3 bg-primary/5 rounded-lg">
-                                <div className="text-lg font-bold text-primary">{result.value}</div>
-                                <div className="text-xs text-muted-foreground">{result.metric}</div>
-                              </div>
-                            ))}
+                            {project.results
+                              .slice(0, 2)
+                              .map((result, resultIndex) => (
+                                <div
+                                  key={resultIndex}
+                                  className="text-center p-3 bg-primary/5 rounded-lg"
+                                >
+                                  <div className="text-lg font-bold text-primary">
+                                    {result.value}
+                                  </div>
+                                  <div className="text-xs text-muted-foreground">
+                                    {result.metric}
+                                  </div>
+                                </div>
+                              ))}
                           </div>
                         </div>
                       )}
@@ -271,23 +314,26 @@ const AllProjects = () => {
                       {/* Tech Stack */}
                       <div className="flex flex-wrap gap-2 mb-6">
                         {project.tech.slice(0, 4).map((tech, techIndex) => (
-                          <Badge 
+                          <Badge
                             key={techIndex}
-                            variant="outline" 
+                            variant="outline"
                             className="border-primary/30 text-primary bg-primary/10 text-xs font-medium hover:bg-primary/20 hover:border-primary/50 transition-all-spring hover-scale"
                           >
                             {tech}
                           </Badge>
                         ))}
                         {project.tech.length > 4 && (
-                          <Badge variant="outline" className="border-border/50 text-muted-foreground text-xs">
+                          <Badge
+                            variant="outline"
+                            className="border-border/50 text-muted-foreground text-xs"
+                          >
                             +{project.tech.length - 4} more
                           </Badge>
                         )}
                       </div>
 
                       {/* CTA Button */}
-                      <Button 
+                      <Button
                         onClick={() => navigate(`/project/${project.id}`)}
                         className="w-full bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift font-semibold group relative overflow-hidden"
                       >
@@ -310,14 +356,15 @@ const AllProjects = () => {
           <div className="container mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">
-                Our{' '}
+                Our{" "}
                 <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                   Portfolio
-                </span>{' '}
+                </span>{" "}
                 Impact
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Numbers that speak for themselves - the results we've delivered for our clients.
+                Numbers that speak for themselves - the results we've delivered
+                for our clients.
               </p>
             </div>
 
@@ -326,36 +373,46 @@ const AllProjects = () => {
                 <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
                   <TrendingUp className="w-10 h-10 text-primary" />
                 </div>
-                <div className="text-4xl font-bold text-primary mb-2">{projects.length}+</div>
+                <div className="text-4xl font-bold text-primary mb-2">
+                  {projects.length}+
+                </div>
                 <div className="font-semibold mb-2">Projects Delivered</div>
-                <div className="text-sm text-muted-foreground">Successful launches across industries</div>
+                <div className="text-sm text-muted-foreground">
+                  Successful launches across industries
+                </div>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
                   <Target className="w-10 h-10 text-primary" />
                 </div>
                 <div className="text-4xl font-bold text-primary mb-2">98%</div>
                 <div className="font-semibold mb-2">Client Satisfaction</div>
-                <div className="text-sm text-muted-foreground">Exceeding expectations consistently</div>
+                <div className="text-sm text-muted-foreground">
+                  Exceeding expectations consistently
+                </div>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
                   <Award className="w-10 h-10 text-primary" />
                 </div>
                 <div className="text-4xl font-bold text-primary mb-2">25+</div>
                 <div className="font-semibold mb-2">Awards Won</div>
-                <div className="text-sm text-muted-foreground">Industry recognition & excellence</div>
+                <div className="text-sm text-muted-foreground">
+                  Industry recognition & excellence
+                </div>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
                   <Star className="w-10 h-10 text-primary" />
                 </div>
                 <div className="text-4xl font-bold text-primary mb-2">300%</div>
                 <div className="font-semibold mb-2">Average ROI</div>
-                <div className="text-sm text-muted-foreground">Client growth & success</div>
+                <div className="text-sm text-muted-foreground">
+                  Client growth & success
+                </div>
               </div>
             </div>
           </div>
@@ -365,32 +422,33 @@ const AllProjects = () => {
         <section className="py-24 px-6 bg-gradient-dark">
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">
-              Ready to Join Our{' '}
+              Ready to Join Our{" "}
               <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 Success Stories?
               </span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can help you achieve similar results for your business.
+              Let's discuss how we can help you achieve similar results for your
+              business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                onClick={() => navigate('/get-quote')}
+              <Button
+                size="lg"
+                onClick={() => navigate("/get-quote")}
                 className="bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift px-10 py-5 text-xl font-semibold group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10">Start Your Project</span>
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 onClick={() => {
-                  navigate('/');
+                  navigate("/");
                   setTimeout(() => {
-                    const contactSection = document.getElementById('contact');
+                    const contactSection = document.getElementById("contact");
                     if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                      contactSection.scrollIntoView({ behavior: "smooth" });
                     }
                   }, 100);
                 }}

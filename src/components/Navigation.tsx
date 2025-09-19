@@ -203,6 +203,9 @@ const Navigation = () => {
                   </a>
                 ))}
                 <div className="pt-4 mt-4 border-t border-border/30">
+                  <div className="flex justify-center mb-4">
+                    <ThemeToggle />
+                  </div>
                   <Button
                     onClick={() => {
                       setIsOpen(false);
