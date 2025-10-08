@@ -3,8 +3,29 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Index = () => {
+  const location = useLocation();
+
+  // Handle scrolling to section when page loads with hash
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      // Small delay to ensure page is fully rendered
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />

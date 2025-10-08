@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { ThemeToggle } from "./theme-toggle";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Handle scroll effect for navigation
   useEffect(() => {
@@ -58,12 +59,22 @@ const Navigation = () => {
     if (item.action === "navigate") {
       navigate(item.href);
     } else {
-      const element = document.querySelector(item.href);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+      // For scroll actions, check if we're on the homepage
+      const isHomePage =
+        location.pathname === "/" || location.pathname === "/index";
+
+      if (isHomePage) {
+        // We're on homepage, scroll directly
+        const element = document.querySelector(item.href);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      } else {
+        // We're on a different page, navigate to homepage with hash
+        navigate(`/${item.href}`, { replace: false });
       }
     }
   };

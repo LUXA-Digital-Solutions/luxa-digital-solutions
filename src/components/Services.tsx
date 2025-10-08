@@ -112,7 +112,7 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="group p-6 sm:p-8 lg:p-10 bg-card/30 border-border/30 hover:border-brand-teal/40 transition-all-spring hover-lift backdrop-blur-sm relative overflow-hidden"
+              className="group p-6 sm:p-8 lg:p-10 bg-card/30 border-border hover:border-brand-teal/40 transition-all-spring hover-lift relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Hover background effect */}
