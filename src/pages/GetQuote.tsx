@@ -3,20 +3,26 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { 
-  ArrowLeft, 
-  ArrowRight, 
-  Calculator, 
-  Clock, 
+import {
+  ArrowLeft,
+  ArrowRight,
+  Calculator,
+  Clock,
   CheckCircle,
   Star,
   DollarSign,
   Calendar,
-  MessageSquare
+  MessageSquare,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -34,9 +40,9 @@ const GetQuote = () => {
         "SEO optimization",
         "Basic analytics setup",
         "2 weeks delivery",
-        "30 days support"
+        "30 days support",
       ],
-      popular: false
+      popular: false,
     },
     {
       name: "Professional",
@@ -49,9 +55,9 @@ const GetQuote = () => {
         "API development",
         "Performance optimization",
         "4-6 weeks delivery",
-        "90 days support"
+        "90 days support",
       ],
-      popular: true
+      popular: true,
     },
     {
       name: "Enterprise",
@@ -64,25 +70,25 @@ const GetQuote = () => {
         "Scalable architecture",
         "Custom integrations",
         "8-12 weeks delivery",
-        "1 year support"
+        "1 year support",
       ],
-      popular: false
-    }
+      popular: false,
+    },
   ];
 
   const services = [
     "Web Development",
-    "Mobile Applications", 
+    "Mobile Applications",
     "UI/UX Design",
     "Digital Consulting",
     "Performance Optimization",
-    "Security & Compliance"
+    "Security & Compliance",
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-24 px-6 bg-gradient-dark relative overflow-hidden">
@@ -93,9 +99,9 @@ const GetQuote = () => {
 
           <div className="container mx-auto relative z-10">
             <div className="mb-8">
-              <Button 
-                variant="ghost" 
-                onClick={() => navigate('/')}
+              <Button
+                variant="ghost"
+                onClick={() => navigate("/")}
                 className="text-muted-foreground hover:text-primary mb-6 group transition-all-spring hover-lift"
               >
                 <ArrowLeft className="mr-3 w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
@@ -104,20 +110,26 @@ const GetQuote = () => {
             </div>
 
             <div className="text-center max-w-4xl mx-auto">
-              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2 text-sm font-semibold">
+              <Badge
+                variant="secondary"
+                className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2 text-sm font-semibold"
+              >
                 Get Your Quote
               </Badge>
-              
+
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Let's Build Something{' '}
+                Let's Build Something{" "}
                 <span className="relative inline-block">
-                  <span className="relative z-10 text-white font-bold px-4 py-2">Amazing</span>
+                  <span className="relative z-10 text-white font-bold px-4 py-2">
+                    Amazing
+                  </span>
                   <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
                 </span>
               </h1>
-              
+
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Get a personalized quote for your project. Our team will analyze your requirements and provide you with a detailed proposal.
+                Get a personalized quote for your project. Our team will analyze
+                your requirements and provide you with a detailed proposal.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -139,24 +151,25 @@ const GetQuote = () => {
           <div className="container mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">
-                Transparent{' '}
+                Transparent{" "}
                 <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                   Pricing
                 </span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Understand our pricing structure to make an informed decision about your project.
+                Understand our pricing structure to make an informed decision
+                about your project.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {pricingTiers.map((tier, index) => (
-                <Card 
+                <Card
                   key={tier.name}
                   className={`p-8 relative overflow-hidden group hover-lift transition-all-spring ${
-                    tier.popular 
-                      ? 'border-primary/40 bg-gradient-accent' 
-                      : 'border-border/30 bg-card/30'
+                    tier.popular
+                      ? "border-primary/40 bg-gradient-accent"
+                      : "border-border/30 bg-card/30"
                   }`}
                 >
                   {tier.popular && (
@@ -169,9 +182,13 @@ const GetQuote = () => {
 
                   <div className="text-center">
                     <h3 className="text-2xl font-bold mb-4">{tier.name}</h3>
-                    <div className="text-3xl font-bold text-primary mb-2">{tier.price}</div>
-                    <p className="text-muted-foreground mb-6">{tier.description}</p>
-                    
+                    <div className="text-3xl font-bold text-primary mb-2">
+                      {tier.price}
+                    </div>
+                    <p className="text-muted-foreground mb-6">
+                      {tier.description}
+                    </p>
+
                     <ul className="space-y-3 text-left mb-8">
                       {tier.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center">
@@ -181,11 +198,11 @@ const GetQuote = () => {
                       ))}
                     </ul>
 
-                    <Button 
+                    <Button
                       className={`w-full ${
-                        tier.popular 
-                          ? 'bg-gradient-primary hover:shadow-cyan' 
-                          : 'bg-primary/10 hover:bg-primary/20 text-primary border-primary/30'
+                        tier.popular
+                          ? "bg-gradient-primary hover:shadow-cyan"
+                          : "bg-primary/10 hover:bg-primary/20 text-primary border-primary/30"
                       } transition-all-spring hover-lift`}
                     >
                       Choose {tier.name}
@@ -203,13 +220,14 @@ const GetQuote = () => {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold mb-6">
-                  Get Your{' '}
+                  Get Your{" "}
                   <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                     Custom Quote
                   </span>
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                  Fill out the form below and we'll provide you with a detailed quote for your project.
+                  Fill out the form below and we'll provide you with a detailed
+                  quote for your project.
                 </p>
               </div>
 
@@ -217,23 +235,29 @@ const GetQuote = () => {
                 <form className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="firstName" className="text-sm font-medium text-foreground">
+                      <Label
+                        htmlFor="firstName"
+                        className="text-sm font-medium text-foreground"
+                      >
                         First Name *
                       </Label>
-                      <Input 
-                        id="firstName" 
-                        placeholder="John" 
+                      <Input
+                        id="firstName"
+                        placeholder="John"
                         required
                         className="h-12 border-border/50 hover:border-primary/40 focus:border-primary transition-all-spring"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="lastName" className="text-sm font-medium text-foreground">
+                      <Label
+                        htmlFor="lastName"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Last Name *
                       </Label>
-                      <Input 
-                        id="lastName" 
-                        placeholder="Doe" 
+                      <Input
+                        id="lastName"
+                        placeholder="Doe"
                         required
                         className="h-12 border-border/50 hover:border-primary/40 focus:border-primary transition-all-spring"
                       />
@@ -242,43 +266,55 @@ const GetQuote = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="text-sm font-medium text-foreground">
+                      <Label
+                        htmlFor="email"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Email Address *
                       </Label>
-                      <Input 
-                        id="email" 
-                        type="email" 
-                        placeholder="john@example.com" 
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="john@example.com"
                         required
                         className="h-12 border-border/50 hover:border-primary/40 focus:border-primary transition-all-spring"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone" className="text-sm font-medium text-foreground">
+                      <Label
+                        htmlFor="phone"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Phone Number
                       </Label>
-                      <Input 
-                        id="phone" 
-                        placeholder="+2347047494586" 
+                      <Input
+                        id="phone"
+                        placeholder="+2347047494586"
                         className="h-12 border-border/50 hover:border-primary/40 focus:border-primary transition-all-spring"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="company" className="text-sm font-medium text-foreground">
+                    <Label
+                      htmlFor="company"
+                      className="text-sm font-medium text-foreground"
+                    >
                       Company
                     </Label>
-                    <Input 
-                      id="company" 
-                      placeholder="Your Company" 
+                    <Input
+                      id="company"
+                      placeholder="Your Company"
                       className="h-12 border-border/50 hover:border-primary/40 focus:border-primary transition-all-spring"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="service" className="text-sm font-medium text-foreground">
+                      <Label
+                        htmlFor="service"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Primary Service *
                       </Label>
                       <Select>
@@ -287,7 +323,10 @@ const GetQuote = () => {
                         </SelectTrigger>
                         <SelectContent>
                           {services.map((service) => (
-                            <SelectItem key={service} value={service.toLowerCase().replace(/\s+/g, '-')}>
+                            <SelectItem
+                              key={service}
+                              value={service.toLowerCase().replace(/\s+/g, "-")}
+                            >
                               {service}
                             </SelectItem>
                           ))}
@@ -295,7 +334,10 @@ const GetQuote = () => {
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="budget" className="text-sm font-medium text-foreground">
+                      <Label
+                        htmlFor="budget"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Budget Range *
                       </Label>
                       <Select>
@@ -303,9 +345,15 @@ const GetQuote = () => {
                           <SelectValue placeholder="Select budget range" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="5k-15k">$5,000 - $15,000</SelectItem>
-                          <SelectItem value="15k-50k">$15,000 - $50,000</SelectItem>
-                          <SelectItem value="50k-100k">$50,000 - $100,000</SelectItem>
+                          <SelectItem value="5k-15k">
+                            $5,000 - $15,000
+                          </SelectItem>
+                          <SelectItem value="15k-50k">
+                            $15,000 - $50,000
+                          </SelectItem>
+                          <SelectItem value="50k-100k">
+                            $50,000 - $100,000
+                          </SelectItem>
                           <SelectItem value="100k+">$100,000+</SelectItem>
                         </SelectContent>
                       </Select>
@@ -313,7 +361,10 @@ const GetQuote = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="timeline" className="text-sm font-medium text-foreground">
+                    <Label
+                      htmlFor="timeline"
+                      className="text-sm font-medium text-foreground"
+                    >
                       Project Timeline
                     </Label>
                     <Select>
@@ -321,7 +372,9 @@ const GetQuote = () => {
                         <SelectValue placeholder="Select timeline" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="asap">As soon as possible</SelectItem>
+                        <SelectItem value="asap">
+                          As soon as possible
+                        </SelectItem>
                         <SelectItem value="1-2-months">1-2 months</SelectItem>
                         <SelectItem value="3-6-months">3-6 months</SelectItem>
                         <SelectItem value="6-months+">6+ months</SelectItem>
@@ -330,12 +383,15 @@ const GetQuote = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="description" className="text-sm font-medium text-foreground">
+                    <Label
+                      htmlFor="description"
+                      className="text-sm font-medium text-foreground"
+                    >
                       Project Description *
                     </Label>
-                    <Textarea 
-                      id="description" 
-                      placeholder="Describe your project requirements, goals, and any specific features you need..." 
+                    <Textarea
+                      id="description"
+                      placeholder="Describe your project requirements, goals, and any specific features you need..."
                       rows={6}
                       required
                       className="border-border/50 hover:border-primary/40 focus:border-primary transition-all-spring resize-none"
@@ -343,19 +399,22 @@ const GetQuote = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="additional" className="text-sm font-medium text-foreground">
+                    <Label
+                      htmlFor="additional"
+                      className="text-sm font-medium text-foreground"
+                    >
                       Additional Requirements
                     </Label>
-                    <Textarea 
-                      id="additional" 
-                      placeholder="Any additional information, questions, or special requirements..." 
+                    <Textarea
+                      id="additional"
+                      placeholder="Any additional information, questions, or special requirements..."
                       rows={4}
                       className="border-border/50 hover:border-primary/40 focus:border-primary transition-all-spring resize-none"
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift py-6 text-xl font-semibold group relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -375,13 +434,14 @@ const GetQuote = () => {
           <div className="container mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">
-                Why Choose{' '}
+                Why Choose{" "}
                 <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                   LUXA?
                 </span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                We deliver exceptional results with transparent pricing and unmatched quality.
+                We deliver exceptional results with transparent pricing and
+                unmatched quality.
               </p>
             </div>
 
@@ -392,27 +452,30 @@ const GetQuote = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-4">Transparent Pricing</h3>
                 <p className="text-muted-foreground">
-                  No hidden costs. Get a detailed breakdown of your project costs upfront.
+                  No hidden costs. Get a detailed breakdown of your project
+                  costs upfront.
                 </p>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
                   <Clock className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Fast Response</h3>
                 <p className="text-muted-foreground">
-                  Receive your custom quote within 24 hours of submitting your request.
+                  Receive your custom quote within 24 hours of submitting your
+                  request.
                 </p>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
                   <Star className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Quality Guarantee</h3>
                 <p className="text-muted-foreground">
-                  We stand behind our work with quality guarantees and ongoing support.
+                  We stand behind our work with quality guarantees and ongoing
+                  support.
                 </p>
               </div>
             </div>

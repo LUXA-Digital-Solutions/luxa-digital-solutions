@@ -86,7 +86,9 @@ const Contact = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
             <span className="text-foreground">Ready to Start</span>{" "}
             <span className="relative inline-block">
-              <span className="relative z-10 text-white font-bold px-4 py-2">Your Project?</span>
+              <span className="relative z-10 text-white font-bold px-4 py-2">
+                Your Project?
+              </span>
               <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
             </span>
           </h2>
@@ -300,7 +302,9 @@ const Contact = () => {
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
               <span className="text-foreground">Let's Build Something</span>{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-white font-bold px-4 py-2">Amazing</span>
+                <span className="relative z-10 text-white font-bold px-4 py-2">
+                  Amazing
+                </span>
                 <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
               </span>
             </h3>
