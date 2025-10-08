@@ -282,10 +282,13 @@ const ProjectDetail = () => {
           <div className="container mx-auto relative z-10">
             <div className="text-center mb-20 animate-slide-up">
               <h2 className="text-5xl md:text-6xl font-bold mb-8">
-                Project{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  Results
-                </span>
+                <span className="relative inline-block">
+                  <span className="relative z-10 text-white font-bold px-4 py-2">
+                    Project
+                  </span>
+                  <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
+                </span>{" "}
+                <span className="text-foreground">Results</span>
               </h2>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Measurable outcomes that demonstrate the success of our solution
@@ -415,10 +418,13 @@ const ProjectDetail = () => {
 
           <div className="container mx-auto relative z-10">
             <h2 className="text-5xl md:text-6xl font-bold mb-20 text-center animate-slide-up">
-              Project{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Gallery
-              </span>
+              <span className="relative inline-block">
+                <span className="relative z-10 text-white font-bold px-4 py-2">
+                  Project
+                </span>
+                <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
+              </span>{" "}
+              <span className="text-foreground">Gallery</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -514,9 +520,10 @@ const ProjectDetail = () => {
               <Rocket className="w-12 h-12 text-primary" />
             </div>
             <h2 className="text-5xl md:text-6xl font-bold mb-8 group-hover:text-primary transition-colors duration-300">
-              Ready to Start Your{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Project?
+              Ready to Start{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 text-white font-bold px-4 py-2">Your Project?</span>
+                <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed group-hover:text-foreground/90 transition-colors duration-300">

@@ -95,10 +95,10 @@ const Services = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
             <span className="text-foreground">Comprehensive</span>{" "}
             <span className="relative inline-block">
-              <span className="relative z-10 text-white font-bold px-4 py-2">
+              <span className="relative z-10 text-white font-bold px-4 py-2 ">
                 Digital Solutions
               </span>
-              <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
+              <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12 h-16"></div>
             </span>
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4 sm:px-6">

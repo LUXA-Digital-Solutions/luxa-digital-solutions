@@ -30,18 +30,18 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+2347047494586",
       description: "Call us anytime",
       action: "Call Now",
-      onClick: () => window.open("tel:+15551234567", "_self"),
+      onClick: () => window.open("tel:+2347047494586", "_self"),
     },
     {
       icon: Mail,
       title: "Email",
-      value: "hello@luxa.com",
+      value: "info@luxasolution.com",
       description: "Send us a message",
       action: "Send Email",
-      onClick: () => window.open("mailto:hello@luxa.com", "_self"),
+      onClick: () => window.open("mailto:info@luxasolution.com", "_self"),
     },
     {
       icon: MapPin,
@@ -84,9 +84,10 @@ const Contact = () => {
             Get In Touch
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-            <span className="text-foreground">Ready to Start Your</span>{" "}
-            <span className="bg-gradient-to-r from-brand-teal to-brand-teal/80 bg-clip-text text-transparent">
-              Project?
+            <span className="text-foreground">Ready to Start</span>{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10 text-white font-bold px-4 py-2">Your Project?</span>
+              <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
             </span>
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4 sm:px-6">
@@ -298,8 +299,9 @@ const Contact = () => {
           <div className="max-w-3xl mx-auto">
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
               <span className="text-foreground">Let's Build Something</span>{" "}
-              <span className="bg-gradient-to-r from-brand-teal to-brand-teal/80 bg-clip-text text-transparent">
-                Amazing
+              <span className="relative inline-block">
+                <span className="relative z-10 text-white font-bold px-4 py-2">Amazing</span>
+                <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
               </span>
             </h3>
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-10 leading-relaxed px-4 sm:px-6">

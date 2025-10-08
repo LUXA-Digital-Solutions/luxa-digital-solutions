@@ -285,7 +285,7 @@ const ScheduleConsultation = () => {
                       </Label>
                       <Input 
                         id="phone" 
-                        placeholder="+1 (555) 123-4567" 
+                        placeholder="+2347047494586" 
                         className="h-12 border-border/50 hover:border-primary/40 focus:border-primary transition-all-spring"
                       />
                     </div>

@@ -88,9 +88,9 @@ const Navigation = () => {
                 <div className="relative overflow-hidden rounded-full bg-black p-2 sm:p-4 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-500 hover:shadow-lg hover:shadow-brand-teal/20 backdrop-blur-sm">
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                   <img
-                    src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png"
+                    src="/luxa.png"
                     alt="LUXA"
-                    className="h-8 sm:h-10 lg:h-12 w-auto relative z-10 group-hover:scale-110 transition-all duration-500 filter drop-shadow-sm group-hover:drop-shadow-md"
+                    className="h-8 sm:h-10 lg:h-15 w-auto relative z-10 group-hover:scale-110 transition-all duration-500 filter drop-shadow-sm group-hover:drop-shadow-md"
                   />
                   <div className="absolute -top-1 -right-1 w-3 h-3 bg-brand-teal/30 rounded-full animate-pulse"></div>
                   <div

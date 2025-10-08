@@ -91,8 +91,9 @@ const AllProjects = () => {
 
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Our{" "}
-                <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                  Projects
+                <span className="relative inline-block">
+                  <span className="relative z-10 text-white font-bold px-4 py-2">Projects</span>
+                  <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
                 </span>
               </h1>
 
@@ -357,8 +358,9 @@ const AllProjects = () => {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">
                 Our{" "}
-                <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                  Portfolio
+                <span className="relative inline-block">
+                  <span className="relative z-10 text-white font-bold px-4 py-2">Portfolio</span>
+                  <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
                 </span>{" "}
                 Impact
               </h2>
@@ -423,8 +425,9 @@ const AllProjects = () => {
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">
               Ready to Join Our{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                Success Stories?
+              <span className="relative inline-block">
+                <span className="relative z-10 text-white font-bold px-4 py-2">Success Stories?</span>
+                <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
               </span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">

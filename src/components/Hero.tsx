@@ -109,7 +109,7 @@ const Hero = () => {
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-brand-teal rounded-full mr-2"></div>
                 <span className="text-sm sm:text-base">
-                  500+ Projects Completed
+                  10+ Projects Completed
                 </span>
               </div>
               <div className="flex items-center">
@@ -128,7 +128,7 @@ const Hero = () => {
       </div>
 
       {/* Enhanced Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 lg:h-48 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 lg:h-52 bg-gradient-to-t from-background via-background/10 to-transparent"></div>
     </section>
   );
 };

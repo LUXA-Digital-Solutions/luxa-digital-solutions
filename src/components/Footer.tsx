@@ -180,25 +180,27 @@ const Footer = () => {
               </h3>
               <div className="space-y-4 sm:space-y-6">
                 <div
-                  onClick={() => window.open("mailto:hello@luxa.com", "_self")}
+                  onClick={() =>
+                    window.open("mailto:info@luxasolution.com", "_self")
+                  }
                   className="flex items-start group cursor-pointer"
                 >
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">
-                      hello@luxa.com
+                      info@luxasolution.com
                     </p>
                   </div>
                 </div>
 
                 <div
-                  onClick={() => window.open("tel:+15551234567", "_self")}
+                  onClick={() => window.open("tel:+2347047494586", "_self")}
                   className="flex items-start group cursor-pointer"
                 >
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base">
-                      +1 (555) 123-4567
+                      +2347047494586
                     </p>
                   </div>
                 </div>

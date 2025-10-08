@@ -110,8 +110,9 @@ const GetQuote = () => {
               
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Let's Build Something{' '}
-                <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                  Amazing
+                <span className="relative inline-block">
+                  <span className="relative z-10 text-white font-bold px-4 py-2">Amazing</span>
+                  <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
                 </span>
               </h1>
               
@@ -258,7 +259,7 @@ const GetQuote = () => {
                       </Label>
                       <Input 
                         id="phone" 
-                        placeholder="+1 (555) 123-4567" 
+                        placeholder="+2347047494586" 
                         className="h-12 border-border/50 hover:border-primary/40 focus:border-primary transition-all-spring"
                       />
                     </div>
