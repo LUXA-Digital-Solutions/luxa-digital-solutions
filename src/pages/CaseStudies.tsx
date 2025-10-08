@@ -80,7 +80,7 @@ const CaseStudies = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <div className="flex items-center text-muted-foreground">
                   <TrendingUp className="w-5 h-5 mr-2" />
-                  <span>500+ projects delivered</span>
+                  <span>10+ projects delivered</span>
                 </div>
                 <div className="flex items-center text-muted-foreground">
                   <Award className="w-5 h-5 mr-2" />
@@ -249,7 +249,9 @@ const CaseStudies = () => {
               <h2 className="text-4xl font-bold mb-6">
                 Our{" "}
                 <span className="relative inline-block">
-                  <span className="relative z-10 text-white font-bold px-4 py-2">Impact</span>
+                  <span className="relative z-10 text-white font-bold px-4 py-2">
+                    Impact
+                  </span>
                   <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
                 </span>
               </h2>
@@ -264,7 +266,7 @@ const CaseStudies = () => {
                 <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
                   <TrendingUp className="w-10 h-10 text-primary" />
                 </div>
-                <div className="text-4xl font-bold text-primary mb-2">500+</div>
+                <div className="text-4xl font-bold text-primary mb-2">10+</div>
                 <div className="font-semibold mb-2">Projects Delivered</div>
                 <div className="text-sm text-muted-foreground">
                   Successful launches across industries
@@ -313,7 +315,9 @@ const CaseStudies = () => {
             <h2 className="text-4xl font-bold mb-6">
               Ready to Create Your{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-white font-bold px-4 py-2">Success Story?</span>
+                <span className="relative z-10 text-white font-bold px-4 py-2">
+                  Success Story?
+                </span>
                 <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
               </span>
             </h2>

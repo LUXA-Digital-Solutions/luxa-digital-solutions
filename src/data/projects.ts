@@ -211,63 +211,63 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: "mobile-banking-app",
-    title: "Mobile Banking Application",
-    category: "FinTech Solution",
-    description: "Secure and intuitive mobile banking experience with advanced features",
-    tech: ["React Native", "Firebase", "Stripe", "Biometric Auth", "AWS", "Node.js"],
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop&crop=center",
+    id: "markazul-bayaan-lms",
+    title: "Markazul Bayaan Islamic Learning Platform",
+    category: "Educational Platform",
+    description: "Modern educational website redesign for Islamic course registration and student management",
+    tech: ["React", "Next.js", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS"],
+    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=600&fit=crop&crop=center",
     link: "#",
-    client: "SecureBank Financial",
-    duration: "8 months",
-    teamSize: 6,
-    budget: "$200,000",
-    overview: "SecureBank Financial needed a modern mobile banking app to compete with digital-first banks. The app required advanced security features, intuitive UX, and comprehensive banking functionality.",
-    challenge: "The existing mobile app had poor user reviews, limited functionality, and security concerns. Customer adoption was low, and the bank was losing market share to more modern competitors.",
-    solution: "We developed a comprehensive mobile banking application with biometric authentication, real-time notifications, advanced transaction management, and seamless user experience across iOS and Android platforms.",
+    client: "Markazul Bayaan",
+    duration: "4 months",
+    teamSize: 4,
+    budget: "$35,000",
+    overview: "Markazul Bayaan, a respected Islamic educational institution, needed a complete website redesign to modernize their student registration process and improve the overall learning experience. The platform required a user-friendly interface for course enrollment, student management, and educational content delivery.",
+    challenge: "The existing website was outdated with a complicated registration process that deterred potential students. The old system lacked proper course management, had poor mobile responsiveness, and didn't reflect the institution's prestigious reputation in Islamic education.",
+    solution: "LUXA redesigned the entire platform with a modern, intuitive interface that streamlines course registration, implements a comprehensive student portal, and provides easy access to Islamic course materials. The solution includes automated enrollment workflows, payment integration, and mobile-optimized design.",
     results: [
       {
-        metric: "User Adoption",
-        value: "+400%",
-        description: "Active mobile users increased"
+        metric: "Student Enrollment",
+        value: "+275%",
+        description: "Significant increase in course registrations"
       },
       {
-        metric: "App Store Rating",
-        value: "4.9/5",
-        description: "Excellent user satisfaction"
+        metric: "User Experience",
+        value: "+320%",
+        description: "Improved navigation and usability scores"
       },
       {
-        metric: "Transaction Volume",
-        value: "+250%",
-        description: "Mobile transactions increased"
+        metric: "Mobile Engagement",
+        value: "+180%",
+        description: "Mobile user engagement increased dramatically"
       },
       {
-        metric: "Customer Support",
-        value: "-70%",
-        description: "Reduced support tickets"
+        metric: "Registration Completion",
+        value: "+200%",
+        description: "Students completing full registration process"
       }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop&crop=center",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center"
+      "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=600&fit=crop&crop=center"
     ],
     testimonial: {
-      quote: "LUXA delivered a mobile banking app that exceeded all our expectations. Our customers love the new experience, and we've seen unprecedented adoption rates.",
-      author: "Lisa Thompson",
-      position: "Head of Digital Banking",
-      company: "SecureBank Financial",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+      quote: "LUXA transformed our educational platform beyond our expectations. The new website has made it incredibly easy for students to register for our Islamic courses, and we've seen a remarkable increase in enrollment. The design perfectly reflects our institution's values while providing modern functionality.",
+      author: "Sheikh Abdullah Rahman",
+      position: "Academic Director",
+      company: "Markazul Bayaan",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
     },
     features: [
-      "Biometric authentication",
-      "Real-time notifications",
-      "Account management",
-      "Transfer and payments",
-      "Investment tracking",
-      "Expense categorization",
-      "Customer support chat",
-      "Advanced security features"
+      "Streamlined course registration",
+      "Student portal dashboard",
+      "Islamic course catalog",
+      "Payment integration",
+      "Mobile-responsive design",
+      "Automated email notifications",
+      "Progress tracking system",
+      "Multi-language support"
     ]
   }
 ];

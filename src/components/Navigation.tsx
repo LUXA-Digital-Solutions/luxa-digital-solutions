@@ -49,6 +49,7 @@ const Navigation = () => {
     { name: "Portfolio", href: "#portfolio", action: "scroll" },
     { name: "Services", href: "#services", action: "scroll" },
     { name: "Pricing", href: "/get-quote", action: "navigate" },
+    { name: "Contact", href: "/contact", action: "navigate" },
   ];
 
   const handleNavClick = (item: { href: string; action: string }) => {
