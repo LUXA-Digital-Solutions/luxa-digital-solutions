@@ -110,14 +110,14 @@ const ProjectDetail = () => {
             ></div>
           </div>
 
-          <div className="container mx-auto px-6 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-7xl mx-auto">
               {/* Back Navigation */}
               <div className="mb-12 animate-slide-up">
                 <Button
                   variant="ghost"
                   onClick={() => navigate("/portfolio")}
-                  className="text-muted-foreground hover:text-primary mb-8 group transition-all-spring hover-lift px-6 py-3"
+                  className="text-muted-foreground hover:text-primary mb-8 group transition-all-spring hover-lift px-4 sm:px-6 py-3"
                 >
                   <ArrowLeft className="mr-3 w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
                   Back to Portfolio
@@ -146,7 +146,7 @@ const ProjectDetail = () => {
                   </p>
 
                   {/* Enhanced Project Stats Grid */}
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                     <div className="text-center group">
                       <div className="w-16 h-16 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-4 group-hover:animate-glow transition-all-spring group-hover:scale-110">
                         <Calendar className="w-8 h-8 text-primary" />
@@ -273,7 +273,7 @@ const ProjectDetail = () => {
         </section>
 
         {/* Enhanced Results Section */}
-        <section className="py-32 px-6 bg-background relative overflow-hidden">
+        <section className="py-32 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-20 left-20 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 right-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
@@ -325,7 +325,7 @@ const ProjectDetail = () => {
         </section>
 
         {/* Enhanced Case Study Section */}
-        <section className="py-32 px-6 bg-gradient-to-b from-card/20 to-background relative overflow-hidden">
+        <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-card/20 to-background relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/3 rounded-full blur-3xl"></div>
           </div>
@@ -410,7 +410,7 @@ const ProjectDetail = () => {
         </section>
 
         {/* Enhanced Gallery Section */}
-        <section className="py-32 px-6 bg-background relative overflow-hidden">
+        <section className="py-32 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-20 right-20 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
@@ -445,9 +445,7 @@ const ProjectDetail = () => {
                     {/* Hover Overlay Content */}
                     <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all-spring transform translate-y-4 group-hover:translate-y-0">
                       <div className="bg-black/60 backdrop-blur-sm rounded-lg p-3 border border-primary/30">
-                        <p className="text-white text-sm font-medium">
-                          Project Screenshot {index + 1}
-                        </p>
+                        <p className="text-white text-sm font-medium"></p>
                       </div>
                     </div>
                   </div>
@@ -459,7 +457,7 @@ const ProjectDetail = () => {
 
         {/* Enhanced Testimonial Section */}
         {project.testimonial && (
-          <section className="py-32 px-6 bg-gradient-accent relative overflow-hidden">
+          <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-accent relative overflow-hidden">
             <div className="absolute inset-0">
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
             </div>
@@ -509,7 +507,7 @@ const ProjectDetail = () => {
         )}
 
         {/* Premium CTA Section */}
-        <section className="py-32 px-6 bg-gradient-dark relative overflow-hidden">
+        <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-dark relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-20 left-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 right-20 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
@@ -522,7 +520,9 @@ const ProjectDetail = () => {
             <h2 className="text-5xl md:text-6xl font-bold mb-8 group-hover:text-primary transition-colors duration-300">
               Ready to Start{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-white font-bold px-4 py-2">Your Project?</span>
+                <span className="relative z-10 text-white font-bold px-4 py-2">
+                  Your Project?
+                </span>
                 <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
               </span>
             </h2>

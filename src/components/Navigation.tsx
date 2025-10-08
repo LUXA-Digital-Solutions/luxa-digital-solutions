@@ -91,7 +91,7 @@ const Navigation = () => {
                   <img
                     src="/luxa.png"
                     alt="LUXA"
-                    className="h-8 sm:h-10 lg:h-15 w-auto relative z-10 group-hover:scale-110 transition-all duration-500 filter drop-shadow-sm group-hover:drop-shadow-md"
+                    className="h-8 sm:h-10 lg:h-12 w-auto relative z-10 group-hover:scale-110 transition-all duration-500 filter drop-shadow-sm group-hover:drop-shadow-md"
                   />
                   <div className="absolute -top-1 -right-1 w-3 h-3 bg-brand-teal/30 rounded-full animate-pulse"></div>
                   <div
