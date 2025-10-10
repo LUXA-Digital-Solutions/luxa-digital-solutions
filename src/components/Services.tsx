@@ -1,16 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  Code,
-  Palette,
-  Smartphone,
-  Globe,
-  Zap,
-  Shield,
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
+import { Code, Globe, Zap, Shield, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Services = () => {
