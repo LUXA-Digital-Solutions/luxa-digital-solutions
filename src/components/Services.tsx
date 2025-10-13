@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Globe, Zap, Shield, ArrowRight } from "lucide-react";
+import { Code, Globe, Zap, Shield, ArrowRight, Smartphone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Services = () => {
@@ -48,24 +48,24 @@ const Services = () => {
       category: "Development",
     },
     {
-      icon: Shield,
-      title: "Automation Solutions",
+      icon: Smartphone,
+      title: "Mobile Apps",
       description:
-        "Smart workflow automation systems that reduce operational costs and eliminate repetitive tasks.",
+        "Custom mobile applications for iOS and Android that engage users and extend your brand's reach.",
       features: [
-        "Workflow optimization",
-        "Cost reduction",
-        "Process integration",
-        "Error elimination",
+        "Cross-platform development",
+        "Intuitive UI/UX",
+        "Push notifications",
+        "App store deployment",
       ],
-      category: "Automation",
+      category: "Mobile",
     },
   ];
 
   return (
     <section
       id="services"
-      className="py-20 sm:py-24 lg:py-32 bg-background relative overflow-hidden"
+      className="py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-brand-light via-background to-background dark:from-brand-dark dark:via-background dark:to-background relative overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0">

@@ -71,9 +71,8 @@ const Hero = () => {
           {/* Enhanced Subheadline */}
           <div className="mb-8 sm:mb-10 lg:mb-12 animate-slide-up-delayed">
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4 sm:px-6">
-              Transform your business with cutting-edge digital solutions. We
-              create innovative, scalable, and user-centric applications that
-              drive results.
+              Transform your business with Websites, mobile apps, and digital
+              solutions designed to help your brand stand out and succeed.
             </p>
           </div>
 
@@ -108,27 +107,24 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-muted-foreground">
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-brand-teal rounded-full mr-2"></div>
-                <span className="text-sm sm:text-base">
+                <span className="text-xl sm:text-base">
                   10+ Projects Completed
                 </span>
               </div>
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-brand-teal rounded-full mr-2"></div>
-                <span className="text-sm sm:text-base">
+                <span className="text-xl sm:text-base">
                   98% Client Satisfaction
                 </span>
               </div>
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-brand-teal rounded-full mr-2"></div>
-                <span className="text-sm sm:text-base">24/7 Support</span>
+                <span className="text-xl sm:text-base">24/7 Support</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Enhanced Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 lg:h-52 bg-gradient-to-t from-background via-background/10 to-transparent"></div>
     </section>
   );
 };
