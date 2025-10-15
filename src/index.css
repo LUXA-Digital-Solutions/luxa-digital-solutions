@@ -163,7 +163,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
   }
 }
 
@@ -236,6 +236,16 @@ All colors MUST be HSL.
 
   .shadow-elegant {
     box-shadow: var(--shadow-elegant);
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 
   /* Smooth transitions */
