@@ -1,203 +1,118 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Code, Globe, Zap, Shield, ArrowRight, Smartphone } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 
 const Services = () => {
-  const navigate = useNavigate();
-
   const services = [
     {
-      icon: Globe,
-      title: "Websites & Landing Pages",
+      title: "WEBSITES & LANDING PAGES",
       description:
         "Conversion-focused websites and landing pages that turn visitors into customers through strategic design and compelling content.",
-      features: [
-        "Conversion optimization",
-        "Mobile-first design",
-        "SEO-friendly",
-        "Fast loading speeds",
-      ],
-      category: "Web",
+      bgColorClass: "bg-gradient-to-br from-cyan-400 to-teal-500",
+      arrowColor: "text-teal-600",
     },
     {
-      icon: Code,
-      title: "Custom Dashboards",
+      title: "CUSTOM DASHBOARDS",
       description:
         "Interactive business intelligence dashboards that transform your data into actionable insights for smarter decision-making.",
-      features: [
-        "Real-time analytics",
-        "Custom KPI tracking",
-        "Interactive reports",
-        "Data visualization",
-      ],
-      category: "Analytics",
+      bgColorClass: "bg-gradient-to-br from-indigo-400 to-indigo-500",
+      arrowColor: "text-indigo-600",
     },
     {
-      icon: Zap,
-      title: "Software Development",
+      title: "SOFTWARE DEVELOPMENT",
       description:
         "Custom software solutions that streamline your daily operations and enhance business efficiency.",
-      features: [
-        "Custom tools",
-        "Process automation",
-        "System integration",
-        "Scalable solutions",
-      ],
-      category: "Development",
+      bgColorClass: "bg-gradient-to-br from-rose-500 to-red-600",
+      arrowColor: "text-rose-500",
     },
     {
-      icon: Smartphone,
-      title: "Mobile Apps",
+      title: "MOBILE APPS",
       description:
         "Custom mobile applications for iOS and Android that engage users and extend your brand's reach.",
-      features: [
-        "Cross-platform development",
-        "Intuitive UI/UX",
-        "Push notifications",
-        "App store deployment",
-      ],
-      category: "Mobile",
+      bgColorClass: "bg-gradient-to-br from-emerald-400 to-green-500",
+      arrowColor: "text-emerald-600",
+    },
+    {
+      title: "SEARCH ENGINE OPTIMIZATION",
+      description:
+        "Boost your website's visibility and attract organic traffic with SEO tailored to your business goals.",
+      bgColorClass: "bg-gradient-to-br from-orange-400 to-orange-500",
+      arrowColor: "text-orange-500",
+    },
+    {
+      title: "CONTENT MARKETING",
+      description:
+        "Enhance your brand's online presence and drive engagement with a strategy customized to your needs.",
+      bgColorClass: "bg-gradient-to-br from-purple-400 to-purple-500",
+      arrowColor: "text-purple-500",
     },
   ];
 
   return (
     <section
       id="services"
-      className="py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-brand-light via-background to-background dark:from-brand-dark dark:via-background dark:to-background relative overflow-hidden"
+      className="py-20 sm:py-24 lg:py-32 bg-white dark:bg-background relative overflow-hidden"
     >
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-brand-teal/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-brand-teal/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-teal/3 rounded-full blur-3xl"></div>
-      </div>
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Enhanced Section Header */}
-        <div className="text-center mb-16 sm:mb-20 lg:mb-24 animate-slide-up">
-          <Badge
-            variant="secondary"
-            className="bg-brand-teal/10 text-brand-teal border-brand-teal/20 mb-4 sm:mb-6 px-4 py-2 text-sm font-semibold"
-          >
-            Our Services
-          </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-            <span className="text-foreground">Comprehensive</span>{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10 text-white font-bold px-4 py-2 ">
-                Digital Solutions
+        {/* Header aligned like the reference: left title, right paragraph */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20 animate-slide-up">
+          <div>
+            <p className="text-red-500 dark:text-brand-coral font-bold text-sm sm:text-base mb-3 uppercase tracking-wider">
+              OUR SERVICES!
+            </p>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05]">
+              <span className="text-gray-900 dark:text-foreground">
+                SERVICES DESIGNED TO
               </span>
-              <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12 h-16"></div>
-            </span>
-          </h2>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4 sm:px-6">
-            From concept to deployment, we provide end-to-end digital solutions
-            that drive business growth and innovation.
-          </p>
+              <br />
+              <span className="text-gray-900 dark:text-foreground">
+                DRIVE REAL RESULTS
+              </span>
+            </h2>
+          </div>
+          <div className="hidden lg:block">
+            <p className="text-lg xl:text-xl text-gray-700 dark:text-muted-foreground leading-relaxed max-w-md ml-auto">
+              Experience growth through innovative digital solutions designed to
+              reach, inspire, and deliver results.
+            </p>
+          </div>
         </div>
 
-        {/* Enhanced Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mb-16 sm:mb-20 lg:mb-24 max-w-6xl mx-auto">
+        {/* Cards: equal height and alignment with decorative cutouts */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 sm:mb-20 lg:mb-24 items-stretch">
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="group p-6 sm:p-8 lg:p-10 bg-card/30 border-border hover:border-brand-teal/40 transition-all-spring hover-lift relative overflow-hidden"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`group relative h-full min-h-[400px] md:min-h-[430px] xl:min-h-[460px] p-7 sm:p-9 lg:p-12 pt-12 ${service.bgColorClass} border-0 rounded-[46px] overflow-hidden`}
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
-              {/* Hover background effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 via-transparent to-brand-teal/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Decorative scallops (top center) */}
+              <div className="pointer-events-none absolute -top-6 left-1/2 -translate-x-20 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white dark:bg-background" />
+              <div className="pointer-events-none absolute -top-6 left-1/2 translate-x-20 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white dark:bg-background" />
+              {/* inner shadows for scallops */}
+              <div className="pointer-events-none absolute -top-[10px] left-1/2 -translate-x-20 w-24 h-24 sm:w-28 sm:h-28 rounded-full opacity-30 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.25)_0%,transparent_70%)]" />
+              <div className="pointer-events-none absolute -top-[10px] left-1/2 translate-x-20 w-24 h-24 sm:w-28 sm:h-28 rounded-full opacity-30 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.25)_0%,transparent_70%)]" />
 
-              <div className="relative z-10">
-                {/* Service Header */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-2xl bg-gradient-accent flex items-center justify-center group-hover:animate-glow transition-all-spring group-hover:scale-110">
-                    <service.icon className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-teal" />
-                  </div>
-                  <Badge
-                    variant="outline"
-                    className="border-brand-teal/30 text-brand-teal bg-brand-teal/10 text-xs sm:text-sm font-medium"
-                  >
-                    {service.category}
-                  </Badge>
-                </div>
+              {/* Bottom-left notch (angled cut) */}
+              <div className="pointer-events-none absolute -bottom-7 -left-7 w-20 h-20 sm:w-24 sm:h-24 rotate-45 rounded-md bg-white dark:bg-background" />
 
-                {/* Service Content */}
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 group-hover:text-brand-teal transition-colors duration-300 leading-tight">
+              {/* Content */}
+              <div className="relative z-10 pr-24 pb-20 flex flex-col gap-6">
+                <h3 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase leading-[1.05] tracking-tight">
                   {service.title}
                 </h3>
-
-                <p className="text-muted-foreground mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base lg:text-lg group-hover:text-foreground/90 transition-colors duration-300">
+                <p className="text-white/90 text-base lg:text-lg leading-relaxed max-w-[38ch]">
                   {service.description}
                 </p>
+              </div>
 
-                {/* Features List */}
-                <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                  {service.features.map((feature, featureIndex) => (
-                    <div
-                      key={featureIndex}
-                      className="flex items-center group/feature"
-                    >
-                      <div className="w-2 h-2 bg-brand-teal rounded-full mr-3 sm:mr-4 group-hover/feature:scale-150 transition-transform duration-300"></div>
-                      <span className="text-muted-foreground group-hover/feature:text-foreground transition-colors duration-300 text-sm sm:text-base leading-relaxed">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Hover indicator */}
-                <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 right-6 sm:right-8 lg:right-10 opacity-0 group-hover:opacity-100 transition-all-spring transform translate-x-4 group-hover:translate-x-0">
-                  <div className="w-8 h-8 rounded-full bg-brand-teal/20 flex items-center justify-center">
-                    <ArrowRight className="w-4 h-4 text-brand-teal" />
-                  </div>
-                </div>
+              {/* Arrow button bottom-right */}
+              <div className="absolute bottom-8 right-8 sm:bottom-10 sm:right-10 w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md transition-all duration-300 group-hover:scale-125 group-hover:rotate-45 hover:scale-125 hover:rotate-45">
+                <ArrowUpRight
+                  className={`w-7 h-7 ${service.arrowColor} transition-transform duration-300`}
+                />
               </div>
             </Card>
           ))}
-        </div>
-
-        {/* Enhanced CTA Section */}
-        <div className="text-center animate-slide-up">
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
-              <span className="text-foreground">Ready to </span>
-              <span className="relative inline-block">
-                <span className="relative z-10 text-white font-bold">
-                  Start Your
-                </span>
-                <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
-              </span>
-              <span className="text-foreground"> Business?</span>
-            </h3>
-            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-10 leading-relaxed px-4 sm:px-6">
-              Let's discuss how our services can help you achieve your digital
-              goals and drive business success.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-              <Button
-                size="lg"
-                onClick={() => navigate("/get-quote")}
-                className="bg-brand-teal hover:shadow-cyan transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold group relative overflow-hidden w-full sm:w-auto rounded-xl"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-teal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative z-10 flex items-center">
-                  Start Your Project
-                  <ArrowRight className="ml-2 sm:ml-3 lg:ml-4 w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </Button>
-
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => navigate("/case-studies")}
-                className="border-brand-teal/40 text-foreground hover:bg-brand-teal/10 hover:border-brand-teal/60 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto rounded-xl"
-              >
-                View Case Studies
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </section>

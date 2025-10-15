@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
-  Sparkles,
   Code,
-  Palette,
-  Smartphone,
   Globe,
-  Zap,
+  Palette,
   Shield,
+  Smartphone,
+  Zap,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -31,24 +30,24 @@ const Hero = () => {
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
         {/* Mesh gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 via-transparent to-primary/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
 
         {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,212,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,212,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
 
         {/* Floating particles */}
-        <div className="absolute top-20 left-10 w-2 h-2 bg-brand-teal/40 rounded-full animate-float blur-sm"></div>
-        <div className="absolute top-32 right-20 w-1 h-1 bg-brand-teal/60 rounded-full animate-float-slow blur-sm"></div>
-        <div className="absolute top-40 left-1/4 w-1.5 h-1.5 bg-brand-teal/30 rounded-full animate-float blur-sm"></div>
-        <div className="absolute top-60 right-1/3 w-1 h-1 bg-brand-teal/50 rounded-full animate-float-slow blur-sm"></div>
-        <div className="absolute top-80 left-1/2 w-2 h-2 bg-brand-teal/40 rounded-full animate-float blur-sm"></div>
-        <div className="absolute top-96 right-1/4 w-1.5 h-1.5 bg-brand-teal/30 rounded-full animate-float-slow blur-sm"></div>
-        <div className="absolute top-1/2 left-10 w-1 h-1 bg-brand-teal/60 rounded-full animate-float blur-sm"></div>
-        <div className="absolute top-1/2 right-10 w-2 h-2 bg-brand-teal/40 rounded-full animate-float-slow blur-sm"></div>
-        <div className="absolute bottom-40 left-20 w-1.5 h-1.5 bg-brand-teal/30 rounded-full animate-float blur-sm"></div>
-        <div className="absolute bottom-60 right-20 w-1 h-1 bg-brand-teal/50 rounded-full animate-float-slow blur-sm"></div>
-        <div className="absolute bottom-80 left-1/3 w-2 h-2 bg-brand-teal/40 rounded-full animate-float blur-sm"></div>
-        <div className="absolute bottom-96 right-1/3 w-1.5 h-1.5 bg-brand-teal/30 rounded-full animate-float-slow blur-sm"></div>
+        <div className="absolute top-20 left-10 w-2 h-2 bg-muted/30 rounded-full animate-float blur-sm"></div>
+        <div className="absolute top-32 right-20 w-1 h-1 bg-muted/40 rounded-full animate-float-slow blur-sm"></div>
+        <div className="absolute top-40 left-1/4 w-1.5 h-1.5 bg-muted/25 rounded-full animate-float blur-sm"></div>
+        <div className="absolute top-60 right-1/3 w-1 h-1 bg-muted/35 rounded-full animate-float-slow blur-sm"></div>
+        <div className="absolute top-80 left-1/2 w-2 h-2 bg-muted/30 rounded-full animate-float blur-sm"></div>
+        <div className="absolute top-96 right-1/4 w-1.5 h-1.5 bg-muted/25 rounded-full animate-float-slow blur-sm"></div>
+        <div className="absolute top-1/2 left-10 w-1 h-1 bg-muted/40 rounded-full animate-float blur-sm"></div>
+        <div className="absolute top-1/2 right-10 w-2 h-2 bg-muted/30 rounded-full animate-float-slow blur-sm"></div>
+        <div className="absolute bottom-40 left-20 w-1.5 h-1.5 bg-muted/25 rounded-full animate-float blur-sm"></div>
+        <div className="absolute bottom-60 right-20 w-1 h-1 bg-muted/35 rounded-full animate-float-slow blur-sm"></div>
+        <div className="absolute bottom-80 left-1/3 w-2 h-2 bg-muted/30 rounded-full animate-float blur-sm"></div>
+        <div className="absolute bottom-96 right-1/3 w-1.5 h-1.5 bg-muted/25 rounded-full animate-float-slow blur-sm"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -57,7 +56,7 @@ const Hero = () => {
           <div className="mb-6 sm:mb-8 lg:mb-10 animate-slide-up">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 sm:mb-6">
               <span className="">We</span> {}
-              <span className="text-brand-teal">Build</span> {}
+              <span className="text-primary">Build</span> {}
               <span className="text-foreground dark:text-brand-light">
                 Digital
               </span>
@@ -95,7 +94,7 @@ const Hero = () => {
                 variant="outline"
                 size="lg"
                 onClick={() => navigate("/all-projects")}
-                className="border-brand-teal/40 text-foreground hover:bg-brand-teal/10 hover:border-brand-teal/60 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto rounded-xl"
+                className="border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto rounded-xl"
               >
                 View Our Work
               </Button>
@@ -106,19 +105,19 @@ const Hero = () => {
           <div className="mb-8 sm:mb-12 animate-slide-up-delayed">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-muted-foreground">
               <div className="flex items-center">
-                <div className="w-2 h-2 bg-brand-teal rounded-full mr-2"></div>
+                <div className="w-2 h-2 bg-muted/40 rounded-full mr-2"></div>
                 <span className="text-xl sm:text-base">
                   10+ Projects Completed
                 </span>
               </div>
               <div className="flex items-center">
-                <div className="w-2 h-2 bg-brand-teal rounded-full mr-2"></div>
+                <div className="w-2 h-2 bg-muted/40 rounded-full mr-2"></div>
                 <span className="text-xl sm:text-base">
                   98% Client Satisfaction
                 </span>
               </div>
               <div className="flex items-center">
-                <div className="w-2 h-2 bg-brand-teal rounded-full mr-2"></div>
+                <div className="w-2 h-2 bg-muted/40 rounded-full mr-2"></div>
                 <span className="text-xl sm:text-base">24/7 Support</span>
               </div>
             </div>

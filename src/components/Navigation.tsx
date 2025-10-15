@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ThemeToggle } from "./theme-toggle";
 
 const Navigation = () => {
@@ -97,16 +97,16 @@ const Navigation = () => {
                 className="relative group cursor-pointer"
                 onClick={() => navigate("/")}
               >
-                <div className="relative overflow-hidden rounded-full bg-black p-2 sm:p-4 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-500 hover:shadow-lg hover:shadow-brand-teal/20 backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div className="relative overflow-hidden rounded-full bg-black p-2 sm:p-4 border border-brand-coral/20 hover:border-brand-coral/40 transition-all duration-500 hover:shadow-lg hover:shadow-brand-coral/20 backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-coral/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                   <img
                     src="/luxa.png"
                     alt="LUXA"
                     className="h-8 sm:h-10 lg:h-12 w-auto relative z-10 group-hover:scale-110 transition-all duration-500 filter drop-shadow-sm group-hover:drop-shadow-md"
                   />
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-brand-teal/30 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-brand-coral/30 rounded-full animate-pulse"></div>
                   <div
-                    className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand-teal/20 rounded-full animate-pulse"
+                    className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand-gold/20 rounded-full animate-pulse"
                     style={{ animationDelay: "0.5s" }}
                   ></div>
                 </div>
@@ -147,7 +147,7 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-foreground hover:text-brand-teal transition-colors p-1"
+                className="text-foreground hover:text-brand-coral transition-colors p-1"
               >
                 {isOpen ? (
                   <X className="h-6 w-6" />
@@ -194,7 +194,7 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsOpen(false)}
-                className="text-foreground hover:text-brand-teal transition-colors p-1"
+                className="text-foreground hover:text-brand-coral transition-colors p-1"
               >
                 <X className="h-6 w-6" />
               </Button>
