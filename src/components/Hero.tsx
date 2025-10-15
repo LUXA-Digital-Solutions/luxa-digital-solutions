@@ -1,3 +1,4 @@
+import LiquidEther from "@/components/animations/LiquidEther";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -24,9 +25,31 @@ const Hero = () => {
     <div ref={heroRef} className="relative bg-brand-dark dark:bg-black">
       {/* First Section - Hero with Image */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-dark dark:bg-black">
+        {/* LiquidEther Background Animation */}
+        <div className="absolute inset-0 z-0">
+          <LiquidEther
+            colors={["#5227FF", "#00D9FF", "#B19EEF"]}
+            mouseForce={20}
+            cursorSize={100}
+            isViscous={false}
+            viscous={30}
+            iterationsViscous={32}
+            iterationsPoisson={32}
+            resolution={0.5}
+            isBounce={false}
+            autoDemo={true}
+            autoSpeed={0.5}
+            autoIntensity={2.2}
+            takeoverDuration={0.25}
+            autoResumeDelay={3000}
+            autoRampDuration={0.6}
+            className="w-full h-full"
+          />
+        </div>
+
         {/* Background with parallax */}
         <div
-          className="absolute inset-0 bg-brand-dark dark:bg-black"
+          className="absolute inset-0 bg-brand-dark/30 dark:bg-black/30 z-[1]"
           style={{ transform: `translateY(${parallaxOffset}px)` }}
         >
           {/* Subtle grid pattern */}
@@ -241,7 +264,7 @@ const Hero = () => {
                   variant="outline"
                   size="lg"
                   onClick={() => navigate("/all-projects")}
-                  className="border-2 border-white/20 dark:border-white/20 text-white dark:text-white hover:bg-white/10 dark:hover:bg-white/10 hover:border-white/30 dark:hover:border-white/30 px-8 py-6 text-base lg:text-lg font-semibold rounded-full transition-all hover:scale-105"
+                  className="border-2 border-white/20 dark:border-white/20 text-gray-500 dark:text-white hover:bg-white/10 dark:hover:bg-white/10 hover:border-white/30 dark:hover:border-white/30 px-8 py-6 text-base lg:text-lg font-semibold rounded-full transition-all hover:scale-105"
                 >
                   View Our Work
                 </Button>
