@@ -8,6 +8,8 @@ const steps = [
     description:
       "We begin by getting to know your brand, industry, and audience. By understanding your challenges, goals, and unique value, we lay the foundation for a successful digital solution.",
     duration: "2-3 Weeks",
+    bgGradient: "linear-gradient(135deg, #ff6b61 0%, #ff5449 100%)", // Coral/Red
+    bgSolid: "#ff6b61",
     cards: [
       {
         title: "Brand Analysis",
@@ -32,6 +34,8 @@ const steps = [
     description:
       "We translate strategy into stunning visuals and robust code. Our team creates intuitive interfaces and develops scalable solutions that bring your vision to life.",
     duration: "4-6 Weeks",
+    bgGradient: "linear-gradient(135deg, #c4ff0d 0%, #b5eb00 100%)", // Lime/Yellow-Green
+    bgSolid: "#c4ff0d",
     cards: [
       {
         title: "UI/UX Design",
@@ -56,6 +60,8 @@ const steps = [
     description:
       "We ensure a smooth launch and provide ongoing support to help your digital product thrive. Our team monitors performance and implements improvements for continuous growth.",
     duration: "2-4 Weeks",
+    bgGradient: "linear-gradient(135deg, #FF8A3C 0%, #FF7420 100%)", // Orange
+    bgSolid: "#FF8A3C",
     cards: [
       {
         title: "Deployment",
@@ -178,25 +184,116 @@ const HowWeWork: React.FC = () => {
                     }`}
                   >
                     <div
-                      className={`rounded-3xl p-8 transition-colors duration-300 ${isOpen ? "bg-brand-gold" : ""}`}
+                      className={`relative rounded-[2.5rem] p-8 transition-colors duration-300 md:p-12`}
+                      style={{
+                        backgroundImage: isOpen ? step.bgGradient : "none",
+                      }}
                     >
-                      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                      {/* Speech Bubble Cutout - Left */}
+                      {isOpen && (
+                        <>
+                          <div className="pointer-events-none absolute -left-6 top-1/2 h-32 w-32 -translate-y-1/2">
+                            <div className="h-full w-full rounded-full bg-background"></div>
+                            <div
+                              className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full"
+                              style={{
+                                background: step.bgGradient,
+                              }}
+                            ></div>
+                          </div>
+
+                          {/* Speech Bubble Cutout - Right */}
+                          <div className="pointer-events-none absolute -right-6 top-1/4 hidden h-32 w-32 md:block">
+                            <div className="h-full w-full rounded-full bg-background"></div>
+                            <div
+                              className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full"
+                              style={{
+                                background: step.bgGradient,
+                              }}
+                            ></div>
+                          </div>
+
+                          {/* Toggle Button in Cutout - Top Right */}
+                          <div className="absolute -right-4 -top-4 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg">
+                            <ChevronUp className="h-6 w-6 text-brand-charcoal" />
+                          </div>
+                        </>
+                      )}
+
+                      {/* Header Text - Inside Colored Box */}
+                      {isOpen && (
+                        <div
+                          className={`mb-8 ${step.id === 2 ? "text-brand-charcoal" : "text-white"}`}
+                        >
+                          <h4 className="mb-4 text-2xl font-bold md:text-3xl">
+                            {step.id === 1 && "DISCOVERY AND STRATEGY"}
+                            {step.id === 2 && "DESIGN AND DEVELOPMENT"}
+                            {step.id === 3 && "LAUNCH AND OPTIMIZATION"}
+                          </h4>
+                          <p
+                            className={`max-w-xl text-base leading-relaxed md:text-lg ${step.id === 2 ? "opacity-80" : "opacity-95"}`}
+                          >
+                            {step.description}
+                          </p>
+                        </div>
+                      )}
+
+                      <div className="relative grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                         {step.cards.map((card, i) => (
                           <div
                             key={i}
-                            className="rounded-2xl bg-white p-6 shadow-md transition-transform duration-300 hover:scale-105"
+                            className="group rounded-2xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
                           >
-                            <div className="mb-3 text-xs text-brand-muted">
-                              {step.title} • {card.duration}
+                            {/* Sprint Badge */}
+                            <div className="mb-4 flex items-center gap-3">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-400">
+                                <svg
+                                  className="h-6 w-6 text-white"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M5 13l4 4L19 7"
+                                  />
+                                </svg>
+                              </div>
+                              <div>
+                                <div className="text-sm font-bold text-brand-charcoal">
+                                  {i === 0 && "1-3 Sprints"}
+                                  {i === 1 && "2-4 Sprints"}
+                                  {i === 2 && "3-5 Sprints"}
+                                </div>
+                                <div className="text-xs text-brand-muted">
+                                  {card.duration}
+                                </div>
+                              </div>
                             </div>
-                            <h4 className="mb-4 text-xl font-bold text-brand-charcoal">
+
+                            <h5 className="mb-2 text-lg font-bold text-brand-charcoal">
                               {card.title}
-                            </h4>
+                            </h5>
+                            <p className="mb-4 text-sm text-muted-foreground">
+                              {card.tags.slice(0, 2).join(" and ")}. Develop a
+                              comprehensive strategy.
+                            </p>
+
                             <div className="flex flex-wrap gap-2">
                               {card.tags.map((tag, k) => (
                                 <span
                                   key={k}
-                                  className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-brand-charcoal transition-colors duration-200 hover:bg-brand-teal hover:text-white"
+                                  className="rounded-md px-2 py-1 text-xs font-medium text-brand-charcoal"
+                                  style={{
+                                    backgroundColor:
+                                      k % 3 === 0
+                                        ? "#FF9B66"
+                                        : k % 3 === 1
+                                          ? "#6DD4C4"
+                                          : "#E6E66D",
+                                  }}
                                 >
                                   {tag}
                                 </span>
