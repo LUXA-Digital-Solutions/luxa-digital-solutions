@@ -1,8 +1,8 @@
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Portfolio from "@/components/Portfolio";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import Navigation from "@/components/Navigation";
+import Portfolio from "@/components/Portfolio";
+import Services from "@/components/Services";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 

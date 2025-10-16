@@ -68,7 +68,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="py-20 sm:py-24 lg:py-32 bg-white dark:bg-background relative overflow-x-hidden"
+      className="pt-20 sm:pt-24 lg:pt-32 bg-white dark:bg-background relative overflow-x-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-full overflow-x-hidden">
         {/* Header aligned like the reference: left title, right paragraph */}

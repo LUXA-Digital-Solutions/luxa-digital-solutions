@@ -272,29 +272,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
-        {/* Up Arrow - Bottom Right */}
-        <div className="absolute bottom-8 right-8 lg:bottom-12 lg:right-12">
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-brand-teal hover:bg-brand-teal/90 dark:bg-brand-teal dark:hover:bg-brand-teal/90 text-white flex items-center justify-center shadow-lg hover:shadow-xl hover:shadow-brand-teal/20 transition-all hover:scale-110 group"
-            aria-label="Scroll to top"
-          >
-            <svg
-              className="w-6 h-6 lg:w-7 lg:h-7 group-hover:-translate-y-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2.5}
-                d="M5 15l7-7 7 7"
-              />
-            </svg>
-          </button>
-        </div>
       </section>
     </div>
   );
