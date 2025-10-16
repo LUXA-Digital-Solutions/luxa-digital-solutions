@@ -49,7 +49,7 @@ const Navigation = () => {
     { name: "About", href: "/about", action: "navigate" },
     { name: "Portfolio", href: "#portfolio", action: "scroll" },
     { name: "Services", href: "#services", action: "scroll" },
-    { name: "Pricing", href: "/get-quote", action: "navigate" },
+    { name: "Pricing", href: "/pricing", action: "navigate" },
     { name: "Contact", href: "/contact", action: "navigate" },
   ];
 
@@ -83,30 +83,30 @@ const Navigation = () => {
     <>
       {/* Modern Navigation Bar */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-200 ${
           scrolled
-            ? "bg-background border-b border-border/30"
+            ? "border-b border-border/30 bg-background"
             : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-2">
-          <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="container mx-auto my-2 px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between sm:h-20">
             <div className="flex items-center justify-start">
               {/* Modern Logo */}
               <div
-                className="relative group cursor-pointer"
+                className="group relative cursor-pointer"
                 onClick={() => navigate("/")}
               >
-                <div className="relative overflow-hidden rounded-full bg-black p-2 sm:p-4 border border-brand-coral/20 hover:border-brand-coral/40 transition-all duration-500 hover:shadow-lg hover:shadow-brand-coral/20 backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-coral/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div className="relative overflow-hidden rounded-full border border-brand-coral/20 bg-black p-2 backdrop-blur-sm transition-all duration-500 hover:border-brand-coral/40 hover:shadow-lg hover:shadow-brand-coral/20 sm:p-4">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-coral/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
                   <img
                     src="/luxa.png"
                     alt="LUXA"
-                    className="h-8 sm:h-10 lg:h-12 w-auto relative z-10 group-hover:scale-110 transition-all duration-500 filter drop-shadow-sm group-hover:drop-shadow-md"
+                    className="relative z-10 h-8 w-auto drop-shadow-sm filter transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-md sm:h-10 lg:h-12"
                   />
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-brand-coral/30 rounded-full animate-pulse"></div>
+                  <div className="absolute -right-1 -top-1 h-3 w-3 animate-pulse rounded-full bg-brand-coral/30"></div>
                   <div
-                    className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand-gold/20 rounded-full animate-pulse"
+                    className="absolute -bottom-1 -left-1 h-2 w-2 animate-pulse rounded-full bg-brand-gold/20"
                     style={{ animationDelay: "0.5s" }}
                   ></div>
                 </div>
@@ -114,7 +114,7 @@ const Navigation = () => {
             </div>
 
             {/* Desktop Navigation - Centered */}
-            <div className="hidden lg:flex items-center justify-center">
+            <div className="hidden items-center justify-center lg:flex">
               {navItems.map((item) => (
                 <a
                   key={item.name}
@@ -123,7 +123,7 @@ const Navigation = () => {
                     e.preventDefault();
                     handleNavClick(item);
                   }}
-                  className="px-5 py-2 text-muted-foreground hover:text-foreground transition-colors text-lg font-medium"
+                  className="px-5 py-2 text-lg font-medium text-muted-foreground transition-colors hover:text-foreground"
                 >
                   {item.name}
                 </a>
@@ -131,23 +131,23 @@ const Navigation = () => {
             </div>
 
             {/* Desktop CTA Button and Theme Toggle */}
-            <div className="hidden lg:flex items-center gap-4">
-              <ThemeToggle />
+            <div className="hidden items-center gap-4 lg:flex">
+              {/* <ThemeToggle /> */}
               <Button
-                onClick={() => navigate("/get-quote")}
-                className="bg-brand-teal hover:bg-brand-teal/90 text-brand-teal-foreground px-6 py-2 rounded-full font-medium text-sm"
+                onClick={() => navigate("/pricing")}
+                className="text-brand-teal-foreground rounded-full bg-brand-teal px-6 py-2 text-sm font-medium hover:bg-brand-teal/90"
               >
                 Get Quote
               </Button>
             </div>
 
             {/* Mobile menu button */}
-            <div className="lg:hidden mobile-toggle ml-4">
+            <div className="mobile-toggle ml-4 lg:hidden">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-foreground hover:text-brand-coral transition-colors p-1"
+                className="p-1 text-foreground transition-colors hover:text-brand-coral"
               >
                 {isOpen ? (
                   <X className="h-6 w-6" />
@@ -162,7 +162,7 @@ const Navigation = () => {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`lg:hidden fixed inset-0 z-40 transform transition-all duration-300 ${
+        className={`fixed inset-0 z-40 transform transition-all duration-300 lg:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -170,11 +170,11 @@ const Navigation = () => {
           className="absolute inset-0 bg-background/80 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         />
-        <nav className="relative h-full w-full max-w-xs ml-auto bg-background border-l border-border/30 shadow-xl">
-          <div className="flex flex-col h-full">
-            <div className="flex items-center justify-between p-4 border-b border-border/30">
+        <nav className="relative ml-auto h-full w-full max-w-xs border-l border-border/30 bg-background shadow-xl">
+          <div className="flex h-full flex-col">
+            <div className="flex items-center justify-between border-b border-border/30 p-4">
               <div
-                className="relative group cursor-pointer"
+                className="group relative cursor-pointer"
                 onClick={() => {
                   setIsOpen(false);
                   navigate("/");
@@ -194,7 +194,7 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsOpen(false)}
-                className="text-foreground hover:text-brand-coral transition-colors p-1"
+                className="p-1 text-foreground transition-colors hover:text-brand-coral"
               >
                 <X className="h-6 w-6" />
               </Button>
@@ -209,21 +209,21 @@ const Navigation = () => {
                       e.preventDefault();
                       handleNavClick(item);
                     }}
-                    className="px-4 py-3 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium rounded-lg hover:bg-muted"
+                    className="rounded-lg px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                   >
                     {item.name}
                   </a>
                 ))}
-                <div className="pt-4 mt-4 border-t border-border/30">
-                  <div className="flex justify-center mb-4">
+                <div className="mt-4 border-t border-border/30 pt-4">
+                  <div className="mb-4 flex justify-center">
                     <ThemeToggle />
                   </div>
                   <Button
                     onClick={() => {
                       setIsOpen(false);
-                      navigate("/get-quote");
+                      navigate("/pricing");
                     }}
-                    className="w-full bg-brand-teal hover:bg-brand-teal/90 text-brand-teal-foreground px-6 py-2 rounded-full font-medium text-sm"
+                    className="text-brand-teal-foreground w-full rounded-full bg-brand-teal px-6 py-2 text-sm font-medium hover:bg-brand-teal/90"
                   >
                     Get Quote
                   </Button>

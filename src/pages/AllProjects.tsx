@@ -1,28 +1,27 @@
+import Footer from "@/components/Footer";
+import Navigation from "@/components/Navigation";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { projects } from "@/data/projects";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import {
   ArrowLeft,
   ArrowUpRight,
+  Award,
+  Calendar,
   ExternalLink,
   Eye,
-  Calendar,
-  Users,
-  Search,
-  Filter,
   Grid3X3,
   List,
-  TrendingUp,
-  Target,
-  Award,
+  Search,
   Star,
+  Target,
+  TrendingUp,
+  Users,
 } from "lucide-react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState, useMemo } from "react";
 
 const AllProjects = () => {
   const navigate = useNavigate();
@@ -47,7 +46,7 @@ const AllProjects = () => {
         project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.tech.some((tech) =>
-          tech.toLowerCase().includes(searchTerm.toLowerCase())
+          tech.toLowerCase().includes(searchTerm.toLowerCase()),
         );
 
       const matchesCategory =
@@ -63,52 +62,54 @@ const AllProjects = () => {
 
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-10 md:py-16 px-2 md:px-6 bg-gradient-dark relative overflow-hidden">
+        <section className="bg-gradient-dark relative overflow-hidden px-2 py-10 md:px-6 md:py-16">
           <div className="absolute inset-0">
-            <div className="absolute top-20 right-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-20 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+            <div className="absolute right-20 top-20 h-40 w-40 rounded-full bg-primary/5 blur-3xl"></div>
+            <div className="absolute bottom-20 left-20 h-32 w-32 rounded-full bg-primary/5 blur-3xl"></div>
           </div>
 
-          <div className="container mx-auto relative z-10">
+          <div className="container relative z-10 mx-auto">
             <div className="mb-8">
               <Button
                 variant="ghost"
                 onClick={() => navigate("/")}
-                className="text-muted-foreground hover:text-primary mb-6 group transition-all-spring hover-lift"
+                className="transition-all-spring hover-lift group mb-6 text-muted-foreground hover:text-primary"
               >
-                <ArrowLeft className="mr-3 w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
+                <ArrowLeft className="mr-3 h-5 w-5 transition-transform duration-300 group-hover:-translate-x-1" />
                 Back to Home
               </Button>
             </div>
 
-            <div className="text-center max-w-4xl mx-auto">
+            <div className="mx-auto max-w-4xl text-center">
               <Badge
                 variant="secondary"
-                className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2 text-sm font-semibold"
+                className="mb-6 border-primary/20 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary"
               >
                 Portfolio
               </Badge>
 
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <h1 className="mb-6 text-4xl font-bold md:text-6xl">
                 Our{" "}
                 <span className="relative inline-block">
-                  <span className="relative z-10 text-white font-bold px-4 py-2">Projects</span>
-                  <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
+                  <span className="relative z-10 px-4 py-2 font-bold text-white">
+                    Projects
+                  </span>
+                  <div className="absolute inset-0 -skew-x-12 transform rounded-lg bg-brand-teal"></div>
                 </span>
               </h1>
 
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="mb-8 text-xl leading-relaxed text-muted-foreground">
                 Explore our comprehensive portfolio of successful projects
                 across various industries and technologies.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <div className="flex items-center text-muted-foreground">
-                  <TrendingUp className="w-5 h-5 mr-2" />
+                  <TrendingUp className="mr-2 h-5 w-5" />
                   <span>{projects.length}+ projects completed</span>
                 </div>
                 <div className="flex items-center text-muted-foreground">
-                  <Award className="w-5 h-5 mr-2" />
+                  <Award className="mr-2 h-5 w-5" />
                   <span>Multiple industries served</span>
                 </div>
               </div>
@@ -117,17 +118,17 @@ const AllProjects = () => {
         </section>
 
         {/* Search and Filter Section */}
-        <section className="py-16 px-6 bg-background border-b border-border/30">
+        <section className="border-b border-border/30 bg-background px-6 py-16">
           <div className="container mx-auto">
-            <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+            <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
               {/* Search Bar */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+              <div className="relative max-w-md flex-1">
+                <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 transform text-muted-foreground" />
                 <Input
                   placeholder="Search projects..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 h-12 border-border/50 hover:border-primary/40 focus:border-primary transition-all-spring"
+                  className="transition-all-spring h-12 border-border/50 pl-10 hover:border-primary/40 focus:border-primary"
                 />
               </div>
 
@@ -139,10 +140,10 @@ const AllProjects = () => {
                     variant={
                       selectedCategory === category ? "default" : "outline"
                     }
-                    className={`cursor-pointer transition-all-spring hover-scale px-4 py-2 text-sm font-medium ${
+                    className={`transition-all-spring hover-scale cursor-pointer px-4 py-2 text-sm font-medium ${
                       selectedCategory === category
                         ? "bg-primary text-black"
-                        : "border-primary/30 text-primary bg-primary/10 hover:bg-primary/20 hover:border-primary/50"
+                        : "border-primary/30 bg-primary/10 text-primary hover:border-primary/50 hover:bg-primary/20"
                     }`}
                     onClick={() => setSelectedCategory(category)}
                   >
@@ -159,7 +160,7 @@ const AllProjects = () => {
                   onClick={() => setViewMode("grid")}
                   className="p-2"
                 >
-                  <Grid3X3 className="w-4 h-4" />
+                  <Grid3X3 className="h-4 w-4" />
                 </Button>
                 <Button
                   variant={viewMode === "list" ? "default" : "outline"}
@@ -167,7 +168,7 @@ const AllProjects = () => {
                   onClick={() => setViewMode("list")}
                   className="p-2"
                 >
-                  <List className="w-4 h-4" />
+                  <List className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -183,15 +184,15 @@ const AllProjects = () => {
         </section>
 
         {/* Projects Grid/List */}
-        <section className="py-24 px-6 bg-background">
+        <section className="bg-background px-6 py-24">
           <div className="container mx-auto">
             {filteredProjects.length === 0 ? (
-              <div className="text-center py-20">
-                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                  <Search className="w-10 h-10 text-primary" />
+              <div className="py-20 text-center">
+                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10">
+                  <Search className="h-10 w-10 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">No projects found</h3>
-                <p className="text-muted-foreground mb-6">
+                <h3 className="mb-4 text-2xl font-bold">No projects found</h3>
+                <p className="mb-6 text-muted-foreground">
                   Try adjusting your search terms or category filters.
                 </p>
                 <Button
@@ -209,14 +210,14 @@ const AllProjects = () => {
               <div
                 className={
                   viewMode === "grid"
-                    ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    ? "grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
                     : "space-y-6"
                 }
               >
                 {filteredProjects.map((project, index) => (
                   <Card
                     key={project.id}
-                    className={`group bg-card/30 border-border/30 hover:border-primary/40 transition-all-spring hover-lift backdrop-blur-sm relative overflow-hidden ${
+                    className={`transition-all-spring hover-lift group relative overflow-hidden border-border/30 bg-card/30 backdrop-blur-sm hover:border-primary/40 ${
                       viewMode === "list" ? "flex" : ""
                     }`}
                     style={{ animationDelay: `${index * 0.1}s` }}
@@ -224,35 +225,35 @@ const AllProjects = () => {
                     {/* Image Container */}
                     <div
                       className={`relative overflow-hidden ${
-                        viewMode === "list" ? "w-80 h-48 flex-shrink-0" : "h-64"
+                        viewMode === "list" ? "h-48 w-80 flex-shrink-0" : "h-64"
                       }`}
                     >
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover transition-all-spring group-hover:scale-110"
+                        className="transition-all-spring h-full w-full object-cover group-hover:scale-110"
                       />
 
                       {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all-spring"></div>
+                      <div className="transition-all-spring absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100"></div>
 
                       {/* Category Badge */}
-                      <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all-spring transform -translate-y-2 group-hover:translate-y-0">
+                      <div className="transition-all-spring absolute left-4 top-4 -translate-y-2 transform opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
                         <Badge
                           variant="secondary"
-                          className="bg-primary/20 text-primary border-primary/30 text-xs font-medium"
+                          className="border-primary/30 bg-primary/20 text-xs font-medium text-primary"
                         >
                           {project.category}
                         </Badge>
                       </div>
 
                       {/* Action Button */}
-                      <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all-spring transform translate-y-2 group-hover:translate-y-0">
+                      <div className="transition-all-spring absolute bottom-4 right-4 translate-y-2 transform opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
                         <Button
                           size="sm"
-                          className="bg-primary/90 hover:bg-primary text-black font-semibold w-10 h-10 p-0 rounded-full hover:scale-110 transition-all-spring"
+                          className="transition-all-spring h-10 w-10 rounded-full bg-primary/90 p-0 font-semibold text-black hover:scale-110 hover:bg-primary"
                         >
-                          <Eye className="w-4 h-4" />
+                          <Eye className="h-4 w-4" />
                         </Button>
                       </div>
                     </div>
@@ -262,26 +263,26 @@ const AllProjects = () => {
                       className={`p-6 ${viewMode === "list" ? "flex-1" : ""}`}
                     >
                       {/* Project Header */}
-                      <div className="flex items-start justify-between mb-4">
-                        <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300 leading-tight flex-1 mr-4">
+                      <div className="mb-4 flex items-start justify-between">
+                        <h3 className="mr-4 flex-1 text-xl font-bold leading-tight transition-colors duration-300 group-hover:text-primary">
                           {project.title}
                         </h3>
-                        <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300 flex-shrink-0" />
+                        <ExternalLink className="h-5 w-5 flex-shrink-0 text-muted-foreground transition-colors duration-300 group-hover:text-primary" />
                       </div>
 
                       {/* Project Description */}
-                      <p className="text-muted-foreground mb-6 leading-relaxed group-hover:text-foreground/90 transition-colors duration-300">
+                      <p className="mb-6 leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-foreground/90">
                         {project.description}
                       </p>
 
                       {/* Project Meta */}
-                      <div className="flex items-center gap-4 mb-6 text-sm text-muted-foreground">
+                      <div className="mb-6 flex items-center gap-4 text-sm text-muted-foreground">
                         <div className="flex items-center">
-                          <Calendar className="w-4 h-4 mr-2" />
+                          <Calendar className="mr-2 h-4 w-4" />
                           <span>{project.duration}</span>
                         </div>
                         <div className="flex items-center">
-                          <Users className="w-4 h-4 mr-2" />
+                          <Users className="mr-2 h-4 w-4" />
                           <span>{project.teamSize} people</span>
                         </div>
                       </div>
@@ -289,7 +290,7 @@ const AllProjects = () => {
                       {/* Results Preview */}
                       {project.results && project.results.length > 0 && (
                         <div className="mb-6">
-                          <h4 className="text-sm font-semibold text-foreground mb-3">
+                          <h4 className="mb-3 text-sm font-semibold text-foreground">
                             Key Results:
                           </h4>
                           <div className="grid grid-cols-2 gap-3">
@@ -298,7 +299,7 @@ const AllProjects = () => {
                               .map((result, resultIndex) => (
                                 <div
                                   key={resultIndex}
-                                  className="text-center p-3 bg-primary/5 rounded-lg"
+                                  className="rounded-lg bg-primary/5 p-3 text-center"
                                 >
                                   <div className="text-lg font-bold text-primary">
                                     {result.value}
@@ -313,12 +314,12 @@ const AllProjects = () => {
                       )}
 
                       {/* Tech Stack */}
-                      <div className="flex flex-wrap gap-2 mb-6">
+                      <div className="mb-6 flex flex-wrap gap-2">
                         {project.tech.slice(0, 4).map((tech, techIndex) => (
                           <Badge
                             key={techIndex}
                             variant="outline"
-                            className="border-primary/30 text-primary bg-primary/10 text-xs font-medium hover:bg-primary/20 hover:border-primary/50 transition-all-spring hover-scale"
+                            className="transition-all-spring hover-scale border-primary/30 bg-primary/10 text-xs font-medium text-primary hover:border-primary/50 hover:bg-primary/20"
                           >
                             {tech}
                           </Badge>
@@ -326,7 +327,7 @@ const AllProjects = () => {
                         {project.tech.length > 4 && (
                           <Badge
                             variant="outline"
-                            className="border-border/50 text-muted-foreground text-xs"
+                            className="border-border/50 text-xs text-muted-foreground"
                           >
                             +{project.tech.length - 4} more
                           </Badge>
@@ -336,12 +337,12 @@ const AllProjects = () => {
                       {/* CTA Button */}
                       <Button
                         onClick={() => navigate(`/project/${project.id}`)}
-                        className="w-full bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift font-semibold group relative overflow-hidden"
+                        className="bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift group relative w-full overflow-hidden font-semibold"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         <span className="relative z-10 flex items-center justify-center">
                           View Project Details
-                          <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                          <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
                         </span>
                       </Button>
                     </div>
@@ -353,65 +354,67 @@ const AllProjects = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-24 px-6 bg-gradient-to-b from-background to-card/20">
+        <section className="bg-gradient-to-b from-background to-card/20 px-6 py-24">
           <div className="container mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
+            <div className="mb-16 text-center">
+              <h2 className="mb-6 text-4xl font-bold">
                 Our{" "}
                 <span className="relative inline-block">
-                  <span className="relative z-10 text-white font-bold px-4 py-2">Portfolio</span>
-                  <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
+                  <span className="relative z-10 px-4 py-2 font-bold text-white">
+                    Portfolio
+                  </span>
+                  <div className="absolute inset-0 -skew-x-12 transform rounded-lg bg-brand-teal"></div>
                 </span>{" "}
                 Impact
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
                 Numbers that speak for themselves - the results we've delivered
                 for our clients.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
               <div className="text-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
-                  <TrendingUp className="w-10 h-10 text-primary" />
+                <div className="bg-gradient-accent mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl">
+                  <TrendingUp className="h-10 w-10 text-primary" />
                 </div>
-                <div className="text-4xl font-bold text-primary mb-2">
+                <div className="mb-2 text-4xl font-bold text-primary">
                   {projects.length}+
                 </div>
-                <div className="font-semibold mb-2">Projects Delivered</div>
+                <div className="mb-2 font-semibold">Projects Delivered</div>
                 <div className="text-sm text-muted-foreground">
                   Successful launches across industries
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
-                  <Target className="w-10 h-10 text-primary" />
+                <div className="bg-gradient-accent mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl">
+                  <Target className="h-10 w-10 text-primary" />
                 </div>
-                <div className="text-4xl font-bold text-primary mb-2">98%</div>
-                <div className="font-semibold mb-2">Client Satisfaction</div>
+                <div className="mb-2 text-4xl font-bold text-primary">98%</div>
+                <div className="mb-2 font-semibold">Client Satisfaction</div>
                 <div className="text-sm text-muted-foreground">
                   Exceeding expectations consistently
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
-                  <Award className="w-10 h-10 text-primary" />
+                <div className="bg-gradient-accent mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl">
+                  <Award className="h-10 w-10 text-primary" />
                 </div>
-                <div className="text-4xl font-bold text-primary mb-2">25+</div>
-                <div className="font-semibold mb-2">Awards Won</div>
+                <div className="mb-2 text-4xl font-bold text-primary">25+</div>
+                <div className="mb-2 font-semibold">Awards Won</div>
                 <div className="text-sm text-muted-foreground">
                   Industry recognition & excellence
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-6">
-                  <Star className="w-10 h-10 text-primary" />
+                <div className="bg-gradient-accent mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl">
+                  <Star className="h-10 w-10 text-primary" />
                 </div>
-                <div className="text-4xl font-bold text-primary mb-2">300%</div>
-                <div className="font-semibold mb-2">Average ROI</div>
+                <div className="mb-2 text-4xl font-bold text-primary">300%</div>
+                <div className="mb-2 font-semibold">Average ROI</div>
                 <div className="text-sm text-muted-foreground">
                   Client growth & success
                 </div>
@@ -421,26 +424,28 @@ const AllProjects = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 px-6 bg-gradient-dark">
+        <section className="bg-gradient-dark px-6 py-24">
           <div className="container mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="mb-6 text-4xl font-bold">
               Ready to Join Our{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-white font-bold px-4 py-2">Success Stories?</span>
-                <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
+                <span className="relative z-10 px-4 py-2 font-bold text-white">
+                  Success Stories?
+                </span>
+                <div className="absolute inset-0 -skew-x-12 transform rounded-lg bg-brand-teal"></div>
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="mx-auto mb-8 max-w-2xl text-xl text-muted-foreground">
               Let's discuss how we can help you achieve similar results for your
               business.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button
                 size="lg"
-                onClick={() => navigate("/get-quote")}
-                className="bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift px-10 py-5 text-xl font-semibold group relative overflow-hidden"
+                onClick={() => navigate("/pricing")}
+                className="bg-gradient-primary hover:shadow-cyan transition-all-spring hover-lift group relative overflow-hidden px-10 py-5 text-xl font-semibold"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                 <span className="relative z-10">Start Your Project</span>
               </Button>
               <Button
@@ -455,7 +460,7 @@ const AllProjects = () => {
                     }
                   }, 100);
                 }}
-                className="border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 transition-all-spring hover-lift px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-semibold w-full sm:w-auto"
+                className="transition-all-spring hover-lift w-full border-primary/40 px-8 py-4 text-lg font-semibold text-foreground hover:border-primary/60 hover:bg-primary/10 sm:w-auto sm:px-10 sm:py-5 sm:text-xl lg:px-12 lg:py-6 lg:text-2xl"
               >
                 Contact Us
               </Button>

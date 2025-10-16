@@ -322,7 +322,7 @@ const Hero = () => {
               <div className="flex flex-col gap-4 pt-6 sm:flex-row lg:pt-8">
                 <Button
                   size="lg"
-                  onClick={() => navigate("/get-quote")}
+                  onClick={() => navigate("/pricing")}
                   className="rounded-full bg-brand-teal px-8 py-6 text-base font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-brand-teal/90 hover:shadow-xl hover:shadow-brand-teal/20 dark:bg-brand-teal dark:hover:bg-brand-teal/90 lg:text-lg"
                 >
                   Start Your Project

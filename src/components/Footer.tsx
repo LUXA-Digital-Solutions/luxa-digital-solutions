@@ -1,14 +1,10 @@
 import { Button } from "@/components/ui/button";
 import {
   ArrowUp,
-  Clock,
   Facebook,
   Instagram,
   Linkedin,
-  Mail,
-  MapPin,
   MessageCircle,
-  Phone,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -74,208 +70,155 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-brand-light dark:bg-brand-dark">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute left-20 top-20 h-32 w-32 rounded-full bg-brand-teal/5 blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 h-40 w-40 rounded-full bg-brand-teal/5 blur-3xl"></div>
-        <div className="bg-brand-teal/3 absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl"></div>
+    <footer className="relative overflow-hidden bg-brand-dark text-white">
+      {/* Background decorative elements (subtle) */}
+      <div className="pointer-events-none absolute inset-0 opacity-20">
+        <div className="absolute left-8 top-12 h-24 w-24 rounded-full bg-brand-gold/5 blur-3xl"></div>
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="py-16 sm:py-20 lg:py-24">
-          <div className="grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-16">
-            {/* Company Info */}
-            <div className="lg:col-span-1">
-              <div className="mb-6 flex items-center sm:mb-8">
-                <div className="group relative cursor-pointer">
-                  <div className="relative overflow-hidden rounded-full border border-brand-teal/25 bg-black p-3 backdrop-blur-sm transition-all duration-700 hover:border-brand-teal/50 hover:shadow-xl hover:shadow-brand-teal/25 sm:p-4 lg:p-5">
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-teal/10 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
-                    <img
-                      src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png"
-                      alt="LUXA"
-                      className="relative z-10 h-10 w-auto drop-shadow-lg filter transition-all duration-700 group-hover:scale-105 group-hover:drop-shadow-xl sm:h-12 lg:h-16"
-                    />
-                    <div className="absolute -right-1 -top-1 h-4 w-4 animate-pulse rounded-full bg-brand-teal/40"></div>
-                    <div
-                      className="absolute -bottom-1 -left-1 h-3 w-3 animate-pulse rounded-full bg-brand-teal/30"
-                      style={{ animationDelay: "0.7s" }}
-                    ></div>
-                    <div
-                      className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 transform animate-ping rounded-full bg-brand-teal/5"
-                      style={{ animationDelay: "1s" }}
-                    ></div>
-                  </div>
-                </div>
+      <div className="container relative z-10 mx-auto px-6 py-20">
+        {/* Main three-column layout: Left (brand), Center (dotted art), Right (links) */}
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
+          {/* Left: Big Brand / Description */}
+          <div className="flex flex-col justify-between md:col-span-1">
+            <div>
+              <div className="flex items-center gap-4">
+                <img
+                  src="/luxa.png"
+                  alt="LUXA Digital Solutions"
+                  className="h-12 w-auto"
+                />
+                <span className="ml-2 text-2xl font-extrabold">
+                  LUXA Digital Solutions
+                </span>
               </div>
-              <p className="mb-6 text-sm leading-relaxed text-muted-foreground sm:mb-8 sm:text-base lg:text-lg">
-                Transforming businesses through innovative digital solutions. We
-                create exceptional experiences that drive growth and success.
+
+              <p className="mt-10 max-w-md text-lg leading-relaxed text-muted-foreground">
+                LUXA Digital Solutions helps ambitious brands refine their
+                vision, grow their digital presence, and drive measurable
+                results.
               </p>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition-all-spring hover-lift group flex h-10 w-10 items-center justify-center rounded-xl border border-brand-teal/20 bg-brand-teal/10 hover:border-brand-teal/40 hover:bg-brand-teal/20 sm:h-12 sm:w-12"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <social.icon className="h-4 w-4 text-brand-teal transition-transform duration-300 group-hover:scale-110 sm:h-5 sm:w-5" />
-                  </a>
-                ))}
-              </div>
             </div>
 
-            {/* Quick Links */}
-            <div>
-              <h3 className="mb-6 text-lg font-bold text-foreground sm:mb-8 sm:text-xl lg:text-2xl">
-                Quick Links
-              </h3>
-              <ul className="space-y-3 sm:space-y-4">
-                {quickLinks.map((link, index) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      onClick={() => handleQuickLinkClick(link)}
-                      className="group flex items-center text-sm text-muted-foreground transition-colors duration-300 hover:text-brand-teal sm:text-base lg:text-lg"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <span className="relative">
-                        {link.name}
-                        <span className="transition-all-spring absolute bottom-0 left-0 h-0.5 w-0 bg-brand-teal group-hover:w-full"></span>
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <div className="mt-12 text-sm text-muted-foreground">
+              Powered by LUXA
             </div>
+          </div>
 
-            {/* Services */}
-            <div>
-              <h3 className="mb-6 text-lg font-bold text-foreground sm:mb-8 sm:text-xl lg:text-2xl">
-                Services
-              </h3>
-              <ul className="space-y-3 sm:space-y-4">
-                {services.map((service, index) => (
-                  <li key={service}>
-                    <span className="group flex cursor-pointer items-center text-sm text-muted-foreground transition-colors duration-300 hover:text-brand-teal sm:text-base lg:text-lg">
-                      <span className="relative">
-                        {service}
-                        <span className="transition-all-spring absolute bottom-0 left-0 h-0.5 w-0 bg-brand-teal group-hover:w-full"></span>
-                      </span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h3 className="mb-6 text-lg font-bold text-foreground sm:mb-8 sm:text-xl lg:text-2xl">
-                Contact Info
-              </h3>
-              <div className="space-y-4 sm:space-y-6">
-                <div
-                  onClick={() =>
-                    window.open("mailto:info@luxasolution.com", "_self")
-                  }
-                  className="group flex cursor-pointer items-start"
-                >
-                  <Mail className="mr-3 mt-1 h-4 w-4 flex-shrink-0 text-brand-teal transition-transform duration-300 group-hover:scale-110 sm:mr-4 sm:h-5 sm:w-5" />
-                  <div>
-                    <p className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground sm:text-base">
-                      info@luxasolution.com
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  onClick={() => window.open("tel:+2347047494586", "_self")}
-                  className="group flex cursor-pointer items-start"
-                >
-                  <Phone className="mr-3 mt-1 h-4 w-4 flex-shrink-0 text-brand-teal transition-transform duration-300 group-hover:scale-110 sm:mr-4 sm:h-5 sm:w-5" />
-                  <div>
-                    <p className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground sm:text-base">
-                      +2347047494586
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  onClick={() =>
-                    window.open(
-                      "https://maps.google.com/?q=123+Digital+Street+Tech+City+TC+12345",
-                      "_blank",
-                    )
-                  }
-                  className="group flex cursor-pointer items-start"
-                >
-                  <MapPin className="mr-3 mt-1 h-4 w-4 flex-shrink-0 text-brand-teal transition-transform duration-300 group-hover:scale-110 sm:mr-4 sm:h-5 sm:w-5" />
-                  <div>
-                    <p className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground sm:text-base">
-                      123 Digital Street
-                      <br />
-                      Tech City, TC 12345
-                    </p>
-                  </div>
-                </div>
-
-                <div className="group flex items-start">
-                  <Clock className="mr-3 mt-1 h-4 w-4 flex-shrink-0 text-brand-teal transition-transform duration-300 group-hover:scale-110 sm:mr-4 sm:h-5 sm:w-5" />
-                  <div>
-                    <p className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground sm:text-base">
-                      Mon-Fri: 9AM-6PM
-                      <br />
-                      Sat: 10AM-4PM
-                    </p>
-                  </div>
-                </div>
+          {/* Center: Dotted artwork with central white dot */}
+          <div className="relative flex items-center justify-center md:col-span-1">
+            <div
+              className="h-72 w-full max-w-[420px] rounded-xl"
+              style={{
+                backgroundImage:
+                  "radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)",
+                backgroundSize: "18px 18px",
+              }}
+            >
+              <div className="relative h-full w-full">
+                <div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-lg"></div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-border/30 py-6 sm:py-8">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row sm:gap-6">
-            <div className="flex items-center text-sm text-muted-foreground sm:text-base">
-              <span>© 2024 LUXA Digital Solutions. All rights reserved.</span>
+          {/* Right: Links, Expertise, Socials, Newsletter, Contact, Legal */}
+          <div className="md:col-span-1">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+              <div>
+                <h4 className="mb-4 text-sm font-semibold text-white">Links</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  {quickLinks.map((link) => (
+                    <li key={link.name}>
+                      <a
+                        href={link.href}
+                        onClick={() => handleQuickLinkClick(link)}
+                        className="hover:text-white"
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="mb-4 text-sm font-semibold text-white">
+                  Expertise
+                </h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  {services.slice(0, 4).map((s) => (
+                    <li key={s} className="hover:text-white">
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="mb-4 text-sm font-semibold text-white">
+                  Socials
+                </h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  {socialLinks.map((s) => (
+                    <li key={s.name}>
+                      <a
+                        href={s.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="hover:text-white"
+                      >
+                        {s.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <div className="flex items-center space-x-6 text-sm sm:space-x-8 sm:text-base">
-              <a
-                href="#"
-                className="text-muted-foreground transition-colors duration-300 hover:text-brand-teal"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-muted-foreground transition-colors duration-300 hover:text-brand-teal"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="#"
-                className="text-muted-foreground transition-colors duration-300 hover:text-brand-teal"
-              >
-                Cookie Policy
-              </a>
+            <div className="mt-8">
+              <h4 className="mb-3 text-sm font-semibold text-white">
+                Newsletter
+              </h4>
+              <div className="relative max-w-md">
+                <input
+                  placeholder="Enter your email"
+                  className="w-full border-0 border-b border-border/20 bg-transparent py-2 pr-4 text-sm text-muted-foreground placeholder:text-muted-foreground focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <div className="mt-8 border-t border-border/20 pt-6 text-sm text-muted-foreground">
+              <div className="mb-4">
+                <h5 className="mb-2 text-sm font-semibold text-white">
+                  Contact
+                </h5>
+                <div>
+                  146 Franklin Street,
+                  <br />
+                  Brooklyn, NY 11222
+                  <br />
+                  United States
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6">
+                <a className="hover:text-white">Privacy Policy</a>
+                <a className="hover:text-white">Terms of Service</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll to Top Button */}
-      <Button
-        onClick={scrollToTop}
-        className="shadow-elegant hover:shadow-cyan transition-all-spring hover-lift group fixed bottom-6 right-6 z-40 h-12 w-12 rounded-full bg-brand-teal/90 text-black hover:bg-brand-teal sm:bottom-8 sm:right-8 sm:h-14 sm:w-14"
-      >
-        <ArrowUp className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-1 sm:h-6 sm:w-6" />
-      </Button>
+      {/* Scroll to Top Button - keep existing style */}
+      <div className="fixed bottom-6 right-6 z-40">
+        <Button
+          onClick={scrollToTop}
+          className="shadow-elegant hover:shadow-cyan transition-all-spring hover-lift group fixed bottom-6 right-6 z-40 h-12 w-12 rounded-full bg-brand-teal/90 text-black hover:bg-brand-teal sm:bottom-8 sm:right-8 sm:h-14 sm:w-14"
+        >
+          <ArrowUp className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-1 sm:h-6 sm:w-6" />
+        </Button>
+      </div>
     </footer>
   );
 };
