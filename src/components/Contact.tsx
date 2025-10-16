@@ -1,3 +1,5 @@
+import FAQSection from "@/components/FAQSection";
+import FinalCTA from "@/components/FinalCTA";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -8,8 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { Clock, Mail, MapPin, Minus, Phone, Plus } from "lucide-react";
-import { useState } from "react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
@@ -51,8 +52,6 @@ const Contact = () => {
     },
   ];
 
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   const faqItems = [
     {
       q: "How do I get started with a project?",
@@ -71,8 +70,6 @@ const Contact = () => {
       a: "We price based on scope, complexity, and ongoing needs. Use the budget dropdown to indicate a range and we will follow up with a detailed estimate after discovery.",
     },
   ];
-
-  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
     <section id="contact" className="relative overflow-hidden bg-background">
@@ -388,56 +385,9 @@ const Contact = () => {
       </div>
 
       {/* FAQ SECTION */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
-            <div className="lg:col-span-7">
-              <div className="mb-4 text-sm font-semibold uppercase tracking-widest text-violet-300">
-                FAQ
-              </div>
-              <h2 className="text-5xl font-extrabold leading-tight text-[#071a29]">
-                Your Questions, Answered
-              </h2>
-              <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-                Helping you understand our process and offerings. If you don't
-                see your question, send it via the form above.
-              </p>
-            </div>
+      <FAQSection items={faqItems} />
 
-            <div className="lg:col-span-5">
-              <div className="space-y-6">
-                {faqItems.map((item, i) => (
-                  <div key={i} className="flex items-start gap-6">
-                    <button
-                      onClick={() => toggle(i)}
-                      className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#071a29] text-white"
-                      aria-expanded={openIndex === i}
-                      aria-controls={`faq-${i}`}
-                    >
-                      {openIndex === i ? (
-                        <Minus className="h-5 w-5" />
-                      ) : (
-                        <Plus className="h-5 w-5" />
-                      )}
-                    </button>
-
-                    <div>
-                      <h4 className="mb-2 text-xl font-extrabold tracking-wider text-[#071a29]">
-                        {item.q}
-                      </h4>
-                      <div id={`faq-${i}`}>
-                        {openIndex === i && (
-                          <p className="text-muted-foreground">{item.a}</p>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FinalCTA />
     </section>
   );
 };

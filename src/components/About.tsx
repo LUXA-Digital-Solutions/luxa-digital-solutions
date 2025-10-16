@@ -1,225 +1,360 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-  CheckCircle,
-  Star,
-  Users,
-  Award,
-  TrendingUp,
-  Target,
-  Lightbulb,
-  Zap,
-} from "lucide-react";
+import FAQSection from "@/components/FAQSection";
+import FinalCTA from "@/components/FinalCTA";
+import { CheckCircle, Lightbulb, Star, Users } from "lucide-react";
 
 const About = () => {
-  const achievements = [
-    "500+ successful projects delivered",
-    "98% client satisfaction rate",
-    "24/7 dedicated support team",
-    "ISO 27001 certified security",
-    "Award-winning design team",
-    "Global client base across 25+ countries",
-  ];
-
-  const technologies = [
-    "React & Next.js",
-    "TypeScript",
-    "Node.js",
-    "Python",
-    "AWS",
-    "Docker",
-    "Figma",
-    "Adobe Creative Suite",
-    "PostgreSQL",
-    "MongoDB",
-    "GraphQL",
-    "REST APIs",
-  ];
-
-  const stats = [
+  const faqItems = [
     {
-      icon: Users,
-      value: "150+",
-      label: "Happy Clients",
-      description: "Satisfied customers worldwide",
+      q: "How do I get started with a project?",
+      a: "Start by sending us a brief via the contact form or schedule a free consultation. We'll review your needs and provide a tailored roadmap and estimate.",
     },
     {
-      icon: Award,
-      value: "25+",
-      label: "Awards Won",
-      description: "Industry recognition & excellence",
+      q: "What are your typical project timelines?",
+      a: "Timelines vary by scope: landing pages 2–6 weeks; medium apps 6–12 weeks; larger enterprise projects vary. We'll provide an accurate timeline with your proposal.",
     },
     {
-      icon: TrendingUp,
-      value: "300%",
-      label: "Growth Rate",
-      description: "Average client ROI increase",
+      q: "Do you offer ongoing support after launch?",
+      a: "Yes — we offer maintenance, monitoring, optimization, and content support packages to keep your product performing and improving over time.",
     },
     {
-      icon: Target,
-      value: "99.9%",
-      label: "Uptime",
-      description: "Reliable service delivery",
+      q: "How do you price projects?",
+      a: "We price based on scope, complexity, and ongoing needs. Use the budget dropdown in the contact form to indicate a range and we'll follow up with a detailed estimate.",
     },
   ];
 
   return (
-    <section
-      id="about"
-      className="py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-background to-card/20 relative overflow-hidden"
-    >
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-brand-teal/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-brand-teal/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-teal/3 rounded-full blur-3xl"></div>
-      </div>
+    <>
+      {/* Dark hero header to match other pages (Contact/Hero) */}
+      <header className="relative overflow-hidden bg-[#071a29] text-white">
+        <div className="container mx-auto px-6 py-36 text-center">
+          <div className="mb-4 text-sm font-semibold tracking-widest text-violet-300">
+            ABOUT
+          </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Enhanced Section Header */}
-        <div className="text-center mb-16 sm:mb-20 lg:mb-24 animate-slide-up">
-          <Badge
-            variant="secondary"
-            className="bg-brand-teal/10 text-brand-teal border-brand-teal/20 mb-4 sm:mb-6 px-4 py-2 text-sm font-semibold"
-          >
-            About Us
-          </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-            <span className="text-foreground">We're More Than Just</span>{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10 text-white font-bold px-4 py-2">Developers</span>
-              <div className="absolute inset-0 bg-brand-teal rounded-lg transform -skew-x-12"></div>
-            </span>
-          </h2>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4 sm:px-6">
-            We're a team of passionate innovators, designers, and
-            problem-solvers dedicated to transforming businesses through
-            technology.
+          <h1 className="mx-auto max-w-4xl text-7xl font-extrabold uppercase leading-[0.9] md:text-[96px] lg:text-[112px]">
+            WE&apos;RE <span className="text-brand-teal">LUXA</span>
+          </h1>
+
+          <p className="mx-auto mt-8 max-w-2xl text-xl text-white/90">
+            Passionate creators crafting meaningful digital experiences that
+            drive growth and delight users.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16 sm:mb-20 lg:mb-24">
-          {/* Enhanced Left Column */}
-          <div className="animate-slide-up">
-            <div className="space-y-6 sm:space-y-8">
-              <div className="group">
-                <p className="text-muted-foreground leading-relaxed text-base sm:text-lg lg:text-xl group-hover:text-foreground/90 transition-colors duration-300">
-                  At LUXA Digital Solutions, we believe that exceptional digital
-                  experiences are the foundation of business success. Our
-                  mission is to create innovative, scalable, and user-centric
-                  solutions that not only meet our clients' immediate needs but
-                  also position them for long-term growth and success.
-                </p>
-              </div>
+        {/* decorative curved cutout */}
+        <div className="pointer-events-none absolute -bottom-6 left-0 right-0 overflow-hidden">
+          <svg
+            viewBox="0 0 1200 60"
+            preserveAspectRatio="none"
+            className="block h-12 w-full"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0,0 C300,60 900,60 1200,0 L1200,60 L0,60 Z"
+              fill="#071a29"
+            />
+            <path
+              d="M0,60 C300,0 900,0 1200,60 L1200,0 L0,0 Z"
+              fill="#ffffff"
+            />
+          </svg>
+        </div>
+      </header>
 
-              <div className="group">
-                <p className="text-muted-foreground leading-relaxed text-base sm:text-lg lg:text-xl group-hover:text-foreground/90 transition-colors duration-300">
-                  With over a decade of experience in the digital landscape,
-                  we've helped hundreds of businesses across various industries
-                  transform their digital presence and achieve remarkable
-                  results. Our approach combines cutting-edge technology with
-                  proven business strategies.
-                </p>
-              </div>
-            </div>
+      {/* Attached hero-style UI (large two-tone heading) - inserted before the 'We work' section */}
+      <section className="py-16">
+        <div className="container mx-auto px-6">
+          <h2 className="mx-auto max-w-6xl text-center text-5xl font-extrabold uppercase leading-tight sm:text-6xl md:text-7xl lg:text-[88px]">
+            At LUXA, WE BELIEVE THAT EVERY
+            <br /> BRAND HAS THE POTENTIAL
+            <br />
+            <span className="text-muted-foreground">
+              TO ACHIEVE EXTRAORDINARY RESULTS
+            </span>
+          </h2>
+        </div>
+      </section>
 
-            {/* Enhanced Achievements List */}
-            <div className="mt-8 sm:mt-12">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center">
-                <CheckCircle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-brand-teal mr-3 sm:mr-4" />
-                Our Achievements
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-center group">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal mr-3 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
-                    <span className="text-sm sm:text-base lg:text-lg text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-relaxed">
-                      {achievement}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Enhanced Technologies Section */}
-            <div className="mt-8 sm:mt-12">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center">
-                <Star className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-brand-teal mr-3 sm:mr-4" />
-                Technologies We Master
-              </h3>
-              <div className="flex flex-wrap gap-2 sm:gap-3">
-                {technologies.map((tech, index) => (
-                  <Badge
-                    key={index}
-                    variant="outline"
-                    className="border-brand-teal/30 text-brand-teal bg-brand-teal/10 text-xs sm:text-sm font-medium hover:bg-brand-teal/20 hover:border-brand-teal/50 transition-all-spring hover-scale"
+      {/* Existing 'We work' section (unchanged) */}
+      <section className="bg-background py-20">
+        <div className="container mx-auto px-6">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
+            {/* Left vertical list */}
+            <aside className="lg:col-span-4">
+              <div className="space-y-6">
+                {[
+                  { label: "Brains", value: "80" },
+                  { label: "Languages", value: "11" },
+                  { label: "Nationalities", value: "17" },
+                  { label: "Time Zones", value: "10" },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex items-center justify-between border-b border-border/20 py-4"
                   >
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Enhanced Right Column - Stats Grid */}
-          <div className="animate-slide-up-delayed">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-              {stats.map((stat, index) => (
-                <Card
-                  key={stat.label}
-                  className="p-6 sm:p-8 text-center bg-card/30 border-border/30 hover:border-brand-teal/40 group hover-lift backdrop-blur-sm transition-all-spring relative overflow-hidden"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {/* Hover background effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 via-transparent to-brand-teal/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:animate-glow transition-all-spring group-hover:scale-110">
-                      <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-brand-teal" />
+                    <div className="text-base font-medium text-foreground">
+                      {item.label}
                     </div>
-
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-brand-teal mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
-                      {stat.value}
-                    </div>
-
-                    <div className="font-semibold mb-2 sm:mb-3 text-sm sm:text-base lg:text-lg group-hover:text-brand-teal transition-colors duration-300">
-                      {stat.label}
-                    </div>
-
-                    <div className="text-xs sm:text-sm text-muted-foreground group-hover:text-foreground/90 transition-colors duration-300 leading-relaxed">
-                      {stat.description}
+                    <div className="text-sm text-muted-foreground">
+                      {item.value}
                     </div>
                   </div>
-                </Card>
-              ))}
+                ))}
+              </div>
+
+              <div className="mt-8 border-t border-border/20 pt-6">
+                <div className="space-y-6">
+                  {[
+                    "Branding",
+                    "Mobile Apps",
+                    "Social Media",
+                    "Web Development",
+                  ].map((s) => (
+                    <div
+                      key={s}
+                      className="flex items-center justify-between py-4"
+                    >
+                      <div className="text-base text-foreground">{s}</div>
+                      <div className="text-muted-foreground">✓</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </aside>
+
+            {/* Right content */}
+            <div className="lg:col-span-8">
+              <h2 className="mb-6 max-w-4xl text-5xl font-extrabold leading-tight tracking-tight text-foreground">
+                We work with founders who don’t wait for permission. The ones
+                building the next big thing fearlessly, with design that speaks
+                louder than words.
+              </h2>
+
+              <div className="prose max-w-none text-lg text-muted-foreground">
+                <p>
+                  We don’t just create visuals, we shape identities. Our work
+                  helps brands stand out, stay true and speak directly to the
+                  people they serve. The kind that sparks curiosity and creates
+                  genuine connections, because great branding isn’t just what
+                  you say, it’s how you make people feel.
+                </p>
+
+                <p>
+                  It’s the wink in your logo, the rhythm in your website, the
+                  pause after a line that lands smoother than your favorite
+                  espresso. We are obsessed over the tiny details, because
+                  that’s where the magic hides (and where most people forget to
+                  look).
+                </p>
+
+                <p>
+                  Whether you're launching from scratch or leveling up, we build
+                  brands people actually want to be part of. No guesswork, no
+                  fluff, just sharp thinking, smart design, and a whole lot of
+                  heart.
+                </p>
+              </div>
+
+              {/* Stats row */}
+              <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
+                <div className="text-center">
+                  <div className="text-4xl font-black text-foreground">20+</div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Years of Experience
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="text-4xl font-black text-foreground">
+                    400+
+                  </div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Projects Delivered
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="text-4xl font-black text-foreground">99%</div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Customer Satisfaction
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Enhanced Mission Statement Card */}
-        <div className="animate-slide-up">
-          <Card className="p-8 sm:p-12 lg:p-16 bg-gradient-accent border-brand-teal/20 backdrop-blur-sm relative overflow-hidden group hover:border-brand-teal/40 transition-all-spring">
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-teal/10 via-transparent to-brand-teal/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      {/* Main about content - tuned spacing so it sits nicely under the hero */}
+      <section
+        id="about"
+        className="relative overflow-hidden bg-background py-20 sm:py-24 lg:py-28"
+      >
+        {/* Background decorative elements */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-20 top-20 h-32 w-32 rounded-full bg-brand-teal/5 blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 h-40 w-40 rounded-full bg-brand-teal/5 blur-3xl"></div>
+          <div className="bg-brand-teal/3 absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl"></div>
+        </div>
 
-            <div className="relative z-10 text-center max-w-4xl mx-auto">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-2xl bg-brand-teal/20 flex items-center justify-center mx-auto mb-6 sm:mb-8 group-hover:animate-glow transition-all-spring group-hover:scale-110">
-                <Lightbulb className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-teal" />
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          {/* New Highlight Stats Section (from design) */}
+          <section className="pb-20 pt-12">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="mb-10 text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                WITH YEARS OF EXPERIENCE AND A TRACK
+                <br /> RECORD OF{" "}
+                <span className="text-muted-foreground">
+                  DELIVERING MEASURABLE RESULTS
+                </span>
+              </h2>
+
+              <div className="grid gap-6 md:grid-cols-3">
+                {/* Card 1 */}
+                <div className="relative overflow-hidden rounded-3xl bg-orange-500 p-10 text-white">
+                  <div className="mb-6 text-6xl font-black leading-none">
+                    300+
+                  </div>
+                  <div className="mb-4 text-lg font-semibold">
+                    Successful Campaigns
+                  </div>
+                  <p className="text-sm opacity-90">
+                    Tailored to your business goals and successful campaigns
+                    delivered across various industries.
+                  </p>
+
+                  {/* decorative notch */}
+                  <div className="pointer-events-none absolute -bottom-6 left-1/2 h-12 w-12 -translate-x-1/2 rotate-45 rounded-sm bg-white" />
+                </div>
+
+                {/* Card 2 */}
+                <div className="relative overflow-hidden rounded-3xl bg-lime-300 p-10 text-foreground">
+                  <div className="mb-6 text-6xl font-black leading-none">
+                    2.5x
+                  </div>
+                  <div className="mb-4 text-lg font-semibold">Average ROI</div>
+                  <p className="text-sm opacity-90">
+                    Crafted for your success, delivering impactful campaigns
+                    across diverse industries worldwide.
+                  </p>
+
+                  <div className="pointer-events-none absolute -bottom-6 left-1/2 h-12 w-12 -translate-x-1/2 rotate-45 rounded-sm bg-background" />
+                </div>
+
+                {/* Card 3 */}
+                <div className="relative overflow-hidden rounded-3xl bg-violet-300 p-10 text-white">
+                  <div className="mb-6 text-6xl font-black leading-none">
+                    10M+
+                  </div>
+                  <div className="mb-4 text-lg font-semibold">
+                    Impressions generated
+                  </div>
+                  <p className="text-sm opacity-90">
+                    Achieving excellence through personalized strategies and
+                    successful results in every industry.
+                  </p>
+
+                  <div className="pointer-events-none absolute -bottom-6 left-1/2 h-12 w-12 -translate-x-1/2 rotate-45 rounded-sm bg-white" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* OUR VALUES */}
+          <section className="py-20">
+            <div className="container mx-auto px-6">
+              <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+                <div className="lg:col-span-7">
+                  <div className="mb-4 text-sm font-semibold uppercase tracking-widest text-violet-300">
+                    ABOUT US
+                  </div>
+                  <h2 className="text-6xl font-extrabold leading-tight text-[#071a29]">
+                    OUR VALUES
+                  </h2>
+                </div>
+
+                <div className="lg:col-span-5">
+                  <p className="mt-4 text-lg text-muted-foreground">
+                    Experience growth through innovative digital marketing
+                    designed to reach, inspire, and deliver results.
+                  </p>
+                </div>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 group-hover:text-brand-teal transition-colors duration-300 leading-tight">
-                Our Mission
-              </h3>
+              <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div>
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#071a29] text-white">
+                      <Lightbulb className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="mb-2 text-xl font-extrabold tracking-wider text-[#071a29]">
+                        INNOVATION
+                      </h4>
+                      <p className="text-muted-foreground">
+                        Staying ahead with cutting-edge strategies.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground leading-relaxed group-hover:text-foreground/90 transition-colors duration-300 px-4 sm:px-6">
-                To empower businesses with innovative digital solutions that
-                drive growth, enhance user experiences, and create lasting value
-                in an ever-evolving digital landscape.
-              </p>
+                <div>
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#071a29] text-white">
+                      <CheckCircle className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="mb-2 text-xl font-extrabold tracking-wider text-[#071a29]">
+                        TRANSPARENCY
+                      </h4>
+                      <p className="text-muted-foreground">
+                        Building trust through open communication.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#071a29] text-white">
+                      <Star className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="mb-2 text-xl font-extrabold tracking-wider text-[#071a29]">
+                        RESULTS-DRIVEN
+                      </h4>
+                      <p className="text-muted-foreground">
+                        Focusing on measurable outcomes that matter.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#071a29] text-white">
+                      <Users className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="mb-2 text-xl font-extrabold tracking-wider text-[#071a29]">
+                        COLLABORATION
+                      </h4>
+                      <p className="text-muted-foreground">
+                        Partnering with clients for shared success.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </Card>
+          </section>
+
+          {/* Render reusable FAQ and Final CTA components above the existing final CTA card */}
+          <FAQSection items={faqItems} />
+          <FinalCTA />
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

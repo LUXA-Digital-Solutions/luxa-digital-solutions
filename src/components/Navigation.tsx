@@ -10,6 +10,10 @@ const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Pages that use a dark hero/header and should show a dark navbar initially
+  const darkHeroRoutes = ["/about", "/contact", "/case-studies", "/pricing"];
+  const isHeroRoute = darkHeroRoutes.includes(location.pathname);
+
   // Handle scroll effect for navigation
   useEffect(() => {
     const handleScroll = () => {
@@ -79,15 +83,26 @@ const Navigation = () => {
     }
   };
 
+  // Dynamic class helpers
+  const navBgClass = scrolled
+    ? "border-b border-border/30 bg-background text-foreground"
+    : isHeroRoute
+      ? "bg-[#071a29] text-white"
+      : "bg-transparent";
+
+  const linkTextClass =
+    scrolled || !isHeroRoute
+      ? "text-muted-foreground hover:text-foreground"
+      : "text-white hover:text-white/90";
+
+  const iconButtonText =
+    scrolled || !isHeroRoute ? "text-foreground" : "text-white";
+
   return (
     <>
       {/* Modern Navigation Bar */}
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-200 ${
-          scrolled
-            ? "border-b border-border/30 bg-background"
-            : "bg-transparent"
-        }`}
+        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-200 ${navBgClass}`}
       >
         <div className="container mx-auto my-2 px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between sm:h-20">
@@ -97,12 +112,14 @@ const Navigation = () => {
                 className="group relative cursor-pointer"
                 onClick={() => navigate("/")}
               >
-                <div className="relative overflow-hidden rounded-full border border-brand-coral/20 bg-black p-2 backdrop-blur-sm transition-all duration-500 hover:border-brand-coral/40 hover:shadow-lg hover:shadow-brand-coral/20 sm:p-4">
+                <div
+                  className={`relative overflow-hidden rounded-full border border-brand-coral/20 ${isHeroRoute && !scrolled ? "bg-transparent" : "bg-black"} p-2 backdrop-blur-sm transition-all duration-500 hover:border-brand-coral/40 hover:shadow-lg hover:shadow-brand-coral/20 sm:p-4`}
+                >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-coral/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
                   <img
                     src="/luxa.png"
                     alt="LUXA"
-                    className="relative z-10 h-8 w-auto drop-shadow-sm filter transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-md sm:h-10"
+                    className={`relative z-10 h-8 w-auto drop-shadow-sm filter transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-md sm:h-10 ${isHeroRoute && !scrolled ? "invert-[0.98]" : ""}`}
                   />
                   <div className="absolute -right-1 -top-1 h-3 w-3 animate-pulse rounded-full bg-brand-coral/30"></div>
                   <div
@@ -123,7 +140,7 @@ const Navigation = () => {
                     e.preventDefault();
                     handleNavClick(item);
                   }}
-                  className="px-5 py-2 text-lg font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  className={`${linkTextClass} px-5 py-2 text-lg font-medium transition-colors`}
                 >
                   {item.name}
                 </a>
@@ -147,7 +164,7 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-1 text-foreground transition-colors hover:text-brand-coral"
+                className={`p-1 transition-colors hover:text-brand-coral ${iconButtonText}`}
               >
                 {isOpen ? (
                   <X className="h-6 w-6" />
@@ -180,15 +197,14 @@ const Navigation = () => {
                   navigate("/");
                 }}
               >
-                {/* <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-brand-teal/10 via-brand-teal/5 to-transparent p-2.5 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-500 hover:shadow-lg hover:shadow-brand-teal/20 backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                {/* Mobile logo placeholder - kept intentionally small */}
+                <div className="relative overflow-hidden rounded-xl p-2">
                   <img
                     src="/lovable-uploads/ba542bb9-91f7-434d-bdec-fc554c9339ac.png"
                     alt="LUXA"
-                    className="h-7 sm:h-8 w-auto relative z-10 group-hover:scale-110 transition-all duration-500 filter drop-shadow-sm"
+                    className="relative z-10 h-7 w-auto drop-shadow-sm filter transition-all duration-500 group-hover:scale-110 sm:h-8"
                   />
-                  <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-brand-teal/30 rounded-full animate-pulse"></div>
-                </div> */}
+                </div>
               </div>
               <Button
                 variant="ghost"
