@@ -1,133 +1,138 @@
-import ScrollStack, {
-  ScrollStackItem,
-} from "@/components/animations/ScrollStack";
-import { Button } from "@/components/ui/button";
 import { projects } from "@/data/projects";
 import { ArrowUpRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Portfolio = () => {
   const navigate = useNavigate();
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    // Initially show all cards (remove animation dependency)
+    setVisibleCards(new Set(projects.map((_, idx) => idx)));
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(
+              entry.target.getAttribute("data-index") || "0",
+            );
+            setVisibleCards((prev) => new Set(prev).add(index));
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "50px" },
+    );
+
+    return () => observerRef.current?.disconnect();
+  }, []);
+
+  const cardRef = (el: HTMLDivElement | null, index: number) => {
+    if (el && observerRef.current) {
+      observerRef.current.observe(el);
+    }
+  };
 
   return (
-    <section id="portfolio" className="relative bg-background overflow-hidden">
+    <section
+      id="portfolio"
+      className="relative overflow-hidden bg-background py-20"
+    >
+      {/* Decorative Cutouts */}
+      <div className="pointer-events-none absolute left-0 top-0 h-64 w-64 opacity-10">
+        <img
+          src="/cutout-top.svg"
+          alt=""
+          className="h-full w-full object-contain"
+        />
+      </div>
+      <div className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 opacity-10">
+        <img
+          src="/cutout-bottom-left.svg"
+          alt=""
+          className="h-full w-full object-contain"
+        />
+      </div>
+
       {/* Header Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-32 pb-8">
-        <div className="text-left max-w-4xl">
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 tracking-wider uppercase">
-            01 / 03
+      <div className="container relative z-10 mx-auto px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="max-w-4xl text-left">
+          <p className="mb-4 text-sm uppercase tracking-wider text-brand-coral">
+            02 / 04
           </p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h2 className="mb-6 text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
             <span className="text-foreground">Our Portfolio</span>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
+          <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
             We've helped businesses across industries achieve their goals. Here
             are some of our selected works.
           </p>
         </div>
       </div>
 
-      {/* ScrollStack Portfolio Cards */}
-      <div className="relative">
-        <ScrollStack
-          useWindowScroll={true}
-          itemDistance={140}
-          itemScale={0.05}
-          itemStackDistance={40}
-          stackPosition="40%"
-          scaleEndPosition="25%"
-          baseScale={0.85}
-          className=""
-        >
-          {/* Add some top spacing to position cards correctly */}
-          <div className="h-[20vh]" />
+      {/* Projects Grid */}
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {projects.map((project, idx) => (
-            <ScrollStackItem
+            <div
               key={project.id}
-              itemClassName="bg-gradient-to-br from-black via-gray-900 to-black dark:from-gray-950 dark:via-black dark:to-gray-900 border border-gray-800/50"
+              ref={(el) => cardRef(el, idx)}
+              data-index={idx}
+              className="group relative cursor-pointer overflow-hidden rounded-3xl bg-gray-100 shadow-lg transition-all duration-700 hover:shadow-2xl dark:bg-gray-900"
+              onClick={() => navigate(`/project/${project.id}`)}
             >
-              <div className="relative w-full h-full flex items-center justify-between gap-8 group">
-                {/* Left Content */}
-                <div className="flex-1 space-y-6 z-10">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4">
-                      <span className="text-sm text-gray-400 font-mono">
-                        {String(idx + 1).padStart(2, "0")}
-                      </span>
-                      <div className="h-px flex-1 bg-gradient-to-r from-gray-700 to-transparent max-w-[100px]"></div>
-                    </div>
+              {/* Image Container */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
 
-                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                      {project.title}
-                    </h3>
-
-                    <p className="text-gray-400 text-sm max-w-md">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  {/* Year, Role, Services */}
-                  <div className="grid grid-cols-3 gap-6 max-w-xl">
-                    <div>
-                      <p className="text-xs text-gray-500 mb-1">Year</p>
-                      <p className="text-white font-semibold">2025</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500 mb-1">Role</p>
-                      <p className="text-white font-semibold">Lead Designer</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500 mb-1">Services</p>
-                      <div className="flex flex-wrap gap-1">
-                        {project.tech.slice(0, 2).map((tech, i) => (
-                          <span
-                            key={i}
-                            className="text-white text-xs font-medium"
-                          >
-                            {tech}
-                            {i < 1 ? "," : ""}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* View Project Link */}
-                  <Button
-                    variant="ghost"
-                    onClick={() => navigate(`/project/${project.id}`)}
-                    className="text-white hover:text-brand-teal transition-colors group/btn p-0 h-auto font-medium text-base"
-                  >
-                    View Project
-                    <ArrowUpRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                  </Button>
+                {/* Category Badges (top-right) */}
+                <div className="absolute right-4 top-4 flex gap-2 transition-opacity duration-300 group-hover:opacity-100">
+                  <span className="rounded-full bg-white/95 px-3 py-1 text-xs font-medium text-brand-charcoal shadow-sm backdrop-blur-sm">
+                    {project.category}
+                  </span>
+                  <span className="rounded-full bg-brand-teal/90 px-3 py-1 text-xs font-medium text-white shadow-sm backdrop-blur-sm">
+                    {project.tech[0]}
+                  </span>
                 </div>
 
-                {/* Right Image */}
-                <div className="relative w-[45%] h-full flex items-center justify-end">
-                  <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-2xl overflow-hidden border border-gray-700/50 shadow-2xl">
-                    {/* Laptop Frame Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800/20 via-transparent to-transparent z-10 pointer-events-none"></div>
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    {/* Screen Reflection Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                  </div>
+                {/* Dark overlay on hover */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
 
-                  {/* Decorative Element */}
-                  <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-brand-teal/10 rounded-full blur-3xl pointer-events-none"></div>
-                </div>
+                {/* Circular CTA that appears on hover */}
+                <button
+                  aria-label={`Open ${project.title}`}
+                  className="absolute bottom-6 right-6 flex h-16 w-16 translate-y-8 transform items-center justify-center rounded-full bg-brand-gold text-brand-charcoal opacity-0 shadow-xl transition-all duration-500 hover:bg-brand-teal hover:text-white group-hover:translate-y-0 group-hover:opacity-100"
+                >
+                  <ArrowUpRight className="h-6 w-6" />
+                </button>
               </div>
-            </ScrollStackItem>
-          ))}
-        </ScrollStack>
-      </div>
 
-      {/* Bottom padding to allow last card to scroll properly */}
-      <div className="h-[20vh]"></div>
+              {/* Text Content */}
+              <div className="p-6">
+                <div className="mb-3 flex items-center gap-2 text-sm text-brand-muted dark:text-gray-400">
+                  <span>{project.category}</span>
+                  <span>•</span>
+                  <span>{project.client}</span>
+                </div>
+
+                <h3 className="mb-3 text-2xl font-bold leading-tight text-foreground transition-colors duration-300 group-hover:text-brand-coral sm:text-3xl">
+                  {project.title}
+                </h3>
+
+                <p className="text-sm text-muted-foreground">
+                  {project.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import HowWeWork from "@/components/HowWeWork";
 import Navigation from "@/components/Navigation";
 import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
@@ -38,6 +39,9 @@ const Index = () => {
         </section>
         <section id="portfolio">
           <Portfolio />
+        </section>
+        <section id="how-we-work">
+          <HowWeWork />
         </section>
       </main>
       <Footer />
