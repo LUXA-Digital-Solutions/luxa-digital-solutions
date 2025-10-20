@@ -36,7 +36,7 @@ export const projects: Project[] = [
     category: "Creative Portfolio",
     description: "Professional portfolio website for a graphics designer showcasing creative works and services",
     tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
-    image: "/assets/muwahhid.png",
+    image: "/assets/al-muwaheed1.0.png",
     link: "#",
     client: "Muwahhid Graphics Studio",
     duration: "2 months",
@@ -68,9 +68,10 @@ export const projects: Project[] = [
       }
     ],
     gallery: [
-      "/assets/muwahhid.png",
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center",
-      "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop&crop=center"
+      "/assets/al-muwaheed1.0.png",
+      "/assets/al-muwaheed2.0.png",
+      "/assets/al-muwaheed3.0.png",
+      "/assets/al-muwaheed4.0.png"
     ],
     testimonial: {
       quote: "LUXA created a stunning portfolio website that perfectly captures my creative vision. The professional presentation has helped me attract high-quality clients and establish credibility in the industry.",
@@ -96,7 +97,7 @@ export const projects: Project[] = [
     category: "Business Dashboard",
     description: "Comprehensive dashboard for data and airtime vendor operations management",
     tech: ["Next.js", "TypeScript", "React", "Node.js", "MongoDB", "TailwindCSS"],
-    image: "/assets/360data.png",
+    image: "/assets/dashboard1.0.png",
     link: "#",
     client: "360Data Solutions",
     duration: "3 months",
@@ -128,9 +129,9 @@ export const projects: Project[] = [
       }
     ],
     gallery: [
-      "/assets/360data.png",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center"
+      "/assets/dashboard1.0.png",
+      "/assets/dashboard2.0.png",
+      "/assets/360data.png"
     ],
     testimonial: {
       quote: "LUXA's dashboard has completely transformed our business operations. We can now monitor everything in real-time and make data-driven decisions that have significantly improved our profitability.",
@@ -216,7 +217,7 @@ export const projects: Project[] = [
     category: "Educational Platform",
     description: "Modern educational website redesign for Islamic course registration and student management",
     tech: ["React", "Next.js", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=600&fit=crop&crop=center",
+    image: "/assets/markaz-bayan1.0.png",
     link: "#",
     client: "Markazul Bayaan",
     duration: "4 months",
@@ -248,9 +249,9 @@ export const projects: Project[] = [
       }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=600&fit=crop&crop=center",
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop&crop=center",
-      "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=600&fit=crop&crop=center"
+      "/assets/markaz-bayan1.0.png",
+      "/assets/markaz-bayan2.0.png",
+      "/assets/markaz-bayan3.0.png"
     ],
     testimonial: {
       quote: "LUXA transformed our educational platform beyond our expectations. The new website has made it incredibly easy for students to register for our Islamic courses, and we've seen a remarkable increase in enrollment. The design perfectly reflects our institution's values while providing modern functionality.",

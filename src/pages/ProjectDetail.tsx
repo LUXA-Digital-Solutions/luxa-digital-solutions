@@ -55,7 +55,7 @@ const ProjectDetail = () => {
           alt={project.title}
           className="absolute inset-0 h-full w-full object-cover brightness-75 filter"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
 
         <div className="container relative z-10 mx-auto flex h-full items-end pt-16 sm:pt-20 lg:items-center">
           <div className="w-full px-6 py-12 lg:px-8 lg:py-24">
