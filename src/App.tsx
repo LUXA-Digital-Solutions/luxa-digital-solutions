@@ -11,6 +11,7 @@ import ContactPage from "./pages/Contact";
 import GetQuote from "./pages/GetQuote";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Portfolio from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";
 import ProjectDetail from "./pages/ProjectDetail";
 import ScheduleConsultation from "./pages/ScheduleConsultation";
@@ -26,6 +27,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/project/:id" element={<ProjectDetail />} />
             <Route path="/get-quote" element={<GetQuote />} />
             <Route path="/pricing" element={<Pricing />} />

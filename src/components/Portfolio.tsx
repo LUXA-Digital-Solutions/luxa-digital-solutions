@@ -8,9 +8,12 @@ const Portfolio = () => {
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
   const observerRef = useRef<IntersectionObserver | null>(null);
 
+  // Show only first 4 projects on homepage
+  const featuredProjects = projects.slice(0, 4);
+
   useEffect(() => {
     // Initially show all cards (remove animation dependency)
-    setVisibleCards(new Set(projects.map((_, idx) => idx)));
+    setVisibleCards(new Set(featuredProjects.map((_, idx) => idx)));
 
     observerRef.current = new IntersectionObserver(
       (entries) => {
@@ -74,12 +77,12 @@ const Portfolio = () => {
 
       {/* Projects Grid */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {projects.map((project, idx) => (
+        <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+          {featuredProjects.map((project, index) => (
             <div
               key={project.id}
-              ref={(el) => cardRef(el, idx)}
-              data-index={idx}
+              ref={(el) => cardRef(el, index)}
+              data-index={index}
               className="group relative cursor-pointer overflow-hidden rounded-3xl bg-gray-100 shadow-lg transition-all duration-700 hover:shadow-2xl dark:bg-gray-900"
               onClick={() => navigate(`/project/${project.id}`)}
             >
@@ -131,6 +134,26 @@ const Portfolio = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View All Projects Button */}
+        <div className="flex justify-center">
+          <button
+            onClick={() => navigate("/portfolio")}
+            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-brand-teal to-brand-coral px-10 py-5 text-lg font-semibold text-white shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl active:scale-95"
+          >
+            {/* Animated gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-coral to-brand-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+            {/* Button content */}
+            <span className="relative z-10 flex items-center gap-3">
+              View All Projects
+              <ArrowUpRight className="h-5 w-5 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+            </span>
+
+            {/* Shine effect */}
+            <div className="group-hover:animate-shine absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 transform bg-gradient-to-r from-transparent to-white opacity-20"></div>
+          </button>
         </div>
       </div>
     </section>
