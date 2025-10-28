@@ -270,5 +270,67 @@ export const projects: Project[] = [
       "Progress tracking system",
       "Multi-language support"
     ]
+  },
+  {
+    id: "solar-pulse-platform",
+    title: "Solar Pulse Clean Energy Platform",
+    category: "Environmental Tech",
+    description: "Comprehensive platform for solar energy systems management and sustainability impact tracking",
+    tech: ["React", "TypeScript", "Next.js", "Node.js", "PostgreSQL", "TailwindCSS", "Chart.js"],
+    image: "/assets/solar-pulse.png",
+    link: "#",
+    client: "Solar Pulse Energy",
+    duration: "5 months",
+    teamSize: 5,
+    budget: "$50,000",
+    overview: "Solar Pulse Energy, a leading renewable energy provider, needed a sophisticated platform to showcase their environmental impact, manage solar installations, and provide clients with real-time monitoring of their clean energy contributions. The platform needed to visualize sustainability metrics and inspire confidence in renewable energy adoption.",
+    challenge: "Solar Pulse struggled to effectively communicate the tangible environmental benefits of their solar installations to clients. They lacked a centralized system to track CO2 offset, water savings, and long-term sustainability impact. Potential clients needed clear, compelling data to justify their investment in solar energy.",
+    solution: "We developed a comprehensive clean energy platform featuring real-time impact dashboards, beautiful data visualizations, and client portals. The solution showcases environmental metrics like CO2 offset, water savings, and system lifespan with stunning visual presentations. Interactive charts and statistics make sustainability data accessible and inspiring.",
+    results: [
+      {
+        metric: "Client Conversions",
+        value: "+285%",
+        description: "Increased solar installation sales"
+      },
+      {
+        metric: "Customer Engagement",
+        value: "+350%",
+        description: "Active monitoring and platform usage"
+      },
+      {
+        metric: "Environmental Awareness",
+        value: "+400%",
+        description: "Clients understanding their impact"
+      },
+      {
+        metric: "System Monitoring",
+        value: "Real-time",
+        description: "24/7 performance tracking for all installations"
+      }
+    ],
+    gallery: [
+      "/assets/solar-pulse.png",
+      "/assets/solar-pulse2.png",
+      "/assets/solar-pulse3.png"
+    ],
+    testimonial: {
+      quote: "LUXA's platform has revolutionized how we present solar energy to our clients. The stunning visualizations of environmental impact data have made our sales presentations incredibly compelling. Clients can now see exactly how their investment contributes to a cleaner planet, and our conversion rates have skyrocketed.",
+      author: "Marcus Chen",
+      position: "CEO & Founder",
+      company: "Solar Pulse Energy",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+    },
+    features: [
+      "Real-time environmental impact tracking",
+      "CO2 offset calculations and visualizations",
+      "Water savings metrics dashboard",
+      "30-year system lifespan projections",
+      "Client portal with installation monitoring",
+      "Interactive sustainability reports",
+      "Beautiful data visualizations",
+      "Mobile-responsive energy dashboard",
+      "Automated impact reporting",
+      "System performance analytics"
+    ]
   }
 ];
