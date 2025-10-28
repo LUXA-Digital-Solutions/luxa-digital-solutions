@@ -53,6 +53,7 @@ const Navigation = () => {
     { name: "About", href: "/about", action: "navigate" },
     { name: "Portfolio", href: "#portfolio", action: "scroll" },
     { name: "Services", href: "#services", action: "scroll" },
+    { name: "Blog", href: "/blog", action: "navigate" },
     { name: "Pricing", href: "/pricing", action: "navigate" },
     { name: "Contact", href: "/contact", action: "navigate" },
   ];

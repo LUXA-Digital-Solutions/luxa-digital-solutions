@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "./components/theme-provider";
 import AboutUs from "./pages/AboutUs";
 import AllProjects from "./pages/AllProjects";
+import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 import CaseStudies from "./pages/CaseStudies";
 import ContactPage from "./pages/Contact";
 import GetQuote from "./pages/GetQuote";
@@ -29,6 +31,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/get-quote" element={<GetQuote />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/case-studies" element={<CaseStudies />} />
