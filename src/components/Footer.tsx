@@ -59,7 +59,7 @@ const Footer = () => {
     },
     {
       name: "Instagram",
-      href: "https://www.instagram.com/luxa_digital_solutions?igsh=YzljYTk1ODg3Zg==",
+      href: "https://www.instagram.com/luxa__agency?igsh=MWFtY25paWFpdzZheQ==",
       icon: Instagram,
     },
     {
