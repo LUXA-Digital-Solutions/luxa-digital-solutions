@@ -193,11 +193,11 @@ const Footer = () => {
                   Contact
                 </h5>
                 <div>
-                  146 Franklin Street,
+                  Acre Santa,
                   <br />
-                  Brooklyn, NY 11222
+                  Ilorin, Kwara State,
                   <br />
-                  United States
+                  Nigeria
                 </div>
               </div>
 

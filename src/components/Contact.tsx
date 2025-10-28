@@ -125,7 +125,7 @@ const Contact = () => {
               info@luxasolution.com
             </div>
             <div className="mt-3 text-base text-muted-foreground">
-              support@luxasolution.com
+              luxadigitalsolutions@gmail.com
             </div>
           </div>
 
@@ -138,10 +138,10 @@ const Contact = () => {
               VISIT OUR OFFICE
             </h4>
             <div className="text-base text-muted-foreground">
-              123 Digital Street
+              Acre Santa, Ilorin,
             </div>
             <div className="mt-3 text-base text-muted-foreground">
-              Brooklyn, NY 11222
+              Kwara State, Nigeria
             </div>
           </div>
 
@@ -154,7 +154,7 @@ const Contact = () => {
               CALL US
             </h4>
             <div className="text-base text-muted-foreground">
-              +1 (234) 567-890
+              +2348089287065
             </div>
             <div className="mt-3 text-base text-muted-foreground">
               +2347047494586
@@ -222,7 +222,7 @@ const Contact = () => {
               >
                 <iframe
                   title="office-map"
-                  src="https://www.google.com/maps?q=Brooklyn,+NY&output=embed"
+                  src="https://www.google.com/maps?q=Acre+Santa,+Ilorin,+Kwara+State,+Nigeria&output=embed"
                   className="h-full w-full"
                   loading="lazy"
                 />
